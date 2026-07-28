@@ -31,7 +31,8 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Poppins',system-ui,-apple-system,sans-serif;background:var(--cream);
+  body{font-family:'Poppins',system-ui,-apple-system,sans-serif,
+    'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';background:var(--cream);
     color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   h1,h2,h3{line-height:1.14;letter-spacing:-.02em}
@@ -160,11 +161,19 @@
     border-bottom:17px solid transparent;margin-left:8px}
   .stats-banner{width:100%;max-width:1000px;height:auto;display:block;margin:48px auto 0}
 
+  /* ---- icons ----
+     drawn as SVG rather than emoji/dingbat characters: Poppins has no glyphs for
+     these, and systems without a colour-emoji font fall back to tofu boxes. */
+  .ico-arr{width:1em;height:1em;display:inline-block;vertical-align:-.12em;flex:0 0 auto}
+  .hero-highlight .hh-icon svg{width:1em;height:1em;display:block}
+
   /* ---- checklist ---- */
   .get{text-align:center}
   .get h2{margin-bottom:26px}
   .checks{list-style:none;display:grid;gap:16px;max-width:820px;margin:0 auto;text-align:left}
   .checks li{display:flex;gap:12px;align-items:flex-start;font-size:1.08rem;color:var(--muted)}
+  .checks li::before{content:"";flex:0 0 auto;width:1.32rem;height:1.32rem;margin-top:2px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%2322a06b'/%3E%3Cpath d='M7 12.4l3.3 3.3L17 9' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
   .checks li span.tx{padding-top:2px}
 
   /* ---- feature cards ---- */
@@ -350,7 +359,7 @@
 <header class="topbar">
   <div class="wrap logos">
     <img src="images/revou-logo.png" alt="RevoU" class="logo-revou-img">
-    <span class="logo-x">✕</span>
+    <span class="logo-x">×</span>
     <img src="images/Binus SoC.png" alt="BINUS University — School of Computer Science" class="logo-binus-img">
   </div>
 </header>
@@ -366,7 +375,7 @@
         atau <span class="strong">Data Analytics</span> bareng RevoU.</p>
       <p class="lead"><span class="strong">Daftar sebelum 31 Juli 2026</span> dan dapatkan
         <span class="strong">benefit spesial</span> untuk Mahasiswa &amp; Alumni BINUS University:</p>
-      <p class="hero-highlight"><span class="hh-icon" aria-hidden="true">🎓</span><span><b>Beasiswa 30%</b> biaya program</span></p>
+      <p class="hero-highlight"><span class="hh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span><b>Beasiswa 30%</b> biaya program</span></p>
     </div>
     <div class="hero-actions">
       <p class="cta-label">Pilih Program</p>
@@ -378,7 +387,7 @@
           </span>
           <span class="bh-title">Applied Cybersecurity with AI</span>
           <span class="bh-meta">12 minggu · Sertifikat dari 3 institusi</span>
-          <span class="bh-go">Daftar sekarang →</span>
+          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
         <a href="https://revou-fsse.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-hero se">
           <span class="bh-tags">
@@ -387,7 +396,7 @@
           </span>
           <span class="bh-title">Software Engineering</span>
           <span class="bh-meta">6 bulan · AI-native pertama di Indonesia</span>
-          <span class="bh-go">Daftar sekarang →</span>
+          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
       </div>
       <p class="cta-sub">Program lainnya</p>
@@ -449,10 +458,10 @@
   <div class="wrap">
     <h2>Apa yang akan Kamu Dapatkan di RevoU</h2>
     <ul class="checks">
-      <li>✅ <span class="tx">Kelas Online Live yang Diajar oleh Ahli Industri</span></li>
-      <li>✅ <span class="tx">Tampil Beda di Pasar Kerja dengan Kurikulum Terintegrasi AI dari RevoU</span></li>
-      <li>✅ <span class="tx">Kerjakan Proyek &amp; Pengembangan Proyek yang Dibimbing Langsung oleh Para Ahli supaya Kamu Siap Kerja</span></li>
-      <li>✅ <span class="tx">Career Coaching &amp; Dukungan Pencarian Kerja dengan mentor dan AI assistant</span></li>
+      <li><span class="tx">Kelas Online Live yang Diajar oleh Ahli Industri</span></li>
+      <li><span class="tx">Tampil Beda di Pasar Kerja dengan Kurikulum Terintegrasi AI dari RevoU</span></li>
+      <li><span class="tx">Kerjakan Proyek &amp; Pengembangan Proyek yang Dibimbing Langsung oleh Para Ahli supaya Kamu Siap Kerja</span></li>
+      <li><span class="tx">Career Coaching &amp; Dukungan Pencarian Kerja dengan mentor dan AI assistant</span></li>
     </ul>
   </div>
 </section>
@@ -513,7 +522,7 @@
           <li>AWS Labs Environment</li>
           <li>Sertifikat 3 institusi</li>
         </ul>
-        <a href="#program" class="feat-link" data-goto="cs">Lihat program <span aria-hidden="true">→</span></a>
+        <a href="#program" class="feat-link" data-goto="cs">Lihat program <span aria-hidden="true"><svg class="ico-arr" viewBox="0 0 24 24" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </article>
       <article class="feat-card se">
         <span class="feat-badge">AWS + HackerRank</span>
@@ -525,7 +534,7 @@
           <li>AI-native pertama di Indonesia</li>
           <li>Coding challenge HackerRank</li>
         </ul>
-        <a href="#program" class="feat-link" data-goto="se">Lihat program <span aria-hidden="true">→</span></a>
+        <a href="#program" class="feat-link" data-goto="se">Lihat program <span aria-hidden="true"><svg class="ico-arr" viewBox="0 0 24 24" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </article>
     </div>
   </div>
@@ -688,7 +697,7 @@
   <div class="wrap">
     <h2>Transformasi Karier Alumni BINUS University Setelah Ikut RevoU</h2>
     <div class="carousel">
-      <button class="car-btn" id="prev" aria-label="Sebelumnya">←</button>
+      <button class="car-btn" id="prev" aria-label="Sebelumnya"><svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="car-window">
         <div class="slide active">
           <img src="images/testimonial-alvin.webp" alt="Alvin Budiarjo" class="avatar-img">
@@ -727,7 +736,7 @@
           </div>
         </div>
       </div>
-      <button class="car-btn" id="next" aria-label="Berikutnya">→</button>
+      <button class="car-btn" id="next" aria-label="Berikutnya"><svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
 </section>
