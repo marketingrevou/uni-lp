@@ -465,8 +465,9 @@
 <section class="video-block">
   <div class="wrap">
     <p class="video-head">Klik Video untuk Intip Keseruan Belajar di RevoU</p>
-    <div class="video" style="background-image:url('/binus-university/images/video-thumbnail.jpeg')"
-         role="img" aria-label="Klik video untuk intip keseruan belajar di RevoU">
+    <div class="video" id="video" data-yt="ZvpJPtOO5fA"
+         style="background-image:url('/binus-university/images/video-thumbnail.jpeg');cursor:pointer"
+         role="button" tabindex="0" aria-label="Putar video: intip keseruan belajar di RevoU">
       <span class="play"></span>
     </div>
     <img src="/binus-university/images/stats-banner-desktop.png" class="stats-banner"
@@ -669,7 +670,7 @@
 
       <!-- APPLIED CYBERSECURITY WITH AI -->
       <div class="panel active" id="cs">
-        <h3 class="p-title">Deteksi Ancaman, Tangani Insiden, dan Awasi AI di Kerja Security Nyata</h3>
+        <h3 class="p-title">Mulai karir Cybersecurity dengan AI</h3>
         <p class="p-desc">Program <b>defensive cybersecurity 12 minggu</b> yang dibangun bareng
           <b>BINUS Faculty dan AWS</b>. Kamu bakal kerja dengan <b>infrastruktur live, skenario alert nyata</b>,
           dan <b>tools berbasis AI</b> — sekaligus melatih judgment untuk membedakan ancaman asli dari noise.
@@ -839,6 +840,28 @@
       else { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
     });
   });
+  // Video: click-to-play YouTube embed (loads player only on interaction)
+  (function(){
+    var v = document.getElementById('video');
+    if(!v) return;
+    function play(){
+      var id = v.dataset.yt;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = 'Video RevoU';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit';
+      v.innerHTML = '';
+      v.style.cursor = 'default';
+      v.removeAttribute('role');
+      v.removeAttribute('tabindex');
+      v.appendChild(f);
+    }
+    v.addEventListener('click', play);
+    v.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
+  })();
+
   // Testimonial carousel
   (function(){
     var slides = document.querySelectorAll('.testi .slide');
