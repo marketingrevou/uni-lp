@@ -16,8 +16,8 @@ All images pulled from the original page at full/original resolution
 |------|-----------|
 | `hero-students.png` | Two students in maroon blazers, transparent PNG (desktop hero) |
 | `hero-student-mobile.png` | Single male student, transparent PNG (mobile hero crop) |
-| `BINUS Campus.jpg` | **In use** — faded backdrop behind the whole hero section (`.hero` background, `cover` + bottom anchored, under a cream veil). Sky is baked in so it needs no alpha: 280 KB vs 1.4 MB for the PNG. Preloaded in `<head>`, since a CSS background is discovered late and this one is above the fold. |
-| `BINUS Campus.png` | Source cutout of the campus building, transparent sky. Kept as the master — re-bake the `.jpg` from this if the hero background changes. Baked stops: `#fbf9ef 0% → #ebf2f9 38% → #c6deee 100%` vertical, then JPEG q72. The stops no longer have to match anything in the CSS (they did when the photo sat in its own panel); they now just tint the cropped sky, and cream at the top is what keeps it blending into the page. |
+| `binus-campus.jpg` | **In use** — faded backdrop behind the whole hero section (`.hero` background, `cover` + bottom anchored, under a cream veil). Sky is baked in so it needs no alpha: 280 KB vs 1.4 MB for the PNG. Preloaded in `<head>`, since a CSS background is discovered late and this one is above the fold. |
+| `binus-campus.png` | Source cutout of the campus building, transparent sky. Kept as the master — re-bake the `.jpg` from this if the hero background changes. Baked stops: `#fbf9ef 0% → #ebf2f9 38% → #c6deee 100%` vertical, then JPEG q72. The stops no longer have to match anything in the CSS (they did when the photo sat in its own panel); they now just tint the cropped sky, and cream at the top is what keeps it blending into the page. |
 
 ## Social proof / stats
 | File | What it is |
