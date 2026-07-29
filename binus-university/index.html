@@ -88,7 +88,9 @@
     background-size:100% 100%,cover}
   .hero-grid{display:block;max-width:880px;margin:0 auto}
   .hero-actions{margin-top:12px}
-  .hero h1{margin-bottom:22px}
+  .hero h1{margin-bottom:12px}
+  .hero-partner{font-size:.95rem;font-weight:700;letter-spacing:.01em;color:var(--muted);
+    margin:0 auto 22px;text-transform:none}
   .hero .lead{font-size:1.05rem;max-width:700px;margin:0 auto 18px}
   .benefits{list-style:none;margin:20px auto 6px;display:inline-grid;gap:12px;text-align:left}
   .benefits li{font-size:1.02rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
@@ -123,12 +125,20 @@
   .bh-logo .lg-aws{height:16px}
   .bh-logo .lg-hr{height:11px}
   .bh-logo .lbl{color:#fff;font-size:.63rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+  .bh-scholar{display:inline-flex;align-items:center;gap:6px;
+    background:linear-gradient(120deg,#ffd21f 0%,#ffc700 100%);color:#2a2400;font-size:.7rem;
+    font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:6px 13px;border-radius:999px;
+    line-height:1.4;box-shadow:0 3px 10px rgba(220,174,0,.4)}
+  .bh-scholar svg{width:.95em;height:.95em;display:block}
   .bh-title{font-size:1.14rem;font-weight:800;line-height:1.2;letter-spacing:-.01em}
   .bh-meta{font-size:.85rem;font-weight:500;color:#3f4d59}
   .bh-go{margin-top:5px;font-size:.88rem;font-weight:800;letter-spacing:.3px;
     border-bottom:2px solid rgba(0,0,0,.28);padding-bottom:2px}
   .cta-sub{font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
     color:#3d3d3d;margin:26px 0 13px;text-align:center}
+  .cta-sub .scholar-tag{display:inline-block;margin-left:6px;background:linear-gradient(120deg,#ffd21f 0%,#ffc700 100%);
+    color:#2a2400;padding:3px 10px;border-radius:999px;letter-spacing:.5px;
+    box-shadow:0 2px 8px rgba(220,174,0,.35)}
   .cta-secondary{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   /* Secondary tier, but they sit over the campus photo — a bare outline disappears into the
      foliage, so they carry their own translucent fill. Kept flat and single-line so they stay
@@ -389,20 +399,21 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>Raih Karier Impian di Bidang Digital lewat Beasiswa Eksklusif dari BINUS University &amp; RevoU!</h1>
-      <p class="lead"><span class="strong">Kamu mahasiswa atau alumni BINUS (Bina Nusantara) University?</span>
+      <h1>Raih Karier Impian di Bidang Digital lewat Beasiswa Eksklusif!</h1>
+      <p class="hero-partner">School of Computer Science BINUS University × RevoU</p>
+      <p class="lead"><span class="strong">Kamu mahasiswa atau alumni School of Computer Science BINUS University?</span>
         Ini kesempatanmu buat <span class="strong">mulai karier</span> di bidang paling dicari:
         <span class="strong">Applied Cybersecurity with AI, Software Engineering, Digital Marketing</span>,
         atau <span class="strong">Data Analytics</span> bareng RevoU.</p>
-      <p class="lead"><span class="strong">Daftar sebelum 31 Juli 2026</span> dan dapatkan
-        <span class="strong">benefit spesial</span> untuk Mahasiswa &amp; Alumni BINUS University:</p>
-      <p class="hero-highlight"><span class="hh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span><b>Beasiswa 30%</b> biaya program</span></p>
+      <p class="lead"><span class="strong">Daftar sebelum 19 Agustus 2026</span> dan dapatkan
+        <span class="strong">benefit spesial</span> untuk Mahasiswa &amp; Alumni School of Computer Science BINUS University.</p>
     </div>
     <div class="hero-actions">
       <p class="cta-label">Pilih Program</p>
       <div class="cta-primary">
         <a href="https://www.revou.co/binus-applied-cybersecurity?o=binus" target="_blank" rel="noopener" class="btn-hero cs">
           <span class="bh-tags">
+            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 15%</span>
             <span class="bh-badge">Baru</span>
             <span class="bh-logo dark"><img src="/binus-university/images/aws-logo.png" alt="AWS" class="lg-aws"><span class="lbl">Labs</span></span>
           </span>
@@ -412,6 +423,7 @@
         </a>
         <a href="https://revou-fsse.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-hero se">
           <span class="bh-tags">
+            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
             <span class="bh-logo dark"><img src="/binus-university/images/aws-logo.png" alt="AWS" class="lg-aws"></span>
             <span class="bh-logo light"><img src="/binus-university/images/hackerrank-logo.png" alt="HackerRank" class="lg-hr"></span>
           </span>
@@ -420,7 +432,7 @@
           <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
       </div>
-      <p class="cta-sub">Program lainnya</p>
+      <p class="cta-sub">Program lainnya <span class="scholar-tag">Beasiswa 30%</span></p>
       <div class="cta-secondary">
         <a href="https://fsdm-fb.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-ghost">Digital Marketing</a>
         <a href="https://revou-fsda.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-ghost">Data Analytics</a>
@@ -431,7 +443,7 @@
 
 <!-- STAT BAR -->
 <section class="statbar">
-  <div class="wrap"><h2>Karier 12.900+ Individu Sudah Berubah. Siap Jadi Berikutnya?</h2></div>
+  <div class="wrap"><h2>Karier 15.000+ Individu Sudah Berubah. Siap Jadi Berikutnya?</h2></div>
 </section>
 
 <!-- CLAIM + KENALAN + VIDEO -->
@@ -443,12 +455,15 @@
       </div>
       <div class="claim-text">
         <h2>Klaim Beasiswa &amp; Gabung dengan 260+ Alumni BINUS di RevoU!</h2>
-        <p>Beasiswa 30% ini khusus buat mahasiswa aktif atau alumni BINUS University. Dengan ikut program
+        <p>Beasiswa ini khusus buat mahasiswa aktif atau alumni School of Computer Science BINUS University —
+          potongan <b>30%</b> untuk FSSE &amp; program fullstack lainnya, dan <b>15%</b> untuk Applied
+          Cybersecurity with AI. Dengan ikut program
           RevoU, kamu bisa percepat langkahmu bangun karier lewat skill yang paling dicari perusahaan — dari
           Digital Marketing, Data Analytics, Software Engineering, sampai Applied Cybersecurity with AI. Nggak
           cuma belajar, kamu juga bakal
           dapet bimbingan karier intensif biar lebih siap dan percaya diri masuk dunia kerja. Semua keuntungan
-          ini bisa kamu dapetin dengan potongan 30%, khusus mahasiswa/alumni dari BINUS University!</p>
+          ini bisa kamu dapetin dengan harga scholarship, khusus mahasiswa/alumni dari School of Computer
+          Science BINUS University!</p>
         <h3 class="sub">Kenalan sama RevoU</h3>
         <p>RevoU adalah platform pendidikan online terbaik di Indonesia yang ngasih program belajar penuh
           praktik langsung, fokus ke skill Digital Marketing, Data Analytics, Software Engineering, dan Applied
@@ -471,7 +486,7 @@
       <span class="play"></span>
     </div>
     <img src="/binus-university/images/stats-banner-desktop.png" class="stats-banner"
-         alt="2.695.700+ pembelajar, 12.900+ alumni — Best Digital Marketing Bootcamp 2024">
+         alt="2.695.700+ pembelajar, 15.000+ alumni — Best Digital Marketing Bootcamp 2024">
   </div>
 </section>
 
