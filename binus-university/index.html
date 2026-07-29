@@ -177,9 +177,27 @@
     background:linear-gradient(160deg,#3c4a8c 0%,#5f83be 55%,#a6cbe8 100%);
     display:flex;align-items:flex-end;justify-content:center}
   .claim-visual img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
-  .claim-text h2{margin-bottom:16px}
-  .claim-text p{font-size:1.05rem;margin-bottom:16px}
-  .claim-text h3.sub{font-size:1.5rem;margin:26px 0 10px}
+  .claim-text{display:flex;flex-direction:column;justify-content:center}
+  .claim-text h2{margin-bottom:14px}
+  .claim-text .lede{font-size:1.05rem;margin-bottom:24px}
+
+  /* Two discount tiles carry the same colour mapping as the hero CTAs — blue = Applied
+     Cybersecurity, purple = the fullstack family — so the rate a visitor reads here matches
+     the card they clicked (or are about to click) up top. */
+  .claim-tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .c-tile{border-radius:16px;padding:20px 22px 18px;box-shadow:0 4px 0 rgba(0,0,0,.07)}
+  .c-tile.se{background:linear-gradient(145deg,#e5ddf8 0%,#cdc1ef 100%)}
+  .c-tile.cs{background:linear-gradient(145deg,#dceaf4 0%,#bfd9ec 100%)}
+  .c-off{display:block;font-size:clamp(2rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em;
+    line-height:1;color:#1c1c1c}
+  .c-lbl{display:block;font-size:.7rem;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+    color:#4a4a4a;margin:7px 0 5px}
+  .c-for{display:block;font-size:.95rem;font-weight:600;color:#1c1c1c;line-height:1.3}
+
+  /* Context, not the offer — a hairline rule and small type keep it from competing with the tiles */
+  .kenalan{margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
+  .kenalan h3{font-size:1.05rem;margin-bottom:7px}
+  .kenalan p{font-size:.96rem;margin:0}
 
   .video-block{padding:8px 0 64px}
   .video-head{text-align:center;font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;margin:0 0 26px}
@@ -374,6 +392,10 @@
   @media(max-width:560px){
     .hero-highlight{padding:13px 22px;font-size:1rem;border-radius:20px}
     .cta-primary{grid-template-columns:1fr}
+    /* the two rates stay side by side even on a phone — seeing 30% next to 15% is the point */
+    .claim-tiles{gap:10px}
+    .c-tile{padding:16px 15px 15px}
+    .c-for{font-size:.87rem}
     .btn-ghost{width:100%;text-align:center}
     .cta-stack{max-width:100%}
     .feat-card{padding:28px 22px 26px}
@@ -455,22 +477,26 @@
       </div>
       <div class="claim-text">
         <h2>Klaim Beasiswa &amp; Gabung dengan 260+ Alumni BINUS di RevoU!</h2>
-        <p>Beasiswa ini khusus buat mahasiswa aktif atau alumni School of Computer Science BINUS University —
-          potongan <b>30%</b> untuk FSSE &amp; program fullstack lainnya, dan <b>15%</b> untuk Applied
-          Cybersecurity with AI. Dengan ikut program
-          RevoU, kamu bisa percepat langkahmu bangun karier lewat skill yang paling dicari perusahaan — dari
-          Digital Marketing, Data Analytics, Software Engineering, sampai Applied Cybersecurity with AI. Nggak
-          cuma belajar, kamu juga bakal
-          dapet bimbingan karier intensif biar lebih siap dan percaya diri masuk dunia kerja. Semua keuntungan
-          ini bisa kamu dapetin dengan harga scholarship, khusus mahasiswa/alumni dari School of Computer
-          Science BINUS University!</p>
-        <h3 class="sub">Kenalan sama RevoU</h3>
-        <p>RevoU adalah platform pendidikan online terbaik di Indonesia yang ngasih program belajar penuh
-          praktik langsung, fokus ke skill Digital Marketing, Data Analytics, Software Engineering, dan Applied
-          Cybersecurity with AI. Semua
-          program dibuat sesuai kebutuhan industri supaya kamu siap langsung kerja dan punya skill yang
-          benar-benar dipakai di dunia nyata. Pilih program yang kamu suka dan mulai bangun karier masa depan
-          kamu yang future-proof, tentunya dengan harga scholarship!</p>
+        <p class="lede">Khusus buat mahasiswa aktif &amp; alumni <span class="strong">School of Computer Science
+          BINUS University</span>. Belajar skill yang paling dicari perusahaan plus bimbingan karier dengan
+          beasiswa:</p>
+        <div class="claim-tiles">
+          <div class="c-tile se">
+            <span class="c-off">30%</span>
+            <span class="c-lbl">Potongan biaya</span>
+            <span class="c-for">Software Engineering &amp; program Full Stack lain-nya</span>
+          </div>
+          <div class="c-tile cs">
+            <span class="c-off">15%</span>
+            <span class="c-lbl">Potongan biaya</span>
+            <span class="c-for">Applied Cybersecurity with AI</span>
+          </div>
+        </div>
+        <div class="kenalan">
+          <h3>Kenalan sama RevoU</h3>
+          <p>Platform pendidikan online terbaik di Indonesia — program belajar penuh praktik langsung dengan
+            kurikulum sesuai kebutuhan industri, biar skill-mu benar-benar kepakai di dunia kerja.</p>
+        </div>
       </div>
     </div>
   </div>
