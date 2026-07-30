@@ -129,7 +129,10 @@
   .bh-logo img{width:auto;object-fit:contain;display:block}
   .bh-logo .lg-aws{height:16px}
   .bh-logo .lg-hr{height:11px}
-  .bh-logo .lg-bg{height:18px}
+  /* BINUS × GreatNusa is a two-mark lockup, so it needs more height than the single
+     marks to stay legible; the chip trims its padding to keep the row height sane. */
+  .bh-logo .lg-bg{height:32px}
+  .bh-logo.light:has(.lg-bg){padding:4px 12px}
   .bh-logo .lbl{color:#fff;font-size:.63rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
   .bh-scholar{display:inline-flex;align-items:center;gap:6px;
     background:linear-gradient(120deg,#ffd21f 0%,#ffc700 100%);color:#2a2400;font-size:.7rem;
