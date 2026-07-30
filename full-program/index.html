@@ -180,20 +180,23 @@
     </div>
   </section>
 
-  <!-- Forward tracking parameters (utm_source, utm_medium, utm_campaign, utm_content, o) to every CTA -->
+  <!-- Forward ALL incoming URL parameters (utm_source, utm_medium, utm_campaign,
+       utm_content, utm_ops, o, and any others) to every CTA. The URL API guarantees
+       the first parameter is joined with "?" and the rest with "&" — so a link with no
+       existing query never gets a malformed "&..." (which caused the 400). -->
   <script>
     (function () {
-      var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'o'];
       var incoming = new URLSearchParams(window.location.search);
-      var pass = KEYS.filter(function (k) { return incoming.has(k); });
-      if (!pass.length) return;
+      var pairs = [];
+      incoming.forEach(function (value, key) { pairs.push([key, value]); });
+      if (!pairs.length) return;
 
       document.querySelectorAll('a.btn').forEach(function (a) {
         var raw = a.getAttribute('href');
         if (!raw) return;
         try {
           var url = new URL(raw, window.location.href);
-          pass.forEach(function (k) { url.searchParams.set(k, incoming.get(k)); });
+          pairs.forEach(function (p) { url.searchParams.set(p[0], p[1]); });
           a.setAttribute('href', url.toString());
         } catch (e) { /* leave href untouched if it can't be parsed */ }
       });
