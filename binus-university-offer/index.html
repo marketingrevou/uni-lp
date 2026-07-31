@@ -29,367 +29,360 @@
 <link rel="apple-touch-icon" href="/binus-university-offer/images/revou-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <!-- above-the-fold hero backdrop; as a CSS background it would otherwise not be
      discovered until the stylesheet is parsed and layout begins -->
 <link rel="preload" as="image" href="/binus-university-offer/images/binus-campus.jpg">
 <style>
+  /* Design tokens lifted from revou.co: a cream page, one saturated brand yellow,
+     and a dark gold-brown that does the work colour usually does — it is the heading
+     ink, the border, and the quiet-button outline all at once. Everything else is a
+     tint of those three, which is why the site reads as one material. */
   :root{
-    --cream:#fbf9ef;
-    --ink:#141414;
-    --muted:#5a5a5a;
-    --pink:#f6d0d8;
-    --peach:#f8dcc0;
-    --purple:#d9d1f2;
-    --sky:#cfe4ef;
-    --red:#e8546b;
-    --yellow:#ffd63e;
-    --border:#e7e3d4;
-    --blue-grad:linear-gradient(120deg,#48579f 0%,#6f9fd0 52%,#a4d5e2 100%);
-    --mint-grad:linear-gradient(160deg,#e6f2ec 0%,#d9ece7 60%,#e9f1f0 100%);
+    --cream:#fef6dc;        /* default page surface */
+    --cream-deep:#fcf0c3;   /* the alternating band */
+    --white:#ffffff;
+    --yellow:#f5c518;       /* the only saturated colour; primary CTA + accents */
+    --yellow-soft:#fae082;
+    --yellow-pale:#fbe597;
+    --gold:#cc9f00;
+    --brown:#594500;        /* heading ink, borders, outline buttons */
+    --brown-deep:#241e05;
+    --night:#1c1901;        /* footer */
+    --ink:#1f2937;
+    --muted:#5f5847;
+    --border:rgba(89,69,0,.16);
+    --border-soft:rgba(89,69,0,.10);
+    --tint:rgba(89,69,0,.05);
+    --shadow-sm:0 1px 2px rgba(89,69,0,.06),0 6px 18px rgba(89,69,0,.06);
+    --shadow-md:0 2px 4px rgba(89,69,0,.05),0 16px 40px rgba(89,69,0,.10);
+    /* Programme accents. Deliberately desaturated: they only ever appear as a 4px
+       rail or a low-alpha badge, so the colour-coding between the hero cards, the
+       discount tiles and the tabs survives without a second palette fighting the gold. */
+    --acc-cs:#3d6b8c;
+    --acc-se:#6a58a6;
+    --acc-dm:#bd4f76;
+    --acc-da:#c07a2e;
     --radius:16px;
     --maxw:1160px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Poppins',system-ui,-apple-system,sans-serif,
+  body{font-family:'Mulish',system-ui,-apple-system,sans-serif,
     'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';background:var(--cream);
-    color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  h1,h2,h3{line-height:1.14;letter-spacing:-.02em}
-  h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:800}
-  h2{font-size:clamp(1.7rem,3.6vw,2.7rem);font-weight:800}
-  h3{font-size:clamp(1.2rem,2.2vw,1.9rem);font-weight:800}
+  /* Oswald is condensed and set uppercase throughout on revou.co — it carries the
+     display voice, so headings can run large without crowding the measure. */
+  h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;
+    font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--brown)}
+  h1{font-size:clamp(2.4rem,5.4vw,4rem);font-weight:700;letter-spacing:-.02em}
+  h2{font-size:clamp(1.9rem,4vw,2.85rem)}
+  h3{font-size:clamp(1.25rem,2.2vw,1.75rem);font-weight:700}
   p{color:var(--muted)}
-  .strong{color:var(--ink);font-weight:600}
+  .strong{color:var(--brown);font-weight:700}
   section{position:relative}
 
   /* ---- top logo bar ---- */
-  .topbar{padding:26px 0 6px}
+  .topbar{padding:22px 0 20px;background:var(--white);border-bottom:1px solid var(--border-soft)}
   .logos{display:flex;align-items:center;justify-content:center;gap:20px}
-  .logo-revou-img{width:112px;height:112px;object-fit:contain;display:block}
-  .logo-x{font-size:26px;color:#9a9a9a;font-weight:600}
-  .logo-binus-img{height:86px;width:auto;object-fit:contain;display:block}
+  .logo-revou-img{width:96px;height:96px;object-fit:contain;display:block}
+  .logo-x{font-size:24px;color:var(--brown);opacity:.45;font-weight:600}
+  .logo-binus-img{height:76px;width:auto;object-fit:contain;display:block}
 
   /* ---- hero ----
      The campus sits behind the whole section as a faded backdrop, `cover` + bottom
-     anchored so it spans the full width (`contain` left hard cream seams down both sides)
+     anchored so it spans the full width (`contain` left hard seams down both sides)
      and stays grounded on the section's baseline.
      The cream veil is what every piece of hero text is read against, and it is deliberately
      uneven: heaviest through the top half, where the h1 and the two lead paragraphs sit
      right over the BINUS sign, then thinner past 60% where the only things above the photo
-     are the solid CTA cards. If you lighten it, check the borderless ghost buttons at the
-     bottom and the sign showing through the paragraphs — those two fail first. */
-  .hero{padding:36px 0 58px;text-align:center;background-color:var(--cream);
-    background-image:linear-gradient(180deg,rgba(251,249,239,.94) 0%,rgba(251,249,239,.91) 40%,
-      rgba(251,249,239,.84) 72%,rgba(251,249,239,.80) 100%),url("/binus-university-offer/images/binus-campus.jpg");
+     are the solid programme cards. If you lighten it, check the sign showing through the
+     paragraphs — that fails first. */
+  .hero{padding:56px 0 72px;text-align:center;background-color:var(--cream);
+    background-image:linear-gradient(180deg,rgba(254,246,220,.95) 0%,rgba(254,246,220,.92) 40%,
+      rgba(254,246,220,.86) 72%,rgba(254,246,220,.82) 100%),url("/binus-university-offer/images/binus-campus.jpg");
     background-repeat:no-repeat,no-repeat;
     background-position:center,center bottom;
     background-size:100% 100%,cover}
-  .hero-grid{display:block;max-width:880px;margin:0 auto}
+  .hero-grid{display:block;max-width:900px;margin:0 auto}
   .hero-actions{margin-top:12px}
-  .hero h1{margin-bottom:12px}
-  .hero-partner{font-size:.95rem;font-weight:700;letter-spacing:.01em;color:var(--muted);
-    margin:0 auto 22px;text-transform:none}
-  .hero .lead{font-size:1.05rem;max-width:700px;margin:0 auto 18px}
-  .benefits{list-style:none;margin:20px auto 6px;display:inline-grid;gap:12px;text-align:left}
-  .benefits li{font-size:1.02rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
-  .benefits li b{color:var(--ink);font-weight:600}
-  .hero-highlight{display:inline-flex;align-items:center;gap:12px;margin:22px auto 0;
-    padding:15px 30px;border-radius:999px;background:#fff;border:2px solid var(--yellow);
-    box-shadow:0 8px 22px rgba(220,174,0,.16);color:var(--ink);
-    font-size:1.1rem;font-weight:500;line-height:1.3}
-  .hero-highlight .hh-icon{font-size:1.5rem;line-height:1}
-  .hero-highlight b{font-weight:800}
-  .cta-label{font-weight:700;font-size:1.3rem;margin:34px 0 20px;text-align:center}
-  .cta-stack{display:flex;flex-direction:row;flex-wrap:wrap;gap:16px;justify-content:center}
+  .hero h1{margin-bottom:14px}
+  .hero-partner{font-size:.8rem;font-weight:800;letter-spacing:.14em;color:var(--brown);
+    text-transform:uppercase;margin:0 auto 24px;opacity:.75}
+  .hero .lead{font-size:1.02rem;max-width:700px;margin:0 auto 16px}
+  .cta-label{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+    font-size:1.15rem;letter-spacing:.02em;color:var(--brown);margin:38px 0 20px;text-align:center}
 
-  /* ---- hero tiered CTAs ---- */
-  .cta-primary{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:780px;margin:0 auto}
-  .btn-hero{display:flex;flex-direction:column;align-items:flex-start;gap:9px;text-align:left;
-    text-decoration:none;color:#1c1c1c;padding:22px 26px 20px;border-radius:18px;
-    box-shadow:0 6px 0 rgba(0,0,0,.09);transition:transform .12s ease,box-shadow .12s ease}
-  .btn-hero:hover{transform:translateY(-2px);box-shadow:0 9px 0 rgba(0,0,0,.12)}
-  .btn-hero:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(0,0,0,.12)}
-  .btn-hero.cs{background:linear-gradient(145deg,#dceaf4 0%,#bfd9ec 100%)}
-  .btn-hero.se{background:linear-gradient(145deg,#e5ddf8 0%,#cdc1ef 100%)}
-  .btn-hero.dm{background:linear-gradient(145deg,#fce0ec 0%,#f6c2d6 100%)}
-  .btn-hero.da{background:linear-gradient(145deg,#ffe8d4 0%,#ffd0a6 100%)}
-  .bh-tag{display:inline-flex;align-items:center;background:rgba(255,255,255,.72);color:#2b2b2b;
-    font-size:.67rem;font-weight:800;letter-spacing:.9px;text-transform:uppercase;padding:6px 13px;
-    border-radius:999px;line-height:1.4;border:1px solid rgba(0,0,0,.06)}
-  .bh-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .bh-badge{background:linear-gradient(120deg,#2f5fbe 0%,#4f97d6 100%);color:#fff;font-size:.67rem;
-    font-weight:800;letter-spacing:.9px;text-transform:uppercase;padding:6px 13px;border-radius:999px;
-    line-height:1.4;box-shadow:0 3px 10px rgba(47,95,190,.38)}
+  /* ---- hero programme cards ----
+     White cards on cream, each topped by its programme's accent rail. Flat surfaces and
+     a single hairline border — revou.co never uses an offset "hard" shadow. */
+  .cta-primary{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:0 auto}
+  .btn-hero{position:relative;overflow:hidden;display:flex;flex-direction:column;
+    align-items:flex-start;gap:10px;text-align:left;text-decoration:none;color:var(--ink);
+    padding:26px 26px 22px;border-radius:var(--radius);background:var(--white);
+    border:1px solid var(--border-soft);box-shadow:var(--shadow-sm);
+    transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+  .btn-hero::before{content:"";position:absolute;inset:0 0 auto;height:5px}
+  .btn-hero:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border)}
+  .btn-hero.cs::before{background:var(--acc-cs)}
+  .btn-hero.se::before{background:var(--acc-se)}
+  .btn-hero.dm::before{background:var(--acc-dm)}
+  .btn-hero.da::before{background:var(--acc-da)}
+  .bh-tag{display:inline-flex;align-items:center;background:var(--tint);color:var(--brown);
+    font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 12px;
+    border-radius:999px;line-height:1.4;border:1px solid var(--border-soft)}
+  .bh-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .bh-badge{background:var(--brown);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.09em;
+    text-transform:uppercase;padding:6px 12px;border-radius:999px;line-height:1.4}
   /* AWS mark is white-on-transparent, HackerRank is near-black — each needs its own chip tone */
   .bh-logo{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;line-height:1}
-  .bh-logo.dark{background:#1a1a1a}
-  .bh-logo.light{background:#fff;border:1px solid rgba(0,0,0,.12)}
+  .bh-logo.dark{background:var(--night)}
+  .bh-logo.light{background:#fff;border:1px solid var(--border)}
   .bh-logo img{width:auto;object-fit:contain;display:block}
   .bh-logo .lg-aws{height:16px}
   .bh-logo .lg-hr{height:11px}
   .bh-logo .lg-bg{height:18px}
-  .bh-logo .lbl{color:#fff;font-size:.63rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
-  .bh-scholar{display:inline-flex;align-items:center;gap:6px;
-    background:linear-gradient(120deg,#ffd21f 0%,#ffc700 100%);color:#2a2400;font-size:.7rem;
-    font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:6px 13px;border-radius:999px;
-    line-height:1.4;box-shadow:0 3px 10px rgba(220,174,0,.4)}
+  .bh-logo .lbl{color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .bh-scholar{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);
+    color:var(--brown-deep);font-size:.69rem;font-weight:800;letter-spacing:.07em;
+    text-transform:uppercase;padding:6px 13px;border-radius:999px;line-height:1.4}
   .bh-scholar svg{width:.95em;height:.95em;display:block}
-  .bh-title{font-size:1.14rem;font-weight:800;line-height:1.2;letter-spacing:-.01em}
-  .bh-meta{font-size:.85rem;font-weight:500;color:#3f4d59}
-  .bh-go{margin-top:5px;font-size:.88rem;font-weight:800;letter-spacing:.3px;
-    border-bottom:2px solid rgba(0,0,0,.28);padding-bottom:2px}
-  .cta-sub{font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-    color:#3d3d3d;margin:26px 0 13px;text-align:center}
-  .cta-sub .scholar-tag{display:inline-block;margin-left:6px;background:linear-gradient(120deg,#ffd21f 0%,#ffc700 100%);
-    color:#2a2400;padding:3px 10px;border-radius:999px;letter-spacing:.5px;
-    box-shadow:0 2px 8px rgba(220,174,0,.35)}
-  .cta-secondary{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  /* Secondary tier, but they sit over the campus photo — a bare outline disappears into the
-     foliage, so they carry their own translucent fill. Kept flat and single-line so they stay
-     visibly quieter than the gradient primary cards above. */
-  .btn-ghost{text-decoration:none;font-family:inherit;font-weight:700;font-size:.88rem;
-    letter-spacing:.4px;text-transform:uppercase;padding:14px 26px;border-radius:999px;
-    background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-    border:1.5px solid rgba(20,20,20,.18);color:#2b2b2b;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);transition:.15s}
-  .btn-ghost:hover{background:#fff;border-color:#1a1a1a;color:#111;
-    box-shadow:0 4px 14px rgba(0,0,0,.12)}
+  .bh-title{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:1.3rem;font-weight:700;
+    line-height:1.12;letter-spacing:-.01em;color:var(--brown)}
+  .bh-meta{font-size:.86rem;font-weight:500;color:var(--muted)}
+  .bh-go{margin-top:auto;padding-top:6px;font-size:.88rem;font-weight:800;letter-spacing:.02em;
+    color:var(--brown);display:inline-flex;align-items:center;gap:7px}
+  .bh-go .ico-arr{transition:transform .16s ease}
+  .btn-hero:hover .bh-go .ico-arr{transform:translateX(4px)}
 
-  /* ---- buttons ---- */
-  .btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.98rem;
-    letter-spacing:.4px;padding:19px 30px;border-radius:14px;color:#2a2a2a;
-    box-shadow:0 6px 0 rgba(0,0,0,.06);transition:transform .12s ease,box-shadow .12s ease;
-    text-transform:uppercase;text-decoration:none;display:inline-block;text-align:center}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 9px 0 rgba(0,0,0,.08)}
-  .btn:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(0,0,0,.08)}
-  .btn.pink{background:var(--pink)}
-  .btn.peach{background:var(--peach)}
-  .btn.purple{background:var(--purple)}
-  .btn.sky{background:var(--sky)}
-  .btn.yellow{background:var(--yellow);color:#2a2400;box-shadow:0 6px 0 #dcae00;font-size:1.05rem;padding:20px 40px;border-radius:40px}
-  .btn.yellow:hover{box-shadow:0 9px 0 #dcae00}
+  /* ---- buttons ----
+     One shape: a full pill. Primary is the brand yellow, secondary is a hairline
+     outline in the same brown as the headings. No gradients, no offset shadow. */
+  .btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.95rem;
+    letter-spacing:.01em;padding:17px 34px;border-radius:999px;color:var(--brown-deep);
+    background:var(--yellow);transition:transform .14s ease,box-shadow .14s ease,background .14s ease;
+    text-decoration:none;display:inline-block;text-align:center}
+  .btn:hover{transform:translateY(-2px);background:#ffd233;box-shadow:0 10px 24px rgba(204,159,0,.28)}
+  .btn:active{transform:translateY(0)}
+  /* the four programme colour-names are kept so the markup needs no churn; on revou.co
+     every one of these would be the same yellow pill, so that is what they resolve to */
+  .btn.pink,.btn.peach,.btn.purple,.btn.sky,.btn.yellow{background:var(--yellow);color:var(--brown-deep)}
+  .btn.pink:hover,.btn.peach:hover,.btn.purple:hover,.btn.sky:hover,.btn.yellow:hover{background:#ffd233}
+  .btn.yellow{font-size:1rem;padding:18px 40px}
 
   /* ---- stat bar ---- */
-  .statbar{margin-top:0;padding:30px 24px;
-    background:linear-gradient(90deg,#bfe3e0 0%,#e3dee0 48%,#f4d6d9 100%)}
-  .statbar h2{color:#3a1330;text-align:left;font-size:clamp(1.2rem,2.3vw,2rem)}
+  .statbar{padding:34px 24px;background:var(--yellow)}
+  .statbar h2{color:var(--brown-deep);text-align:center;font-size:clamp(1.35rem,2.6vw,2.1rem)}
 
   /* ---- claim + kenalan ---- */
-  .block{padding:64px 0}
-  .claim-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:stretch}
+  .block{padding:72px 0}
+  .claim-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:stretch}
   .claim-visual{position:relative;border-radius:var(--radius);overflow:hidden;min-height:460px;
-    background:linear-gradient(160deg,#3c4a8c 0%,#5f83be 55%,#a6cbe8 100%);
+    background:linear-gradient(165deg,var(--yellow-soft) 0%,var(--yellow) 58%,var(--gold) 100%);
     display:flex;align-items:flex-end;justify-content:center}
   .claim-visual img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
   .claim-text{display:flex;flex-direction:column;justify-content:center}
-  .claim-text h2{margin-bottom:14px}
-  .claim-text .lede{font-size:1.05rem;margin-bottom:24px}
+  .claim-text h2{margin-bottom:16px}
+  .claim-text .lede{font-size:1.02rem;margin-bottom:26px}
 
-  /* Two discount tiles carry the same colour mapping as the hero CTAs — blue = Applied
-     Cybersecurity, purple = the fullstack family — so the rate a visitor reads here matches
-     the card they clicked (or are about to click) up top. */
+  /* Two discount tiles carry the same accent mapping as the hero cards — the rail colour
+     a visitor reads here matches the card they clicked (or are about to click) up top. */
   .claim-tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .c-tile{border-radius:16px;padding:20px 22px 18px;box-shadow:0 4px 0 rgba(0,0,0,.07)}
-  .c-tile.se{background:linear-gradient(145deg,#e5ddf8 0%,#cdc1ef 100%)}
-  .c-tile.cs{background:linear-gradient(145deg,#dceaf4 0%,#bfd9ec 100%)}
-  .c-off{display:block;font-size:clamp(2rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em;
-    line-height:1;color:#1c1c1c}
-  .c-lbl{display:block;font-size:.7rem;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
-    color:#4a4a4a;margin:7px 0 5px}
-  .c-for{display:block;font-size:.95rem;font-weight:600;color:#1c1c1c;line-height:1.3}
+  .c-tile{border-radius:14px;padding:20px 22px 18px;background:var(--white);
+    border:1px solid var(--border-soft);border-left-width:5px;box-shadow:var(--shadow-sm)}
+  .c-tile.se{border-left-color:var(--acc-se)}
+  .c-tile.cs{border-left-color:var(--acc-cs)}
+  .c-off{display:block;font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,3.6vw,2.9rem);
+    font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--brown)}
+  .c-lbl{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);margin:9px 0 6px}
+  .c-for{display:block;font-size:.93rem;font-weight:600;color:var(--ink);line-height:1.35}
 
   /* Context, not the offer — a hairline rule and small type keep it from competing with the tiles */
-  .kenalan{margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
-  .kenalan h3{font-size:1.05rem;margin-bottom:7px}
-  .kenalan p{font-size:.96rem;margin:0}
+  .kenalan{margin-top:30px;padding-top:22px;border-top:1px solid var(--border)}
+  .kenalan h3{font-size:1.1rem;margin-bottom:8px}
+  .kenalan p{font-size:.94rem;margin:0}
 
-  .video-block{padding:8px 0 64px}
-  .video-head{text-align:center;font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;margin:0 0 26px}
-  .video{position:relative;width:100%;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--radius);
-    background-size:cover;background-position:center;box-shadow:0 24px 60px rgba(0,0,0,.16);
-    display:flex;align-items:center;justify-content:center}
-  .play{width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.9);
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-  .play::after{content:"";border-left:28px solid var(--ink);border-top:17px solid transparent;
-    border-bottom:17px solid transparent;margin-left:8px}
-  .stats-banner{width:100%;max-width:1000px;height:auto;display:block;margin:48px auto 0}
+  .video-block{padding:0 0 72px}
+  .video-head{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
+    text-align:center;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;margin:0 0 28px}
+  .video{position:relative;width:100%;max-width:1000px;margin:0 auto;aspect-ratio:16/9;
+    border-radius:var(--radius);background-size:cover;background-position:center;
+    box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center}
+  .play{width:88px;height:88px;border-radius:50%;background:var(--yellow);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(36,30,5,.35)}
+  .play::after{content:"";border-left:26px solid var(--brown-deep);border-top:16px solid transparent;
+    border-bottom:16px solid transparent;margin-left:8px}
+  .stats-banner{width:100%;max-width:1000px;height:auto;display:block;margin:52px auto 0}
 
   /* ---- icons ----
-     drawn as SVG rather than emoji/dingbat characters: Poppins has no glyphs for
+     drawn as SVG rather than emoji/dingbat characters: the display face has no glyphs for
      these, and systems without a colour-emoji font fall back to tofu boxes. */
   .ico-arr{width:1em;height:1em;display:inline-block;vertical-align:-.12em;flex:0 0 auto}
-  .hero-highlight .hh-icon svg{width:1em;height:1em;display:block}
 
   /* ---- checklist ---- */
-  .get{text-align:center}
-  .get h2{margin-bottom:26px}
-  .checks{list-style:none;display:grid;gap:16px;max-width:820px;margin:0 auto;text-align:left}
-  .checks li{display:flex;gap:12px;align-items:flex-start;font-size:1.08rem;color:var(--muted)}
-  .checks li::before{content:"";flex:0 0 auto;width:1.32rem;height:1.32rem;margin-top:2px;
-    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%2322a06b'/%3E%3Cpath d='M7 12.4l3.3 3.3L17 9' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
-  .checks li span.tx{padding-top:2px}
+  .get{background:var(--cream-deep);text-align:center}
+  .get h2{margin-bottom:30px}
+  .checks{list-style:none;display:grid;gap:14px;max-width:840px;margin:0 auto;text-align:left}
+  .checks li{display:flex;gap:14px;align-items:flex-start;font-size:1.02rem;color:var(--ink);
+    background:var(--white);border:1px solid var(--border-soft);border-radius:12px;padding:18px 22px}
+  .checks li::before{content:"";flex:0 0 auto;width:1.4rem;height:1.4rem;margin-top:2px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23f5c518'/%3E%3Cpath d='M7 12.4l3.3 3.3L17 9' fill='none' stroke='%23241e05' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+  .checks li span.tx{padding-top:1px}
 
   /* ---- feature cards ---- */
-  .ready{text-align:center}
+  .ready{text-align:center;background:var(--white)}
   .ready .intro{max-width:900px;margin:0 auto}
-  .ready .intro p{font-size:1.08rem;margin-top:14px}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;text-align:left}
-  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);
-    padding:34px 30px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
-  .num-img{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;margin-bottom:22px}
-  .card h3{font-size:1.35rem;margin-bottom:14px}
-  .card p{font-size:1rem}
+  .ready .intro p{font-size:1.04rem;margin-top:16px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;text-align:left}
+  .card{background:var(--cream);border:1px solid var(--border-soft);border-radius:var(--radius);
+    padding:34px 30px}
+  /* the shipped card1–3.png badges are blue-violet gradients — the only cold colour left
+     on the page — so the numeral is drawn instead, in the same yellow as every other accent */
+  .num{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:var(--yellow);color:var(--brown-deep);font-family:'Oswald',sans-serif;font-size:1.6rem;
+    font-weight:700;line-height:1;margin-bottom:22px}
+  .card h3{font-size:1.3rem;margin-bottom:14px}
+  .card p{font-size:.98rem}
 
-  /* ---- featured programs ---- */
-  .featured{padding:14px 0 66px}
-  .feat-head{text-align:center;max-width:760px;margin:0 auto 38px}
-  .feat-eyebrow{display:inline-block;background:#1a1a1a;color:#fff;font-size:.8rem;font-weight:800;
-    letter-spacing:1.2px;text-transform:uppercase;padding:9px 20px;border-radius:999px;margin-bottom:20px}
-  .feat-head p{font-size:1.06rem;margin-top:12px}
-  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
-  .feat-card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:22px;
-    padding:34px 32px 30px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.06);
-    transition:transform .16s ease,box-shadow .16s ease}
-  .feat-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.10)}
-  .feat-card::before{content:"";position:absolute;inset:0 0 auto;height:6px;
-    border-radius:22px 22px 0 0}
-  .feat-card.cs::before{background:linear-gradient(90deg,#48579f,#a4d5e2)}
-  .feat-card.se::before{background:linear-gradient(90deg,#7a63c9,#d9d1f2)}
-  .feat-badge{align-self:flex-start;font-size:.76rem;font-weight:800;letter-spacing:.9px;
-    text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:18px}
-  .feat-card.cs .feat-badge{background:var(--sky);color:#1d3a49}
-  .feat-card.se .feat-badge{background:var(--purple);color:#332a55}
-  .feat-card h3{font-size:clamp(1.35rem,2.1vw,1.7rem);margin-bottom:12px}
-  .feat-desc{font-size:1rem;margin-bottom:20px}
-  .feat-facts{list-style:none;display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
-  .feat-facts li{background:#f6f4ea;border:1px solid var(--border);color:#3f3f3f;font-size:.87rem;
-    font-weight:600;padding:7px 14px;border-radius:999px}
-  .feat-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:9px;
-    font-weight:800;font-size:1rem;color:var(--ink);text-decoration:none;
-    border-bottom:2px solid var(--yellow);padding-bottom:3px}
-  .feat-link span{transition:transform .16s ease}
-  .feat-link:hover span{transform:translateX(5px)}
-
-  /* ---- milestone (blue) ---- */
-  .milestone{background:var(--blue-grad);padding:70px 0 80px}
-  .milestone .head{text-align:center;max-width:820px;margin:0 auto 34px;color:#fff}
-  .milestone .head h2{color:#fff}
-  .milestone .head p{color:rgba(255,255,255,.92);font-size:1.08rem;margin-top:12px}
-  .tabs{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:34px}
-  .tab{border:none;background:#fbf9ef;font-family:inherit;font-weight:700;cursor:pointer;
-    padding:16px 30px;border-radius:44px;font-size:.92rem;letter-spacing:.5px;text-transform:uppercase;
-    color:#1a1a1a;transition:.15s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-  .tab{display:inline-flex;align-items:center;gap:10px}
-  .tab.active{background:#111;color:#fff}
-  .tab .tag{font-size:.68rem;font-weight:800;letter-spacing:.6px;padding:4px 9px;border-radius:999px;
-    background:var(--yellow);color:#2a2400;line-height:1}
-  .tab.featured{box-shadow:0 4px 14px rgba(0,0,0,.12),0 0 0 2px var(--yellow)}
-  .program-panel{background:var(--mint-grad);border-radius:26px;padding:48px 44px;
-    box-shadow:0 30px 70px rgba(30,50,90,.2)}
+  /* ---- milestone / programme tabs ---- */
+  .milestone{background:var(--cream-deep);padding:76px 0 84px}
+  .milestone .head{text-align:center;max-width:820px;margin:0 auto 36px}
+  .milestone .head p{font-size:1.04rem;margin-top:14px}
+  .tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:34px}
+  .tab{border:1px solid var(--border);background:var(--white);font-family:inherit;font-weight:700;
+    cursor:pointer;padding:14px 26px;border-radius:999px;font-size:.9rem;letter-spacing:.01em;
+    color:var(--brown);transition:.15s;display:inline-flex;align-items:center;gap:10px}
+  .tab:hover{border-color:var(--gold)}
+  /* the two flagship programmes keep a quiet gold outline so they still lead the row */
+  .tab.featured{border-color:var(--gold)}
+  .tab.active{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
+  .tab .tag{font-size:.66rem;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:999px;
+    background:var(--brown);color:var(--yellow-pale);line-height:1;text-transform:uppercase}
+  .tab.active .tag{background:var(--brown-deep);color:var(--yellow)}
+  .program-panel{background:var(--white);border:1px solid var(--border-soft);border-radius:20px;
+    padding:48px 44px;box-shadow:var(--shadow-md)}
   .panel{display:none}
   .panel.active{display:block;animation:fade .3s ease}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   .panel h3.p-title{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:16px}
-  .panel .p-desc{font-size:1.05rem;max-width:900px}
-  .panel .badge-line{font-size:1.4rem;font-weight:800;margin:32px 0 20px}
+  .panel .p-desc{font-size:1.02rem;max-width:900px}
+  .panel .p-desc b{color:var(--brown)}
+  .panel .badge-line{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
+    font-size:1.25rem;font-weight:600;margin:34px 0 20px;display:flex;align-items:center;gap:14px}
+  .panel .badge-line::after{content:"";flex:1;height:1px;background:var(--border)}
 
   /* ---- accordion (2-col) ---- */
-  .acc-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-  .acc-col{display:flex;flex-direction:column;gap:16px}
-  .acc-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.05)}
-  .acc-item.open{background:linear-gradient(120deg,#eafaf1 0%,#f7e5ee 60%,#fce3ea 100%)}
+  .acc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .acc-col{display:flex;flex-direction:column;gap:12px}
+  .acc-item{background:var(--cream);border:1px solid var(--border-soft);border-radius:12px;overflow:hidden;
+    transition:background .2s ease,border-color .2s ease}
+  .acc-item.open{background:rgba(245,197,24,.14);border-color:rgba(245,197,24,.55)}
   .acc-head{width:100%;text-align:left;background:none;border:none;font-family:inherit;
-    font-weight:600;font-size:1.05rem;padding:22px 24px;cursor:pointer;display:flex;
-    justify-content:space-between;align-items:center;gap:16px;color:var(--ink)}
-  .acc-item.open .acc-head{color:#e8547f;font-weight:700}
-  .chev{flex:0 0 auto;transition:transform .25s;color:#333}
-  .acc-item.open .chev{transform:rotate(180deg);color:#e8547f}
+    font-weight:600;font-size:1rem;padding:20px 22px;cursor:pointer;display:flex;
+    justify-content:space-between;align-items:center;gap:16px;color:var(--ink);line-height:1.4}
+  .acc-item.open .acc-head{color:var(--brown);font-weight:700}
+  .chev{flex:0 0 auto;transition:transform .25s;color:var(--gold)}
+  .acc-item.open .chev{transform:rotate(180deg);color:var(--brown)}
   .acc-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .acc-body .inner{padding:0 24px 22px;color:#4a4a4a;font-size:1rem}
+  .acc-body .inner{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
   .acc-body .inner ul{margin:2px 0 0 18px}
   .acc-body .inner li{margin-bottom:8px}
 
-  .timeline-head{font-size:1.6rem;font-weight:800;margin:46px 0 22px}
+  .timeline-head{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
+    font-size:1.35rem;font-weight:600;margin:46px 0 22px}
   .timeline-img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;border-radius:12px}
   /* Each partner gets its own chip tone: AWS is white-on-transparent, HackerRank is near-black */
   .partner-logos{display:inline-flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
-  .partner-logos .chip{display:inline-flex;gap:30px;align-items:center;
-    padding:14px 28px;border-radius:14px}
-  .partner-logos .chip.dark{background:#1a1a1a}
-  .partner-logos .chip.light{background:#fff;border:1px solid rgba(0,0,0,.12)}
+  .partner-logos .chip{display:inline-flex;gap:30px;align-items:center;padding:14px 28px;border-radius:12px}
+  .partner-logos .chip.dark{background:var(--night)}
+  .partner-logos .chip.light{background:#fff;border:1px solid var(--border)}
   .partner-logos img{height:30px;width:auto;object-fit:contain;display:block}
   .partner-logos .lg-hr{height:20px}
   .partner-logos .chip.light:has(.lg-bg){padding-top:8px;padding-bottom:8px}
   .partner-logos .lg-bg{height:44px}
-  .partner-note{color:#fff;font-weight:600;font-size:.95rem;letter-spacing:.2px;
+  .partner-note{color:#fff;font-weight:600;font-size:.95rem;letter-spacing:.01em;
     padding-left:30px;border-left:1px solid rgba(255,255,255,.28)}
   .panel-cta{text-align:center;margin-top:40px}
 
   /* ---- certificate showcase ---- */
   .cert-showcase{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;
-    background:#fff;border-radius:22px;padding:44px;margin-top:46px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    background:var(--cream);border:1px solid var(--border-soft);border-radius:18px;
+    padding:44px;margin-top:46px}
   .cert-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;
-    justify-content:center;background:linear-gradient(140deg,#fdead6 0%,#fbd9b8 100%);
-    color:#e08c2e;margin-bottom:22px}
-  .cert-copy h4{font-size:clamp(1.3rem,2.2vw,1.75rem);font-weight:800;line-height:1.18;
-    letter-spacing:-.02em;margin-bottom:16px;color:var(--ink)}
-  .cert-copy p{font-size:1.05rem;color:var(--muted)}
+    justify-content:center;background:var(--yellow);color:var(--brown-deep);margin-bottom:22px}
+  .cert-copy h4{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:700;line-height:1.14;
+    margin-bottom:16px}
+  .cert-copy p{font-size:1rem}
   .cert-visual img{width:100%;height:auto;display:block;border-radius:12px}
 
   /* ---- testimonials ---- */
-  .testi{background:#dcecf7;padding:70px 0 84px}
+  .testi{background:var(--white);padding:76px 0 88px}
   .testi h2{text-align:center;max-width:860px;margin:0 auto 44px}
-  .carousel{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:8px}
-  .car-btn{flex:0 0 auto;width:52px;height:52px;border-radius:50%;border:none;background:transparent;
-    cursor:pointer;font-size:1.6rem;color:#222;display:flex;align-items:center;justify-content:center}
-  .car-btn:hover{background:rgba(0,0,0,.06)}
+  .carousel{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px}
+  .car-btn{flex:0 0 auto;width:48px;height:48px;border-radius:50%;border:1px solid var(--border);
+    background:var(--white);cursor:pointer;color:var(--brown);display:flex;align-items:center;
+    justify-content:center;font-size:1.1rem;transition:.15s}
+  .car-btn:hover{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
   .car-window{flex:1;position:relative;min-height:340px}
-  .slide{display:none;background:#fff;border-radius:20px;padding:36px;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);grid-template-columns:260px 1fr;gap:34px;align-items:center}
+  .slide{display:none;background:var(--cream);border:1px solid var(--border-soft);border-radius:18px;
+    padding:36px;grid-template-columns:250px 1fr;gap:34px;align-items:center}
   .slide.active{display:grid;animation:fade .3s ease}
-  .slide .avatar-img{width:100%;aspect-ratio:3/4;border-radius:14px;object-fit:cover;object-position:top;display:block}
-  .slide .t-name{font-size:1.6rem;font-weight:800;margin-bottom:18px}
-  .t-label{font-size:.98rem;color:#8a8a8a;margin-bottom:2px}
-  .t-label.after{background:var(--yellow);color:#2a2400;display:inline-block;padding:2px 10px;
-    border-radius:6px;font-weight:600;margin:16px 0 4px}
-  .t-role{font-size:1.15rem;font-weight:700;color:var(--ink)}
-  .t-at{font-size:1rem;color:var(--muted)}
+  .slide .avatar-img{width:100%;aspect-ratio:3/4;border-radius:12px;object-fit:cover;object-position:top;display:block}
+  .slide .t-name{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
+    font-size:1.6rem;font-weight:700;line-height:1.1;margin-bottom:18px}
+  .t-label{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:4px}
+  .t-label.after{background:var(--yellow);color:var(--brown-deep);display:inline-block;padding:4px 11px;
+    border-radius:999px;margin:18px 0 6px}
+  .t-role{font-size:1.1rem;font-weight:700;color:var(--ink)}
+  .t-at{font-size:.98rem;color:var(--muted)}
 
   /* ---- final cta ---- */
-  .final{background:var(--blue-grad);padding:76px 0 90px;text-align:center}
-  .final h2{max-width:900px;margin:0 auto 34px;color:#111}
-  .final .cta-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
-  .final .btn{min-width:300px}
+  .final{background:var(--cream-deep);padding:80px 0 92px;text-align:center}
+  .final h2{max-width:900px;margin:0 auto 36px}
+  .final .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  /* narrow enough that all four sit on one row at desktop width rather than 3 + 1 orphan */
+  .final .btn{min-width:0;padding:17px 26px;font-size:.92rem}
 
   /* ---- footer ---- */
-  footer{background:#141414;color:#cfcfcf;padding:56px 0 30px;font-size:.9rem}
+  footer{background:var(--night);color:rgba(255,255,255,.72);padding:60px 0 30px;font-size:.9rem}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px}
-  footer h4{color:#fff;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-  footer a{color:#bdbdbd;text-decoration:none;display:block;margin-bottom:10px}
-  footer a:hover{color:#fff}
-  .foot-logo-img{width:66px;height:66px;object-fit:contain;display:block;margin-bottom:16px}
-  .foot-bottom{border-top:1px solid #2c2c2c;margin-top:40px;padding-top:22px;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#8a8a8a;font-size:.82rem}
+  footer h4{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--yellow);
+    font-size:.9rem;font-weight:600;letter-spacing:.08em;margin-bottom:16px}
+  footer a{color:rgba(255,255,255,.7);text-decoration:none;display:block;margin-bottom:10px}
+  footer a:hover{color:var(--yellow)}
+  .foot-logo-img{width:60px;height:60px;object-fit:contain;display:block;margin-bottom:16px}
+  .foot-social{display:flex;gap:12px;margin-top:36px}
+  /* footer a is display:block with a bottom margin — the icon row has to opt out of both */
+  .foot-social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+    margin:0;border-radius:50%;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);
+    transition:.15s}
+  .foot-social a:hover{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
+  .foot-social svg{width:18px;height:18px;display:block}
+  .foot-social+.foot-bottom{margin-top:28px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    color:rgba(255,255,255,.45);font-size:.82rem}
 
-  /* ---- whatsapp float ---- */
-  .wa{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--red);color:#fff;
-    border-radius:40px;padding:16px 26px;font-weight:600;box-shadow:0 12px 30px rgba(232,84,107,.45);
-    text-decoration:none;font-size:.98rem}
-  .wa:hover{filter:brightness(1.05)}
+  /* ---- whatsapp float ----
+     dark rather than yellow: the page's own CTAs are yellow pills, so a yellow float
+     would read as one more of them instead of a persistent, separate affordance. */
+  .wa{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--night);color:var(--yellow);
+    border-radius:999px;padding:15px 26px;font-weight:700;box-shadow:0 12px 30px rgba(36,30,5,.35);
+    text-decoration:none;font-size:.94rem}
+  .wa:hover{background:var(--brown-deep)}
 
   @media(max-width:920px){
     /* on a phone the hero is tall and narrow, so `contain` would shrink the campus to a
        thin strip along the bottom. Oversize it and crop the sides instead, biased to 58%
        across so the crop stays centred on the entrance and the sign rather than the wall. */
     .hero{background-size:100% 100%,190% auto;background-position:center,58% bottom}
-    .claim-grid{grid-template-columns:1fr;gap:26px}
+    .claim-grid{grid-template-columns:1fr;gap:28px}
     .claim-visual{min-height:360px}
     .cards{grid-template-columns:1fr}
     .acc-cols{grid-template-columns:1fr}
-    .feat-grid{grid-template-columns:1fr}
     .cert-showcase{grid-template-columns:1fr;gap:28px;padding:32px 24px;text-align:center}
     .cert-icon{margin-left:auto;margin-right:auto}
     .program-panel{padding:34px 22px}
@@ -398,16 +391,13 @@
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
-    .hero-highlight{padding:13px 22px;font-size:1rem;border-radius:20px}
     .cta-primary{grid-template-columns:1fr}
     /* the two rates stay side by side even on a phone — seeing 30% next to 15% is the point */
     .claim-tiles{gap:10px}
-    .c-tile{padding:16px 15px 15px}
-    .c-for{font-size:.87rem}
-    .btn-ghost{width:100%;text-align:center}
-    .cta-stack{max-width:100%}
-    .feat-card{padding:28px 22px 26px}
-    .tab{padding:14px 20px;font-size:.84rem}
+    .c-tile{padding:16px 14px 15px}
+    .c-for{font-size:.86rem}
+    .checks li{padding:15px 17px;font-size:.97rem}
+    .tab{padding:12px 18px;font-size:.84rem}
     .cert-showcase{padding:26px 18px}
     .final .btn{width:100%;min-width:0}
     .foot-grid{grid-template-columns:1fr}
@@ -563,7 +553,7 @@
     </div>
     <div class="cards">
       <div class="card">
-        <img src="/binus-university-offer/images/card1.png" alt="1" class="num-img">
+        <span class="num" aria-hidden="true">1</span>
         <h3>Kuasai Skill Digital yang Dicari Perusahaan</h3>
         <p>RevoU bantu kamu pelajari skill praktis di Digital Marketing, Data Analytics, Software Engineering,
           atau Applied Cybersecurity with AI—semua dibimbing praktisi industri. Plus, kurikulumnya udah
@@ -571,13 +561,13 @@
           bisa tetap relevan di job market yang makin berubah cepat.</p>
       </div>
       <div class="card">
-        <img src="/binus-university-offer/images/card2.png" alt="2" class="num-img">
+        <span class="num" aria-hidden="true">2</span>
         <h3>Tunjukin Kemampuan Lewat Proyek Nyata</h3>
         <p>Kamu bakal ngerjain proyek nyata yang hasilnya bisa langsung kamu masukin ke portofolio. Jadi bukan
           cuma belajar teori, tapi juga buktiin kalau kamu bisa langsung pakai skill yang udah dipelajari.</p>
       </div>
       <div class="card">
-        <img src="/binus-university-offer/images/card3.png" alt="3" class="num-img">
+        <span class="num" aria-hidden="true">3</span>
         <h3>Persiapan Matang untuk Karier Digital Kamu</h3>
         <p>Nggak cuma belajar, kamu juga bakal dibimbing biar siap bersaing di proses rekrutmen. Mulai dari
           mock interview, optimasi LinkedIn, sampai career coaching — semuanya disiapin biar kamu siap secara
@@ -811,24 +801,44 @@
         <p style="color:#9a9a9a;max-width:280px">Platform pendidikan online terbaik di Indonesia untuk skill
           Digital Marketing, Data Analytics, Software Engineering, dan Applied Cybersecurity with AI.</p>
       </div>
-      <div>
-        <h4>Why RevoU</h4>
-        <a href="#">Why Digital Marketing</a>
-        <a href="#">Why RevoU</a>
-        <a href="#">RevoU Community</a>
-      </div>
+      <!-- column taxonomy and destinations mirror the live revou.co footer; absolute URLs
+           because this page is served from offer.revou.co, where /digital-marketing would 404 -->
       <div>
         <h4>Program</h4>
-        <a href="#">Learning Phase</a>
-        <a href="#">Curriculum</a>
-        <a href="#">Instructors</a>
+        <a href="https://www.revou.co/digital-marketing">Digital Marketing with AI</a>
+        <a href="https://www.revou.co/data-analytics">Data Analytics with AI</a>
+        <a href="https://www.revou.co/software-engineering">Software Engineering with AI</a>
+        <a href="https://www.revou.co/binus-applied-cybersecurity">Applied Cybersecurity with BINUS</a>
+        <a href="https://www.revou.co/applied-ai-automation">Applied AI, Analytics &amp; Automation</a>
+        <a href="https://www.revou.co/itb-data-ai-decision-making">Data-Driven Decision Making with ITB</a>
       </div>
       <div>
-        <h4>Support</h4>
-        <a href="#">Career Service</a>
-        <a href="#">FAQ</a>
-        <a href="#">Contact</a>
+        <h4>Resources</h4>
+        <a href="https://www.revou.co/important-links">Free Courses</a>
+        <a href="https://www.revou.co/panduan-karir">Career Guide</a>
+        <a href="https://www.revou.co/revoupedia">RevoUpedia</a>
       </div>
+      <div>
+        <h4>Company</h4>
+        <a href="https://www.revou.co/lifeatrevou">About Us</a>
+        <a href="https://www.revou.co/career">Careers</a>
+        <a href="https://api.whatsapp.com/send/?phone=6281399100086&amp;text=Halo+Kak%2C+aku+habis+explore+website+RevoU+dan+ingin+tanya+beberapa+hal&amp;type=phone_number&amp;app_absent=0"
+           target="_blank" rel="noopener">Contact</a>
+      </div>
+    </div>
+    <div class="foot-social">
+      <a href="https://www.linkedin.com/school/revou/" target="_blank" rel="noopener" aria-label="RevoU di LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/revou_id/" target="_blank" rel="noopener" aria-label="RevoU di Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.youtube.com/c/revoudotco" target="_blank" rel="noopener" aria-label="RevoU di YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.44-5.03a2.6 2.6 0 0 0-1.83-1.84C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.43a2.6 2.6 0 0 0-1.83 1.84C1 8.6 1 12 1 12s0 3.4.44 5.03c.24.9.95 1.6 1.83 1.84 1.63.43 8.73.43 8.73.43s7.1 0 8.73-.43a2.6 2.6 0 0 0 1.83-1.84C23 15.4 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@revou_id" target="_blank" rel="noopener" aria-label="RevoU di TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.2a2.7 2.7 0 1 1-2.2-2.65V9.4a6 6 0 1 0 5.2 5.94V9.02a7 7 0 0 0 4 1.27V7.2a4.2 4.2 0 0 1-4-4.2z"/></svg>
+      </a>
     </div>
     <div class="foot-bottom">
       <span>© 2026 RevoU × BINUS University. Beasiswa Eksklusif.</span>
