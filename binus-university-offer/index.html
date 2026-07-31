@@ -142,7 +142,11 @@
   .bh-logo img{width:auto;object-fit:contain;display:block}
   .bh-logo .lg-aws{height:16px}
   .bh-logo .lg-hr{height:11px}
-  .bh-logo .lg-bg{height:18px}
+  /* a 4:1 two-logo lockup, so it needs roughly double the height of the single-mark
+     chips before either BINUS or GreatNusa is legible; it already wraps to its own
+     row in the card, so the taller chip costs nothing above it */
+  .bh-logo .lg-bg{height:32px}
+  .bh-logo:has(.lg-bg){padding:5px 11px}
   .bh-logo .lbl{color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
   .bh-scholar{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);
     color:var(--brown-deep);font-size:.69rem;font-weight:800;letter-spacing:.07em;
