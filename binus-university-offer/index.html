@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beasiswa Eksklusif BINUS University untuk Karier Masa Depan</title>
-<meta name="description" content="Raih beasiswa eksklusif 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing & Cybersecurity with AI. Daftar sekarang!">
+<meta name="description" content="Raih beasiswa eksklusif hingga 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
 <link rel="canonical" href="https://offer.revou.co/binus-university-offer">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://offer.revou.co/binus-university-offer">
 <meta property="og:title" content="Beasiswa Eksklusif BINUS University untuk Karier Masa Depan">
-<meta property="og:description" content="Raih beasiswa eksklusif 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing & Cybersecurity with AI. Daftar sekarang!">
+<meta property="og:description" content="Raih beasiswa eksklusif hingga 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
 <meta property="og:image" content="https://offer.revou.co/binus-university-offer/images/og-image.jpg">
 <meta property="og:image:width" content="2253">
 <meta property="og:image:height" content="1203">
@@ -22,7 +22,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Beasiswa Eksklusif BINUS University untuk Karier Masa Depan">
-<meta name="twitter:description" content="Raih beasiswa eksklusif 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing & Cybersecurity with AI. Daftar sekarang!">
+<meta name="twitter:description" content="Raih beasiswa eksklusif hingga 30% dari BINUS University & RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
 <meta name="twitter:image" content="https://offer.revou.co/binus-university-offer/images/og-image.jpg">
 
 <link rel="icon" type="image/png" href="/binus-university-offer/images/revou-logo.png">
@@ -63,6 +63,7 @@
     --acc-se:#6a58a6;
     --acc-dm:#bd4f76;
     --acc-da:#c07a2e;
+    --acc-ai:#3f7f6d;
     --radius:16px;
     --maxw:1160px;
   }
@@ -129,6 +130,11 @@
   .btn-hero.se::before{background:var(--acc-se)}
   .btn-hero.dm::before{background:var(--acc-dm)}
   .btn-hero.da::before{background:var(--acc-da)}
+  .btn-hero.ai::before{background:var(--acc-ai)}
+  /* The fifth card would otherwise orphan in the 2-up grid, so it takes the whole row.
+     The extra width is spent on a longer meta line — start date, format and the
+     no-coding-needed caveat — which none of the two-column cards has room for. */
+  .btn-hero.wide{grid-column:1/-1}
   .bh-tag{display:inline-flex;align-items:center;background:var(--tint);color:var(--brown);
     font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 12px;
     border-radius:999px;line-height:1.4;border:1px solid var(--border-soft)}
@@ -147,6 +153,16 @@
      row in the card, so the taller chip costs nothing above it */
   .bh-logo .lg-bg{height:32px}
   .bh-logo:has(.lg-bg){padding:5px 11px}
+  /* n8n is a single-line mark, so it sits near the AWS height. The Claude Code wordmark is a
+     stacked two-line lockup — it needs close to the BINUS/GreatNusa height before either
+     line is legible, and the taller chip gets the same tightened padding.
+     Both tools share one chip so the tag row carries two white chips rather than three of
+     uneven height; the hairline between them is what keeps them from reading as a single
+     co-branded lockup, the same job the divider does in the AWS chip. */
+  .bh-logo .lg-n8n{height:18px}
+  .bh-logo .lg-cc{height:26px}
+  .bh-logo:has(.lg-cc){padding:5px 13px;gap:11px}
+  .bh-logo .lg-n8n+.lg-cc{border-left:1px solid var(--border);padding-left:11px}
   .bh-logo .lbl{color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
   .bh-scholar{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);
     color:var(--brown-deep);font-size:.69rem;font-weight:800;letter-spacing:.07em;
@@ -190,13 +206,14 @@
   .claim-text h2{margin-bottom:16px}
   .claim-text .lede{font-size:1.02rem;margin-bottom:26px}
 
-  /* Two discount tiles carry the same accent mapping as the hero cards — the rail colour
+  /* The discount tiles carry the same accent mapping as the hero cards — the rail colour
      a visitor reads here matches the card they clicked (or are about to click) up top. */
-  .claim-tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .claim-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .c-tile{border-radius:14px;padding:20px 22px 18px;background:var(--white);
     border:1px solid var(--border-soft);border-left-width:5px;box-shadow:var(--shadow-sm)}
   .c-tile.se{border-left-color:var(--acc-se)}
   .c-tile.cs{border-left-color:var(--acc-cs)}
+  .c-tile.ai{border-left-color:var(--acc-ai)}
   .c-off{display:block;font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,3.6vw,2.9rem);
     font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--brown)}
   .c-lbl{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
@@ -259,7 +276,7 @@
     cursor:pointer;padding:14px 26px;border-radius:999px;font-size:.9rem;letter-spacing:.01em;
     color:var(--brown);transition:.15s;display:inline-flex;align-items:center;gap:10px}
   .tab:hover{border-color:var(--gold)}
-  /* the two flagship programmes keep a quiet gold outline so they still lead the row */
+  /* the flagship and BINUS-partnered programmes keep a quiet gold outline so they lead the row */
   .tab.featured{border-color:var(--gold)}
   .tab.active{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
   .tab .tag{font-size:.66rem;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:999px;
@@ -310,6 +327,21 @@
     padding-left:30px;border-left:1px solid rgba(255,255,255,.28)}
   .panel-cta{text-align:center;margin-top:40px}
 
+  /* ---- tool pills ----
+     text, not logos: no n8n or Claude marks ship in /images, and a pill row sits with the
+     partner chips above it without pulling a second visual weight into the panel. */
+  /* Every tool here ships a real mark, so the row is bare artwork — no pills. A pill around
+     a logo reads as a second border fighting it, and each mark is already its own label.
+     Heights are tuned per mark rather than shared: these are three wordmark lockups and one
+     square icon, so matching their box heights would leave the wordmarks tiny next to the
+     icon. What is matched is optical weight — roughly equal cap height across the row. */
+  .tool-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}
+  .tool-logo{width:auto;object-fit:contain;display:block}
+  .tool-logo.lg-claude{height:25px}
+  .tool-logo.lg-cc{height:31px}
+  .tool-logo.lg-n8n{height:23px}
+  .tool-logo.lg-gpt{height:26px}
+
   /* ---- certificate showcase ---- */
   .cert-showcase{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;
     background:var(--cream);border:1px solid var(--border-soft);border-radius:18px;
@@ -318,6 +350,9 @@
     justify-content:center;background:var(--yellow);color:var(--brown-deep);margin-bottom:22px}
   .cert-copy h4{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:700;line-height:1.14;
     margin-bottom:16px}
+  /* the column is vertically centred, so a heading with no caption under it must drop its
+     trailing margin or the block sits half that margin above true centre */
+  .cert-copy h4:last-child{margin-bottom:0}
   .cert-copy p{font-size:1rem}
   .cert-visual img{width:100%;height:auto;display:block;border-radius:12px}
 
@@ -346,8 +381,10 @@
   /* ---- final cta ---- */
   .final{background:var(--cream-deep);padding:80px 0 92px;text-align:center}
   .final h2{max-width:900px;margin:0 auto 36px}
-  .final .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-  /* narrow enough that all four sit on one row at desktop width rather than 3 + 1 orphan */
+  /* five programmes no longer fit on one row, and the full 1160 lets four sit up top with a
+     lone fifth stranded under them. Capping the row forces a balanced 3 + 2 instead. */
+  .final .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+    max-width:920px;margin:0 auto}
   .final .btn{min-width:0;padding:17px 26px;font-size:.92rem}
 
   /* ---- footer ---- */
@@ -396,8 +433,10 @@
   }
   @media(max-width:560px){
     .cta-primary{grid-template-columns:1fr}
-    /* the two rates stay side by side even on a phone — seeing 30% next to 15% is the point */
-    .claim-tiles{gap:10px}
+    /* the two rates stay side by side even on a phone — seeing 30% next to 15% is the point,
+       so only the third tile (the second programme on the 15% rate) drops to its own row */
+    .claim-tiles{grid-template-columns:1fr 1fr;gap:10px}
+    .c-tile.ai{grid-column:1/-1}
     .c-tile{padding:16px 14px 15px}
     .c-for{font-size:.86rem}
     .checks li{padding:15px 17px;font-size:.97rem}
@@ -427,15 +466,16 @@
       <p class="hero-partner">School of Computer Science BINUS University × RevoU</p>
       <p class="lead"><span class="strong">Kamu mahasiswa atau alumni School of Computer Science BINUS University?</span>
         Ini kesempatanmu buat <span class="strong">mulai karier</span> di bidang paling dicari:
-        <span class="strong">Applied Cybersecurity with AI, Software Engineering, Digital Marketing</span>,
-        atau <span class="strong">Data Analytics</span> bareng RevoU.</p>
+        <span class="strong">Applied Cybersecurity with AI, Applied AI, Analytics &amp; Automation,
+        Software Engineering, Digital Marketing</span>, atau <span class="strong">Data Analytics</span>
+        bareng RevoU.</p>
       <p class="lead"><span class="strong">Daftar sebelum 19 Agustus 2026</span> dan dapatkan
         <span class="strong">benefit spesial</span> untuk Mahasiswa &amp; Alumni School of Computer Science BINUS University.</p>
     </div>
     <div class="hero-actions">
       <p class="cta-label">Pilih Program</p>
       <div class="cta-primary">
-        <a href="https://www.revou.co/binus-applied-cybersecurity?o=binus" target="_blank" rel="noopener" class="btn-hero cs">
+        <a href="#program" data-goto="cs" class="btn-hero cs">
           <span class="bh-tags">
             <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 15%</span>
             <span class="bh-badge">Baru</span>
@@ -444,9 +484,9 @@
           </span>
           <span class="bh-title">Applied Cybersecurity with AI</span>
           <span class="bh-meta">12 minggu · Sertifikat dari 3 institusi</span>
-          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="https://revou-fsse.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-hero se">
+        <a href="#program" data-goto="se" class="btn-hero se">
           <span class="bh-tags">
             <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
             <span class="bh-logo dark"><img src="/binus-university-offer/images/aws-logo.png" alt="AWS" class="lg-aws"></span>
@@ -454,25 +494,39 @@
           </span>
           <span class="bh-title">Software Engineering</span>
           <span class="bh-meta">6 bulan · AI-native pertama di Indonesia</span>
-          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="https://fsdm-fb.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-hero dm">
+        <a href="#program" data-goto="dm" class="btn-hero dm">
           <span class="bh-tags">
             <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
             <span class="bh-tag">AI-powered</span>
           </span>
           <span class="bh-title">Digital Marketing</span>
           <span class="bh-meta">4 bulan · Growth &amp; performance marketing</span>
-          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a href="https://revou-fsda.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn-hero da">
+        <a href="#program" data-goto="da" class="btn-hero da">
           <span class="bh-tags">
             <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
             <span class="bh-tag">AI-powered</span>
           </span>
           <span class="bh-title">Data Analytics</span>
           <span class="bh-meta">4 bulan · Analitik siap kerja bareng AI</span>
-          <span class="bh-go">Daftar sekarang <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="#program" data-goto="ai" class="btn-hero ai wide">
+          <span class="bh-tags">
+            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 15%</span>
+            <span class="bh-badge">Baru</span>
+            <span class="bh-logo light"><img src="/binus-university-offer/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
+            <span class="bh-logo light">
+              <img src="/binus-university-offer/images/n8n-logo.png" alt="n8n" class="lg-n8n">
+              <img src="/binus-university-offer/images/claude-code-logo.png" alt="Claude Code" class="lg-cc">
+            </span>
+          </span>
+          <span class="bh-title">Applied AI, Analytics &amp; Automation</span>
+          <span class="bh-meta">12 minggu · Mulai Oktober 2026 · Online live + sesi on-campus di BINUS Kemanggisan · Tanpa pengalaman coding</span>
+          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
       </div>
     </div>
@@ -506,6 +560,11 @@
             <span class="c-off">15%</span>
             <span class="c-lbl">Potongan biaya</span>
             <span class="c-for">Applied Cybersecurity with AI</span>
+          </div>
+          <div class="c-tile ai">
+            <span class="c-off">15%</span>
+            <span class="c-lbl">Potongan biaya</span>
+            <span class="c-for">Applied AI, Analytics &amp; Automation</span>
           </div>
         </div>
         <div class="kenalan">
@@ -560,7 +619,8 @@
         <span class="num" aria-hidden="true">1</span>
         <h3>Kuasai Skill Digital yang Dicari Perusahaan</h3>
         <p>RevoU bantu kamu pelajari skill praktis di Digital Marketing, Data Analytics, Software Engineering,
-          atau Applied Cybersecurity with AI—semua dibimbing praktisi industri. Plus, kurikulumnya udah
+          Applied Cybersecurity with AI, atau Applied AI, Analytics &amp; Automation—semua dibimbing praktisi
+          industri. Plus, kurikulumnya udah
           terintegrasi AI, jadi kamu
           bisa tetap relevan di job market yang makin berubah cepat.</p>
       </div>
@@ -595,6 +655,7 @@
       <button class="tab featured" data-tab="se">Software Engineering</button>
       <button class="tab" data-tab="dm">Digital Marketing</button>
       <button class="tab" data-tab="da">Data Analytics</button>
+      <button class="tab featured" data-tab="ai">Applied AI, Analytics &amp; Automation <span class="tag">Baru</span></button>
     </div>
 
     <div class="program-panel">
@@ -728,7 +789,58 @@
                  alt="Contoh Certificate of Achievement program Cybersecurity dari RevoU, BINUS University, dan GreatNusa">
           </div>
         </div>
-        <div class="panel-cta"><a href="https://www.revou.co/binus-applied-cybersecurity?o=binus" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Applied Cybersecurity Sekarang</a></div>
+        <div class="panel-cta"><a href="https://cybersecurity-fp.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Applied Cybersecurity Sekarang</a></div>
+      </div>
+
+      <!-- APPLIED AI, ANALYTICS & AUTOMATION -->
+      <div class="panel" id="ai">
+        <h3 class="p-title">Bangun AI Agent &amp; Automation untuk Kerjaan Kamu</h3>
+        <p class="p-desc">Program <b>12 minggu hybrid</b> yang mulai <b>Oktober 2026</b>, dibangun bareng
+          <b>BINUS Faculty dan praktisi industri</b>: kelas online live 3× seminggu (19.00–21.00 WIB) plus
+          <b>tiga sesi on-campus di BINUS Kemanggisan</b>. Kamu bakal
+          bangun <b>AI workflow, AI agent, dan sistem automation</b> pakai <b>n8n dan Claude Code</b> —
+          <b>tanpa perlu pengalaman coding</b>. Dirancang buat yang sambil kerja: sesi malam hari dan semuanya
+          direkam. Selesai program, kamu dapat <b>professional certificate</b> dari RevoU, BINUS University,
+          dan GreatNusa.</p>
+        <div class="partner-logos">
+          <span class="chip light"><img src="/binus-university-offer/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
+        </div>
+        <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
+        <div class="acc-cols">
+          <div class="acc-col">
+            <div class="acc-item"><button class="acc-head">Foundations of Data-Driven Problem Solving<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 1–2 — Framework problem solving seperti 5 Whys dan hypothesis-driven thinking, plus cara menerjemahkan masalah bisnis jadi metrik yang bisa diukur.</div></div></div>
+            <div class="acc-item"><button class="acc-head">Data Analytics Foundation &amp; Communication<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 3–4 — Exploratory data analysis, prinsip visualisasi, dan data storytelling untuk meyakinkan stakeholder.</div></div></div>
+            <div class="acc-item"><button class="acc-head">AI Foundations<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 5 — Cara kerja Large Language Model: token, embedding, dan context window, plus etika AI soal bias, halusinasi, dan privasi data.</div></div></div>
+          </div>
+          <div class="acc-col">
+            <div class="acc-item"><button class="acc-head">Custom AI &amp; Analytics<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 6–7 — Prompt engineering dasar sampai lanjutan, bikin chatbot dan asisten AI no-code, dan mengintegrasikan AI ke workflow kerja yang sudah jalan.</div></div></div>
+            <div class="acc-item"><button class="acc-head">Automation &amp; Agentic AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 8–10 — Merancang workflow otomatis dan multi-agent system pakai n8n dan Claude Code, termasuk kapan workflow terkontrol lebih aman daripada agent otonom.</div></div></div>
+            <div class="acc-item"><button class="acc-head">Capstone: AI-First Solution<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 11–12 — Bangun satu solusi AI end-to-end — dari masalah bisnis, data, workflow, sampai dampaknya — lalu pitch prototype-nya ke panel industri di Demo Day.</div></div></div>
+          </div>
+        </div>
+        <div class="timeline-head">Tools yang Kamu Pakai</div>
+        <div class="tool-row">
+          <img src="/binus-university-offer/images/claude-logo.png" alt="Claude" class="tool-logo lg-claude">
+          <img src="/binus-university-offer/images/claude-code-logo.png" alt="Claude Code" class="tool-logo lg-cc">
+          <img src="/binus-university-offer/images/n8n-logo.png" alt="n8n" class="tool-logo lg-n8n">
+          <img src="/binus-university-offer/images/chatgpt-logo.png" alt="ChatGPT" class="tool-logo lg-gpt">
+        </div>
+        <div class="cert-showcase">
+          <div class="cert-copy">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 9h7M7 12h4"/>
+                <circle cx="17" cy="18" r="3.4" fill="#fff"/><path d="M15.6 18l1 1 1.8-2"/>
+              </svg>
+            </div>
+            <h4>Sertifikat profesional, didukung akademisi dan industri</h4>
+          </div>
+          <div class="cert-visual">
+            <img src="/binus-university-offer/images/certificate-applied-ai.webp"
+                 alt="Contoh Certificate of Achievement program Applied AI, Analytics &amp; Automation dari RevoU, BINUS University, dan GreatNusa">
+          </div>
+        </div>
+        <div class="panel-cta"><a href="https://revou-applied-ai.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn yellow">Daftar Applied AI, Analytics &amp; Automation Sekarang</a></div>
       </div>
     </div>
   </div>
@@ -792,6 +904,7 @@
       <a href="https://revou-fsda.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn peach">Daftar Data Analytics</a>
       <a href="https://revou-fsse.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn purple">Daftar Software Engineering</a>
       <a href="https://www.revou.co/binus-applied-cybersecurity?o=binus" target="_blank" rel="noopener" class="btn sky">Daftar Applied Cybersecurity</a>
+      <a href="https://revou-applied-ai.paperform.co/?o=binus" target="_blank" rel="noopener" class="btn yellow">Daftar Applied AI &amp; Automation</a>
     </div>
   </div>
 </section>
@@ -803,7 +916,8 @@
       <div class="foot-brand">
         <img src="/binus-university-offer/images/revou-logo.png" alt="RevoU" class="foot-logo-img">
         <p style="color:#9a9a9a;max-width:280px">Platform pendidikan online terbaik di Indonesia untuk skill
-          Digital Marketing, Data Analytics, Software Engineering, dan Applied Cybersecurity with AI.</p>
+          Digital Marketing, Data Analytics, Software Engineering, Applied Cybersecurity with AI, dan
+          Applied AI, Analytics &amp; Automation.</p>
       </div>
       <!-- column taxonomy and destinations mirror the live revou.co footer; absolute URLs
            because this page is served from offer.revou.co, where /digital-marketing would 404 -->
@@ -864,11 +978,15 @@
     });
   });
 
-  // Featured cards -> open the matching program tab
+  // Hero cards -> open the matching program tab and scroll to the curriculum.
+  // The scroll is done here rather than left to the #program href: once the hash is
+  // already #program, a second card click wouldn't move the page on its own.
   document.querySelectorAll('[data-goto]').forEach(function(link){
-    link.addEventListener('click', function(){
+    link.addEventListener('click', function(e){
       var tab = document.querySelector('.tab[data-tab="'+link.dataset.goto+'"]');
+      var target = document.getElementById('program');
       if(tab) tab.click();
+      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
   // Accordion

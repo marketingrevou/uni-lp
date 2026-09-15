@@ -10,6 +10,11 @@ All images pulled from the original page at full/original resolution
 | `binus-logo.png` | BINUS University logo |
 | `aws-logo.png` | AWS logo (Software Engineering section) |
 | `hackerrank-logo.png` | HackerRank logo (Software Engineering section) |
+| `binus-greatnusa.png` | BINUS University + GreatNusa two-logo lockup (certificate issuers) |
+| `claude-code-logo.png` | Claude Code wordmark, stacked two-line lockup, orange on transparent. Pulled from the programme's own page at `revou.co/images/claude-code-logo.png`, so the offer page shows the same asset the live page does. Used in the Applied AI hero card chip and its tool row. |
+| `n8n-logo.png` | Official n8n horizontal logo (coral node mark + slate wordmark, transparent). From `n8n.io/n8n-logo.png` — the programme page references n8n only in a workflow screenshot, so the mark came from the vendor. Slate wordmark, so it needs a white chip, never the dark one. |
+| `claude-logo.png` | Claude horizontal lockup — orange asterisk + black "Claude" wordmark, transparent. Wikimedia Commons `Claude AI logo.svg` (public domain), rendered to 480px wide. |
+| `chatgpt-logo.png` | ChatGPT knot mark, black on transparent — the current branding, not the old sage-green app tile. Wikimedia Commons `ChatGPT-Logo.svg` (public domain), rendered to 320px square. Icon only: no ChatGPT wordmark lockup exists on Commons. |
 
 ## Hero
 | File | What it is |
@@ -47,6 +52,12 @@ All images pulled from the original page at full/original resolution
 | `tech-logos-desktop.png` | Tool logos row (GitHub, Kiro, Lucidchart, Next.js, Python, Vercel, Claude, Flask…) — desktop |
 | `tech-logos-mobile.png` | Same logos, mobile grid layout |
 
+## Certificates
+| File | What it is |
+|------|-----------|
+| `certificate-cybersecurity.png` | Certificate of Achievement sample — Applied Cybersecurity with AI (RevoU / BINUS / GreatNusa) |
+| `certificate-applied-ai.webp` | Certificate of Achievement sample — Applied AI, Analytics & Automation. Pulled from the programme's own page (`revou.co/_astro/certificate-preview.*.webp`, the zoom-size render, 1024×799). Kept as WebP: 34 KB against 411 KB for the equivalent PNG. |
+
 ## Alumni testimonials
 | File | What it is |
 |------|-----------|
@@ -55,4 +66,8 @@ All images pulled from the original page at full/original resolution
 | `testimonial-nathasya.jpeg` | Nathasya Magdalena photo |
 
 > Note: these are RevoU/BINUS brand and stock/licensed assets. Use only within
-> the intended RevoU × BINUS partnership context.
+> the intended RevoU × BINUS partnership context. `claude-code-logo.png`, `n8n-logo.png`,
+> `claude-logo.png` and `chatgpt-logo.png` are third-party vendor marks, shown to identify the
+> tools the curriculum teaches — the same nominative use as the AWS and HackerRank marks.
+> They render bare in the Applied AI panel's tool row, sized by optical weight rather than a
+> shared box height: three wordmark lockups plus one square icon.
