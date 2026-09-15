@@ -408,15 +408,15 @@
   .hero-photo{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 49%;border-radius:0;
     filter:saturate(.92) contrast(1.04)}
   .hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:
-    linear-gradient(90deg,rgba(16,14,2,.94) 0%,rgba(22,19,3,.83) 35%,rgba(25,21,3,.36) 67%,rgba(25,21,3,.14) 100%),
+    linear-gradient(90deg,rgba(16,14,2,.94) 0%,rgba(20,17,3,.82) 18%,rgba(25,21,3,.58) 34%,rgba(25,21,3,.28) 52%,rgba(25,21,3,.10) 70%,transparent 88%),
     linear-gradient(0deg,rgba(16,14,2,.8) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
   .hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:
     radial-gradient(circle at 82% 28%,rgba(245,197,24,.2),transparent 28%),
     linear-gradient(180deg,rgba(245,197,24,.06),transparent 30%);mix-blend-mode:screen}
-  .hero-grid{width:100%;min-height:calc(100svh - var(--nav-h));grid-template-columns:minmax(0,1.22fr) minmax(290px,.56fr);
-    gap:clamp(42px,6vw,96px);align-items:end;padding-top:clamp(72px,10vh,120px);padding-bottom:clamp(64px,9vh,104px);
+  .hero-grid{width:100%;max-width:1500px;min-height:calc(100svh - var(--nav-h));grid-template-columns:minmax(0,1.15fr) minmax(290px,.48fr);
+    gap:clamp(32px,4vw,64px);align-items:end;padding:clamp(72px,10vh,120px) clamp(32px,3vw,48px) clamp(64px,9vh,104px);
     position:relative;z-index:2}
-  .hero-copy{max-width:780px}
+  .hero-copy{max-width:700px}
   .hero h1{font-size:clamp(3.2rem,6.5vw,6rem);line-height:.93;color:#fff8df;margin-bottom:28px;
     max-width:12.5ch;text-shadow:0 5px 34px rgba(0,0,0,.38)}
   .hero .mark{color:var(--yellow);background:none;padding:0}
@@ -534,9 +534,9 @@
   .wa{display:inline-flex;align-items:center;gap:9px;box-shadow:0 16px 40px rgba(20,18,1,.3)}
   .wa svg{width:18px;height:18px;flex:0 0 auto}
 
-  /* Give the campus signage a clear focal area beside the desktop hero copy. */
+  /* Let the image run edge-to-edge; the overlay handles the copy-to-campus transition. */
   @media(min-width:961px){
-    .hero-photo{width:78%;margin-left:auto;object-position:50% 52%}
+    .hero-photo{width:100%;object-position:50% 52%}
   }
 
   @media(max-width:960px){
