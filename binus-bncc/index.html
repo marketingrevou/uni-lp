@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beasiswa Eksklusif BNCC untuk Karier Masa Depan</title>
+<title>Beasiswa Eksklusif BNCC × RevoU — Campus Edition</title>
 <meta name="description" content="Raih beasiswa eksklusif hingga 30% untuk anggota & alumni BNCC dari RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
 <link rel="canonical" href="https://offer.revou.co/binus-bncc">
-
-<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RevoU x BNCC">
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://offer.revou.co/binus-bncc">
 <meta property="og:title" content="Beasiswa Eksklusif BNCC untuk Karier Masa Depan">
-<meta property="og:description" content="Raih beasiswa eksklusif hingga 30% untuk anggota & alumni BNCC dari RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
+<meta property="og:description" content="Raih beasiswa eksklusif hingga 30% untuk anggota & alumni BNCC dari RevoU. Daftar sebelum 23 Oktober 2026.">
 <meta property="og:image" content="https://offer.revou.co/binus-bncc/images/og-image.jpg">
 <meta property="og:image:width" content="2253">
 <meta property="og:image:height" content="1203">
 <meta property="og:image:alt" content="Beasiswa Eksklusif BNCC x RevoU">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Beasiswa Eksklusif BNCC untuk Karier Masa Depan">
-<meta name="twitter:description" content="Raih beasiswa eksklusif hingga 30% untuk anggota & alumni BNCC dari RevoU untuk program Software Engineering, Data Analytics, Digital Marketing, Applied Cybersecurity & Applied AI Automation. Daftar sekarang!">
+<meta name="twitter:description" content="Raih beasiswa eksklusif hingga 30% untuk anggota & alumni BNCC dari RevoU. Daftar sebelum 23 Oktober 2026.">
 <meta name="twitter:image" content="https://offer.revou.co/binus-bncc/images/og-image.jpg">
 
 <link rel="icon" type="image/png" href="/binus-bncc/images/revou-logo.png">
@@ -30,506 +26,652 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-<!-- above-the-fold hero backdrop; as a CSS background it would otherwise not be
-     discovered until the stylesheet is parsed and layout begins -->
 <link rel="preload" as="image" href="/binus-bncc/images/binus-campus.jpg">
 <style>
-  /* Design tokens lifted from revou.co: a cream page, one saturated brand yellow,
-     and a dark gold-brown that does the work colour usually does — it is the heading
-     ink, the border, and the quiet-button outline all at once. Everything else is a
-     tint of those three, which is why the site reads as one material. */
+  /* ============================================================
+     RATE TIERS — a revou.co-faithful variation.
+     The brand is a hard constraint here, so every token is revou.co's: cream page,
+     one saturated yellow, the dark gold-brown as heading ink and hairline, Oswald
+     uppercase for the display voice, Mulish for everything read, full pills for
+     every button. What changes is composition:
+       - the offer is organised the way it actually works — two scholarship rates,
+         each owning its programmes — instead of five look-alike cards with rails
+       - every section commits to a left-aligned, asymmetric split; nothing is a
+         centred stack
+       - hierarchy comes from brand colour blocks (yellow tier, brown tier, yellow
+         close) and brown hairlines, not from soft shadows on every surface
+     Radius is by role: 20px panels, 14px media, 999px controls. No box-shadows.
+     ============================================================ */
   :root{
-    --cream:#fef6dc;        /* default page surface */
-    --cream-deep:#fcf0c3;   /* the alternating band */
+    --cream:#fef6dc;
+    --cream-deep:#fcf0c3;
     --white:#ffffff;
-    --yellow:#f5c518;       /* the only saturated colour; primary CTA + accents */
-    --yellow-soft:#fae082;
-    --yellow-pale:#fbe597;
+    --yellow:#f5c518;
+    --yellow-hover:#ffd233;
     --gold:#cc9f00;
-    --brown:#594500;        /* heading ink, borders, outline buttons */
+    --brown:#594500;
     --brown-deep:#241e05;
-    --night:#1c1901;        /* footer */
+    --night:#1c1901;
     --ink:#1f2937;
     --muted:#5f5847;
-    --border:rgba(89,69,0,.16);
+    --border:rgba(89,69,0,.18);
     --border-soft:rgba(89,69,0,.10);
-    --tint:rgba(89,69,0,.05);
-    --shadow-sm:0 1px 2px rgba(89,69,0,.06),0 6px 18px rgba(89,69,0,.06);
-    --shadow-md:0 2px 4px rgba(89,69,0,.05),0 16px 40px rgba(89,69,0,.10);
-    /* Programme accents. Deliberately desaturated: they only ever appear as a 4px
-       rail or a low-alpha badge, so the colour-coding between the hero cards, the
-       discount tiles and the tabs survives without a second palette fighting the gold. */
-    --acc-cs:#3d6b8c;
-    --acc-se:#6a58a6;
-    --acc-dm:#bd4f76;
-    --acc-da:#c07a2e;
-    --acc-ai:#3f7f6d;
-    --radius:16px;
-    --maxw:1160px;
+    --r-panel:20px;
+    --r-media:14px;
+    --maxw:1200px;
+    --nav-h:89px;           /* 64px logo + 24px padding + 1px border */
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Mulish',system-ui,-apple-system,sans-serif,
-    'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';background:var(--cream);
-    color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:'Mulish',system-ui,-apple-system,sans-serif;background:var(--cream);color:var(--ink);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%}
+  /* components set their own display, which would otherwise beat the `hidden` attribute */
+  [hidden]{display:none!important}
+  ::selection{background:var(--yellow);color:var(--brown-deep)}
+  :focus-visible{outline:3px solid var(--brown);outline-offset:3px;border-radius:6px}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  /* Oswald is condensed and set uppercase throughout on revou.co — it carries the
-     display voice, so headings can run large without crowding the measure. */
-  h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;
-    font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--brown)}
-  h1{font-size:clamp(2.4rem,5.4vw,4rem);font-weight:700;letter-spacing:-.02em}
-  h2{font-size:clamp(1.9rem,4vw,2.85rem)}
-  h3{font-size:clamp(1.25rem,2.2vw,1.75rem);font-weight:700}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+  h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;font-weight:600;
+    line-height:1.05;letter-spacing:-.01em;color:var(--brown)}
+  h1{font-size:clamp(2.6rem,5.6vw,4.5rem);font-weight:700;letter-spacing:-.02em;line-height:1}
+  h2{font-size:clamp(1.9rem,3.8vw,2.85rem)}
+  h3{font-size:clamp(1.2rem,2vw,1.6rem);font-weight:700}
   p{color:var(--muted)}
-  .strong{color:var(--brown);font-weight:700}
-  section{position:relative}
+  b{color:var(--brown);font-weight:700}
+  /* the highlighter: a hard-stop band of brand yellow behind a phrase — used on the one
+     phrase per headline that carries the offer, never as general decoration */
+  .mark{background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 94%,transparent 94%);
+    padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-  /* ---- top logo bar ---- */
-  .topbar{padding:22px 0 20px;background:var(--white);border-bottom:1px solid var(--border-soft)}
-  .logos{display:flex;align-items:center;justify-content:center;gap:20px}
-  .logo-revou-img{width:96px;height:96px;object-fit:contain;display:block}
-  .logo-x{font-size:24px;color:var(--brown);opacity:.45;font-weight:600}
-  /* the BNCC mark is a stacked lockup with two lines of small type under the wordmark, so it
-     needs the RevoU logo's full height before "Unit Kegiatan Mahasiswa" is legible */
-  .logo-bncc-img{height:96px;width:auto;object-fit:contain;display:block}
+  /* ---- buttons: revou.co's one shape, the full pill ---- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;
+    font-weight:800;font-size:.95rem;letter-spacing:.01em;padding:16px 30px;border-radius:999px;
+    background:var(--yellow);color:var(--brown-deep);border:1.5px solid var(--yellow);text-decoration:none;
+    cursor:pointer;text-align:center;transition:background .15s ease,color .15s ease,border-color .15s ease}
+  .btn:hover{background:var(--yellow-hover);border-color:var(--yellow-hover)}
+  .btn:active{background:var(--gold);border-color:var(--gold)}
+  .btn.line{background:transparent;border-color:var(--brown);color:var(--brown)}
+  .btn.line:hover{background:var(--brown);color:var(--cream)}
+  .ico{width:1.05em;height:1.05em;flex:0 0 auto;display:block}
 
-  /* ---- hero ----
-     The campus sits behind the whole section as a faded backdrop, `cover` + bottom
-     anchored so it spans the full width (`contain` left hard seams down both sides)
-     and stays grounded on the section's baseline.
-     The cream veil is what every piece of hero text is read against, and it is deliberately
-     uneven: heaviest through the top half, where the h1 and the two lead paragraphs sit
-     right over the BINUS sign, then thinner past 60% where the only things above the photo
-     are the solid programme cards. If you lighten it, check the sign showing through the
-     paragraphs — that fails first. */
-  .hero{padding:56px 0 72px;text-align:center;background-color:var(--cream);
-    background-image:linear-gradient(180deg,rgba(254,246,220,.95) 0%,rgba(254,246,220,.92) 40%,
-      rgba(254,246,220,.86) 72%,rgba(254,246,220,.82) 100%),url("/binus-bncc/images/binus-campus.jpg");
-    background-repeat:no-repeat,no-repeat;
-    background-position:center,center bottom;
-    background-size:100% 100%,cover}
-  .hero-grid{display:block;max-width:900px;margin:0 auto}
-  .hero-actions{margin-top:12px}
-  .hero h1{margin-bottom:14px}
-  .hero-partner{font-size:.8rem;font-weight:800;letter-spacing:.14em;color:var(--brown);
-    text-transform:uppercase;margin:0 auto 24px;opacity:.75}
-  .hero .lead{font-size:1.02rem;max-width:700px;margin:0 auto 16px}
-  .cta-label{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
-    font-size:1.15rem;letter-spacing:.02em;color:var(--brown);margin:38px 0 20px;text-align:center}
+  /* ---- top bar ---- */
+  /* sticky, so the logos and the deadline CTA stay in reach down the whole page */
+  .topbar{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--border-soft)}
+  /* in-page jumps (Pilih Program, tier rows) must land below the bar, not under it */
+  [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding-top:12px;padding-bottom:12px}
+  .logos{display:flex;align-items:center;gap:14px}
+  .logo-revou-img{width:64px;height:64px;object-fit:contain;display:block}
+  .logo-x{color:var(--brown);opacity:.5;font-weight:700;font-size:1.2rem}
+  .logo-bncc-img{height:60px;width:auto;object-fit:contain;display:block}
+  .top-cta{padding:11px 20px;font-size:.86rem}
 
-  /* ---- hero programme cards ----
-     White cards on cream, each topped by its programme's accent rail. Flat surfaces and
-     a single hairline border — revou.co never uses an offset "hard" shadow. */
-  .cta-primary{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:0 auto}
-  .btn-hero{position:relative;overflow:hidden;display:flex;flex-direction:column;
-    align-items:flex-start;gap:10px;text-align:left;text-decoration:none;color:var(--ink);
-    padding:26px 26px 22px;border-radius:var(--radius);background:var(--white);
-    border:1px solid var(--border-soft);box-shadow:var(--shadow-sm);
-    transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
-  .btn-hero::before{content:"";position:absolute;inset:0 0 auto;height:5px}
-  .btn-hero:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border)}
-  .btn-hero.cs::before{background:var(--acc-cs)}
-  .btn-hero.se::before{background:var(--acc-se)}
-  .btn-hero.dm::before{background:var(--acc-dm)}
-  .btn-hero.da::before{background:var(--acc-da)}
-  .btn-hero.ai::before{background:var(--acc-ai)}
-  /* The fifth card would otherwise orphan in the 2-up grid, so it takes the whole row.
-     The extra width is spent on a longer meta line — start date, format and the
-     no-coding-needed caveat — which none of the two-column cards has room for. */
-  .btn-hero.wide{grid-column:1/-1}
-  .bh-tag{display:inline-flex;align-items:center;background:var(--tint);color:var(--brown);
-    font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 12px;
-    border-radius:999px;line-height:1.4;border:1px solid var(--border-soft)}
-  .bh-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
-  .bh-badge{background:var(--brown);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.09em;
-    text-transform:uppercase;padding:6px 12px;border-radius:999px;line-height:1.4}
-  /* AWS mark is white-on-transparent, HackerRank is near-black — each needs its own chip tone */
-  .bh-logo{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;line-height:1}
-  .bh-logo.dark{background:var(--night)}
-  .bh-logo.light{background:#fff;border:1px solid var(--border)}
-  .bh-logo img{width:auto;object-fit:contain;display:block}
-  .bh-logo .lg-aws{height:16px}
-  .bh-logo .lg-hr{height:11px}
-  /* a 4:1 two-logo lockup, so it needs roughly double the height of the single-mark
-     chips before either BINUS or GreatNusa is legible; it already wraps to its own
-     row in the card, so the taller chip costs nothing above it */
-  .bh-logo .lg-bg{height:32px}
-  .bh-logo:has(.lg-bg){padding:5px 11px}
-  /* n8n is a single-line mark, so it sits near the AWS height. The Claude Code wordmark is a
-     stacked two-line lockup — it needs close to the BINUS/GreatNusa height before either
-     line is legible, and the taller chip gets the same tightened padding.
-     Both tools share one chip so the tag row carries two white chips rather than three of
-     uneven height; the hairline between them is what keeps them from reading as a single
-     co-branded lockup, the same job the divider does in the AWS chip. */
-  .bh-logo .lg-n8n{height:18px}
-  .bh-logo .lg-cc{height:26px}
-  .bh-logo:has(.lg-cc){padding:5px 13px;gap:11px}
-  .bh-logo .lg-n8n+.lg-cc{border-left:1px solid var(--border);padding-left:11px}
-  .bh-logo .lbl{color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-  .bh-scholar{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);
-    color:var(--brown-deep);font-size:.69rem;font-weight:800;letter-spacing:.07em;
-    text-transform:uppercase;padding:6px 13px;border-radius:999px;line-height:1.4}
-  .bh-scholar svg{width:.95em;height:.95em;display:block}
-  .bh-title{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:1.3rem;font-weight:700;
-    line-height:1.12;letter-spacing:-.01em;color:var(--brown)}
-  .bh-meta{font-size:.86rem;font-weight:500;color:var(--muted)}
-  .bh-go{margin-top:auto;padding-top:6px;font-size:.88rem;font-weight:800;letter-spacing:.02em;
-    color:var(--brown);display:inline-flex;align-items:center;gap:7px}
-  .bh-go .ico-arr{transition:transform .16s ease}
-  .btn-hero:hover .bh-go .ico-arr{transform:translateX(4px)}
-
-  /* ---- buttons ----
-     One shape: a full pill. Primary is the brand yellow, secondary is a hairline
-     outline in the same brown as the headings. No gradients, no offset shadow. */
-  .btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.95rem;
-    letter-spacing:.01em;padding:17px 34px;border-radius:999px;color:var(--brown-deep);
-    background:var(--yellow);transition:transform .14s ease,box-shadow .14s ease,background .14s ease;
-    text-decoration:none;display:inline-block;text-align:center}
-  .btn:hover{transform:translateY(-2px);background:#ffd233;box-shadow:0 10px 24px rgba(204,159,0,.28)}
-  .btn:active{transform:translateY(0)}
-  /* the four programme colour-names are kept so the markup needs no churn; on revou.co
-     every one of these would be the same yellow pill, so that is what they resolve to */
-  .btn.pink,.btn.peach,.btn.purple,.btn.sky,.btn.yellow{background:var(--yellow);color:var(--brown-deep)}
-  .btn.pink:hover,.btn.peach:hover,.btn.purple:hover,.btn.sky:hover,.btn.yellow:hover{background:#ffd233}
-  .btn.yellow{font-size:1rem;padding:18px 40px}
+  /* ---- hero: argument left, campus right, the rate as a seal where they meet ---- */
+  .hero{padding:64px 0 88px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .hero h1{margin-bottom:26px}
+  .hero .lead{font-size:1.05rem;max-width:58ch}
+  .hero .lead+.lead{margin-top:14px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .hero-media{position:relative}
+  .hero-photo{display:block;width:100%;aspect-ratio:5/4;object-fit:cover;object-position:56% 60%;
+    border-radius:var(--r-panel)}
+  .seal{position:absolute;left:-44px;bottom:-36px;width:156px;height:156px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--cream);outline:1.5px solid var(--brown);outline-offset:-12px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    transform:rotate(-8deg);font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown-deep);
+    line-height:1}
+  .seal small{font-size:.74rem;font-weight:600;letter-spacing:.08em}
+  .seal strong{font-size:3.1rem;font-weight:700;letter-spacing:-.03em;margin-top:4px}
 
   /* ---- stat bar ---- */
-  .statbar{padding:34px 24px;background:var(--yellow)}
-  .statbar h2{color:var(--brown-deep);text-align:center;font-size:clamp(1.35rem,2.6vw,2.1rem)}
+  .statbar{background:var(--yellow);padding:36px 0}
+  .statbar h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;color:var(--brown-deep);
+    font-size:clamp(1.35rem,2.6vw,2rem)}
+  .statbar .big{font-size:clamp(3rem,7vw,5.2rem);line-height:.9;letter-spacing:-.03em;font-weight:700}
 
-  /* ---- claim + kenalan ---- */
-  .block{padding:72px 0}
-  .claim-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:stretch}
-  .claim-visual{position:relative;border-radius:var(--radius);overflow:hidden;min-height:460px;
-    background:linear-gradient(165deg,var(--yellow-soft) 0%,var(--yellow) 58%,var(--gold) 100%);
-    display:flex;align-items:flex-end;justify-content:center}
+  /* ---- section heads: title left, context right, sharing a baseline ---- */
+  .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+  .sec-head p{font-size:1.03rem;max-width:52ch}
+
+  /* ---- rate tiers: the signature ----
+     The two scholarship levels are the real structure of the offer, so they are the
+     containers. Yellow owns 30%, brown owns 15% — both straight from the palette, so the
+     split reads as brand, not as a new colour code. Each programme is one row and the
+     whole row is the link into its curriculum. */
+  .choose{padding:92px 0 100px}
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .tier{background:var(--white);border:1px solid var(--border);border-radius:var(--r-panel);overflow:hidden}
+  .tier-head{display:grid;grid-template-columns:auto 1fr;gap:4px 22px;align-items:end;padding:28px 30px 26px}
+  .t30 .tier-head{background:var(--yellow)}
+  .t15 .tier-head{background:var(--brown)}
+  .tier-rate{grid-row:1/3;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(4rem,7vw,5.4rem);
+    line-height:.8;letter-spacing:-.04em;color:var(--brown-deep)}
+  .tier-rate i{font-style:normal;font-size:.44em;vertical-align:.85em;margin-left:2px}
+  .t15 .tier-rate{color:var(--yellow)}
+  .tier-lbl{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:1.05rem;
+    letter-spacing:.02em;color:var(--brown-deep)}
+  .t15 .tier-lbl{color:var(--yellow)}
+  .tier-for{font-size:.9rem;font-weight:700;line-height:1.4;color:var(--brown-deep)}
+  .t15 .tier-for{color:var(--cream)}
+  .prog{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;padding:24px 30px;
+    border-top:1px solid var(--border-soft);text-decoration:none;color:var(--ink);transition:background .15s ease}
+  .tier-head+.prog{border-top:0}
+  .prog:hover{background:var(--cream)}
+  .prog-name{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:700;font-size:1.35rem;
+    line-height:1.1;letter-spacing:-.01em;color:var(--brown)}
+  .prog-meta{font-size:.88rem;font-weight:500;color:var(--muted)}
+  .prog-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+  .prog-go{grid-column:2;grid-row:1/3;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--brown);
+    color:var(--brown);display:flex;align-items:center;justify-content:center;
+    transition:background .15s ease,border-color .15s ease,color .15s ease}
+  .prog:hover .prog-go{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
+  .tag{display:inline-flex;align-items:center;font-size:.66rem;font-weight:800;letter-spacing:.09em;
+    text-transform:uppercase;padding:6px 12px;border-radius:999px;line-height:1.4;
+    color:var(--brown);border:1px solid var(--border)}
+  .tag.new{background:var(--brown);border-color:var(--brown);color:#fff}
+  /* AWS mark is white-on-transparent, HackerRank is near-black — each needs its own chip tone */
+  .chip{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;line-height:1}
+  .chip.dark{background:var(--night)}
+  .chip.light{background:#fff;border:1px solid var(--border)}
+  .chip img{width:auto;object-fit:contain;display:block}
+  .chip .lbl{color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .chip .lg-aws{height:16px}.chip .lg-hr{height:11px}.chip .lg-bg{height:30px}
+  .chip .lg-n8n{height:17px}.chip .lg-cc{height:24px}
+  .chip:has(.lg-bg),.chip:has(.lg-cc){padding:5px 12px}
+  .chip .lg-n8n+.lg-cc{border-left:1px solid var(--border);padding-left:10px}
+
+  /* ---- claim ---- */
+  .claim{background:var(--cream-deep);padding:92px 0}
+  .claim-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .claim h2{margin-bottom:18px}
+  .claim .lede{font-size:1.05rem;max-width:56ch}
+  .kenalan{margin-top:34px;padding-top:22px;border-top:1.5px solid var(--brown)}
+  .kenalan h3{font-size:1.15rem;margin-bottom:8px}
+  .kenalan p{font-size:.96rem;max-width:56ch}
+  .claim-visual{background:var(--yellow);border-radius:var(--r-panel);overflow:hidden;aspect-ratio:3/2}
   .claim-visual img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
-  .claim-text{display:flex;flex-direction:column;justify-content:center}
-  .claim-text h2{margin-bottom:16px}
-  .claim-text .lede{font-size:1.02rem;margin-bottom:26px}
 
-  /* The discount tiles carry the same accent mapping as the hero cards — the rail colour
-     a visitor reads here matches the card they clicked (or are about to click) up top. */
-  .claim-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .c-tile{border-radius:14px;padding:20px 22px 18px;background:var(--white);
-    border:1px solid var(--border-soft);border-left-width:5px;box-shadow:var(--shadow-sm)}
-  .c-tile.se{border-left-color:var(--acc-se)}
-  .c-tile.cs{border-left-color:var(--acc-cs)}
-  .c-tile.ai{border-left-color:var(--acc-ai)}
-  .c-off{display:block;font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,3.6vw,2.9rem);
-    font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--brown)}
-  .c-lbl{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);margin:9px 0 6px}
-  .c-for{display:block;font-size:.93rem;font-weight:600;color:var(--ink);line-height:1.35}
-
-  /* Context, not the offer — a hairline rule and small type keep it from competing with the tiles */
-  .kenalan{margin-top:30px;padding-top:22px;border-top:1px solid var(--border)}
-  .kenalan h3{font-size:1.1rem;margin-bottom:8px}
-  .kenalan p{font-size:.94rem;margin:0}
-
-  .video-block{padding:0 0 72px}
-  .video-head{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
-    text-align:center;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;margin:0 0 28px}
-  .video{position:relative;width:100%;max-width:1000px;margin:0 auto;aspect-ratio:16/9;
-    border-radius:var(--radius);background-size:cover;background-position:center;
-    box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center}
-  .play{width:88px;height:88px;border-radius:50%;background:var(--yellow);
-    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(36,30,5,.35)}
+  /* ---- video ---- */
+  .video-sec{padding:92px 0 84px}
+  .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r-panel);overflow:hidden;
+    background:var(--night) center/cover no-repeat;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .play{width:92px;height:92px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;
+    justify-content:center;transition:transform .2s ease}
   .play::after{content:"";border-left:26px solid var(--brown-deep);border-top:16px solid transparent;
     border-bottom:16px solid transparent;margin-left:8px}
-  .stats-banner{width:100%;max-width:1000px;height:auto;display:block;margin:52px auto 0}
+  .video:hover .play{transform:scale(1.06)}
+  .stats-banner{width:100%;height:auto;display:block;margin-top:48px}
 
-  /* ---- icons ----
-     drawn as SVG rather than emoji/dingbat characters: the display face has no glyphs for
-     these, and systems without a colour-emoji font fall back to tofu boxes. */
-  .ico-arr{width:1em;height:1em;display:inline-block;vertical-align:-.12em;flex:0 0 auto}
-
-  /* ---- checklist ---- */
-  .get{background:var(--cream-deep);text-align:center}
-  .get h2{margin-bottom:30px}
-  .checks{list-style:none;display:grid;gap:14px;max-width:840px;margin:0 auto;text-align:left}
-  .checks li{display:flex;gap:14px;align-items:flex-start;font-size:1.02rem;color:var(--ink);
-    background:var(--white);border:1px solid var(--border-soft);border-radius:12px;padding:18px 22px}
-  .checks li::before{content:"";flex:0 0 auto;width:1.4rem;height:1.4rem;margin-top:2px;
+  /* ---- what you get: a ruled 2×2, no cards ---- */
+  .get{background:var(--white);padding:84px 0}
+  .get-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+  .get-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+  .get-list li{display:flex;gap:14px;align-items:flex-start;border-top:1.5px solid var(--brown);padding:20px 0 28px;
+    font-weight:700;color:var(--brown);font-size:1.02rem;line-height:1.4}
+  .get-list li>span{display:block;min-width:0}
+  .get-list li::before{content:"";flex:0 0 auto;width:1.35rem;height:1.35rem;margin-top:1px;
     background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23f5c518'/%3E%3Cpath d='M7 12.4l3.3 3.3L17 9' fill='none' stroke='%23241e05' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
-  .checks li span.tx{padding-top:1px}
 
-  /* ---- feature cards ---- */
-  .ready{text-align:center;background:var(--white)}
-  .ready .intro{max-width:900px;margin:0 auto}
-  .ready .intro p{font-size:1.04rem;margin-top:16px}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;text-align:left}
-  .card{background:var(--cream);border:1px solid var(--border-soft);border-radius:var(--radius);
-    padding:34px 30px}
-  /* the shipped card1–3.png badges are blue-violet gradients — the only cold colour left
-     on the page — so the numeral is drawn instead, in the same yellow as every other accent */
-  .num{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    background:var(--yellow);color:var(--brown-deep);font-family:'Oswald',sans-serif;font-size:1.6rem;
-    font-weight:700;line-height:1;margin-bottom:22px}
-  .card h3{font-size:1.3rem;margin-bottom:14px}
-  .card p{font-size:.98rem}
+  /* ---- why: sticky intro beside three ruled points ---- */
+  .why{padding:100px 0}
+  .why-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+  .why-intro{position:sticky;top:calc(var(--nav-h) + 32px)}
+  .why-intro p{margin-top:18px;font-size:1.02rem}
+  .why-item{display:grid;grid-template-columns:4.2rem 1fr;gap:22px;align-items:center;padding:32px 0;border-top:1.5px solid var(--brown)}
+  .why-item:last-child{border-bottom:1.5px solid var(--brown)}
+  .why-n{font-family:'Oswald',sans-serif;font-weight:700;font-size:3.6rem;line-height:.82;
+    color:var(--yellow);-webkit-text-stroke:1.5px var(--brown)}
+  .why-item h3{font-size:1.3rem}
+  .why-item p{font-size:.98rem}
 
-  /* ---- milestone / programme tabs ---- */
-  .milestone{background:var(--cream-deep);padding:76px 0 84px}
-  .milestone .head{text-align:center;max-width:820px;margin:0 auto 36px}
-  .milestone .head p{font-size:1.04rem;margin-top:14px}
-  .tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:34px}
-  .tab{border:1px solid var(--border);background:var(--white);font-family:inherit;font-weight:700;
-    cursor:pointer;padding:14px 26px;border-radius:999px;font-size:.9rem;letter-spacing:.01em;
-    color:var(--brown);transition:.15s;display:inline-flex;align-items:center;gap:10px}
-  .tab:hover{border-color:var(--gold)}
-  /* the flagship and BINUS-partnered programmes keep a quiet gold outline so they lead the row */
-  .tab.featured{border-color:var(--gold)}
-  .tab.active{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
-  .tab .tag{font-size:.66rem;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:999px;
-    background:var(--brown);color:var(--yellow-pale);line-height:1;text-transform:uppercase}
-  .tab.active .tag{background:var(--brown-deep);color:var(--yellow)}
-  .program-panel{background:var(--white);border:1px solid var(--border-soft);border-radius:20px;
-    padding:48px 44px;box-shadow:var(--shadow-md)}
+  /* ---- programme tabs ---- */
+  .milestone{background:var(--cream-deep);padding:100px 0}
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .tab{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--border);background:var(--white);
+    font-family:inherit;font-weight:700;font-size:.9rem;letter-spacing:.01em;color:var(--brown);cursor:pointer;
+    padding:13px 22px;border-radius:999px;transition:border-color .15s ease,background .15s ease,color .15s ease}
+  .tab:hover{border-color:var(--brown)}
+  .tab[aria-selected="true"]{background:var(--brown);border-color:var(--brown);color:var(--yellow)}
+  .tab .tag{padding:3px 8px;font-size:.6rem;border-color:currentColor;color:inherit}
+  .program-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--r-panel);padding:52px 48px}
   .panel{display:none}
-  .panel.active{display:block;animation:fade .3s ease}
-  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .panel h3.p-title{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:16px}
-  .panel .p-desc{font-size:1.02rem;max-width:900px}
-  .panel .p-desc b{color:var(--brown)}
-  .panel .badge-line{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
-    font-size:1.25rem;font-weight:600;margin:34px 0 20px;display:flex;align-items:center;gap:14px}
-  .panel .badge-line::after{content:"";flex:1;height:1px;background:var(--border)}
-
-  /* ---- accordion (2-col) ---- */
-  .acc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-  .acc-col{display:flex;flex-direction:column;gap:12px}
-  .acc-item{background:var(--cream);border:1px solid var(--border-soft);border-radius:12px;overflow:hidden;
-    transition:background .2s ease,border-color .2s ease}
-  .acc-item.open{background:rgba(245,197,24,.14);border-color:rgba(245,197,24,.55)}
-  .acc-head{width:100%;text-align:left;background:none;border:none;font-family:inherit;
-    font-weight:600;font-size:1rem;padding:20px 22px;cursor:pointer;display:flex;
-    justify-content:space-between;align-items:center;gap:16px;color:var(--ink);line-height:1.4}
-  .acc-item.open .acc-head{color:var(--brown);font-weight:700}
-  .chev{flex:0 0 auto;transition:transform .25s;color:var(--gold)}
+  .panel.active{display:block}
+  .panel h3.p-title{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-bottom:16px;max-width:26ch}
+  .panel .p-desc{font-size:1.03rem;max-width:70ch}
+  .panel .badge-line{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);font-size:1.2rem;
+    font-weight:600;margin:44px 0 6px;display:flex;align-items:center;gap:14px}
+  .panel .badge-line::after{content:"";flex:1;height:1.5px;background:var(--brown)}
+  .acc-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:start}
+  .acc-item{border-bottom:1px solid var(--border)}
+  .acc-head{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-weight:600;
+    font-size:1rem;line-height:1.4;padding:18px 2px;cursor:pointer;display:flex;justify-content:space-between;
+    align-items:center;gap:16px;color:var(--ink);transition:color .15s ease}
+  .acc-head:hover,.acc-item.open .acc-head{color:var(--brown)}
+  .acc-item.open .acc-head{font-weight:700}
+  .chev{flex:0 0 auto;color:var(--gold);transition:transform .25s ease}
   .acc-item.open .chev{transform:rotate(180deg);color:var(--brown)}
   .acc-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .acc-body .inner{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
+  .acc-body .inner{padding:0 2px 20px;color:var(--muted);font-size:.96rem}
   .acc-body .inner ul{margin:2px 0 0 18px}
   .acc-body .inner li{margin-bottom:8px}
-
-  .timeline-head{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
-    font-size:1.35rem;font-weight:600;margin:46px 0 22px}
-  .timeline-img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;border-radius:12px}
-  /* Each partner gets its own chip tone: AWS is white-on-transparent, HackerRank is near-black */
+  .timeline-head{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);font-size:1.2rem;
+    font-weight:600;margin:48px 0 18px}
+  .timeline-img{width:100%;height:auto;display:block;border-radius:var(--r-media)}
   .partner-logos{display:inline-flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
-  .partner-logos .chip{display:inline-flex;gap:30px;align-items:center;padding:14px 28px;border-radius:12px}
-  .partner-logos .chip.dark{background:var(--night)}
-  .partner-logos .chip.light{background:#fff;border:1px solid var(--border)}
+  .partner-logos .chip{gap:30px;padding:14px 28px;border-radius:12px}
   .partner-logos img{height:30px;width:auto;object-fit:contain;display:block}
   .partner-logos .lg-hr{height:20px}
-  .partner-logos .chip.light:has(.lg-bg){padding-top:8px;padding-bottom:8px}
   .partner-logos .lg-bg{height:44px}
-  .partner-note{color:#fff;font-weight:600;font-size:.95rem;letter-spacing:.01em;
-    padding-left:30px;border-left:1px solid rgba(255,255,255,.28)}
-  .panel-cta{text-align:center;margin-top:40px}
-
-  /* ---- tool pills ----
-     text, not logos: no n8n or Claude marks ship in /images, and a pill row sits with the
-     partner chips above it without pulling a second visual weight into the panel. */
-  /* Every tool here ships a real mark, so the row is bare artwork — no pills. A pill around
-     a logo reads as a second border fighting it, and each mark is already its own label.
-     Heights are tuned per mark rather than shared: these are three wordmark lockups and one
-     square icon, so matching their box heights would leave the wordmarks tiny next to the
-     icon. What is matched is optical weight — roughly equal cap height across the row. */
+  .partner-logos .chip.light:has(.lg-bg){padding-top:8px;padding-bottom:8px}
+  .partner-note{color:#fff;font-weight:600;font-size:.95rem;padding-left:30px;border-left:1px solid rgba(255,255,255,.28)}
   .tool-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}
   .tool-logo{width:auto;object-fit:contain;display:block}
-  .tool-logo.lg-claude{height:25px}
-  .tool-logo.lg-cc{height:31px}
-  .tool-logo.lg-n8n{height:23px}
-  .tool-logo.lg-gpt{height:26px}
-
-  /* ---- certificate showcase ---- */
-  .cert-showcase{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;
-    background:var(--cream);border:1px solid var(--border-soft);border-radius:18px;
-    padding:44px;margin-top:46px}
-  .cert-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;
-    justify-content:center;background:var(--yellow);color:var(--brown-deep);margin-bottom:22px}
-  .cert-copy h4{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:700;line-height:1.14;
-    margin-bottom:16px}
-  /* the column is vertically centred, so a heading with no caption under it must drop its
-     trailing margin or the block sits half that margin above true centre */
+  .tool-logo.lg-claude{height:25px}.tool-logo.lg-cc{height:31px}.tool-logo.lg-n8n{height:23px}.tool-logo.lg-gpt{height:26px}
+  .cert-showcase{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;margin-top:48px;
+    padding:40px;background:var(--cream);border-radius:var(--r-panel)}
+  .cert-copy h4{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:700;line-height:1.14;margin-bottom:16px}
   .cert-copy h4:last-child{margin-bottom:0}
   .cert-copy p{font-size:1rem}
-  .cert-visual img{width:100%;height:auto;display:block;border-radius:12px}
+  .cert-visual img{width:100%;height:auto;display:block;border-radius:var(--r-media)}
+  .panel-cta{margin-top:44px}
 
-  /* ---- testimonials ---- */
-  .testi{background:var(--white);padding:76px 0 88px}
-  .testi h2{text-align:center;max-width:860px;margin:0 auto 44px}
-  .carousel{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px}
-  .car-btn{flex:0 0 auto;width:48px;height:48px;border-radius:50%;border:1px solid var(--border);
-    background:var(--white);cursor:pointer;color:var(--brown);display:flex;align-items:center;
-    justify-content:center;font-size:1.1rem;transition:.15s}
+  /* ---- alumni: before → after as two steps joined by a line ---- */
+  .testi{background:var(--white);padding:100px 0}
+  .testi-grid{display:grid;grid-template-columns:4fr 8fr;gap:64px;align-items:center}
+  .testi-intro h2{margin-bottom:28px}
+  .car-nav{display:flex;align-items:center;gap:10px}
+  .car-btn{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--brown);background:var(--white);
+    color:var(--brown);cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .15s ease,border-color .15s ease,color .15s ease}
   .car-btn:hover{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
-  .car-window{flex:1;position:relative;min-height:340px}
-  .slide{display:none;background:var(--cream);border:1px solid var(--border-soft);border-radius:18px;
-    padding:36px;grid-template-columns:250px 1fr;gap:34px;align-items:center}
-  .slide.active{display:grid;animation:fade .3s ease}
-  .slide .avatar-img{width:100%;aspect-ratio:3/4;border-radius:12px;object-fit:cover;object-position:top;display:block}
-  .slide .t-name{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);
-    font-size:1.6rem;font-weight:700;line-height:1.1;margin-bottom:18px}
-  .t-label{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:4px}
-  .t-label.after{background:var(--yellow);color:var(--brown-deep);display:inline-block;padding:4px 11px;
-    border-radius:999px;margin:18px 0 6px}
-  .t-role{font-size:1.1rem;font-weight:700;color:var(--ink)}
-  .t-at{font-size:.98rem;color:var(--muted)}
+  .car-btn svg{width:20px;height:20px;display:block}
+  .car-count{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.04em;
+    color:var(--brown);margin-left:10px}
+  .slide{display:none}
+  .slide.active{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:center}
+  .slide .avatar-img{width:100%;aspect-ratio:3/4;border-radius:var(--r-media);object-fit:cover;object-position:top;display:block}
+  .t-name{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--brown);font-size:1.9rem;
+    font-weight:700;line-height:1.05;margin-bottom:20px}
+  .t-step{border-radius:var(--r-media);padding:16px 20px}
+  .t-step.before{background:var(--cream)}
+  .t-step.after{background:var(--yellow)}
+  .t-join{display:block;width:1.5px;height:22px;background:var(--brown);margin-left:30px}
+  .t-label{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--brown);margin-bottom:4px}
+  .t-role{display:block;font-size:1.06rem;font-weight:800;color:var(--brown-deep);line-height:1.3}
+  .t-at{display:block;font-size:.95rem;color:var(--muted)}
+  .t-step.after .t-at{color:var(--brown-deep)}
 
-  /* ---- final cta ---- */
-  .final{background:var(--cream-deep);padding:80px 0 92px;text-align:center}
-  .final h2{max-width:900px;margin:0 auto 36px}
-  /* five programmes no longer fit on one row, and the full 1160 lets four sit up top with a
-     lone fifth stranded under them. Capping the row forces a balanced 3 + 2 instead. */
-  .final .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
-    max-width:920px;margin:0 auto}
-  .final .btn{min-width:0;padding:17px 26px;font-size:.92rem}
+  /* ---- final: the one full-yellow close ---- */
+  .final{background:var(--yellow);padding:96px 0}
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .final h2{color:var(--brown-deep)}
+  .final .deadline{margin-top:20px;font-weight:800;color:var(--brown-deep);font-size:1.02rem}
+  .cta-list{list-style:none}
+  .cta-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;
+    border-top:1.5px solid var(--brown-deep);text-decoration:none;color:var(--brown-deep)}
+  .cta-list li:last-child a{border-bottom:1.5px solid var(--brown-deep)}
+  .cta-name{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:clamp(1.05rem,1.8vw,1.3rem);line-height:1.15}
+  .cta-name small{display:block;font-family:'Mulish',sans-serif;text-transform:none;font-weight:700;font-size:.82rem;margin-top:3px}
+  .cta-pill{flex:0 0 auto;font-weight:800;font-size:.85rem;padding:10px 20px;border-radius:999px;
+    background:var(--brown-deep);color:var(--yellow);transition:background .15s ease,color .15s ease}
+  .cta-list a:hover .cta-pill{background:var(--night);color:#fff}
+  .cta-list a:focus-visible{outline-color:var(--brown-deep)}
 
   /* ---- footer ---- */
-  footer{background:var(--night);color:rgba(255,255,255,.72);padding:60px 0 30px;font-size:.9rem}
-  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px}
-  footer h4{font-family:'Oswald',sans-serif;text-transform:uppercase;color:var(--yellow);
-    font-size:.9rem;font-weight:600;letter-spacing:.08em;margin-bottom:16px}
-  footer a{color:rgba(255,255,255,.7);text-decoration:none;display:block;margin-bottom:10px}
+  footer{background:var(--night);color:rgba(255,255,255,.72);padding:64px 0 28px;font-size:.92rem}
+  .foot-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:44px}
+  footer h4{font-size:.9rem;font-weight:600;letter-spacing:.08em;color:var(--yellow);margin-bottom:14px}
+  footer p{color:rgba(255,255,255,.62);max-width:34ch}
+  footer a{color:rgba(255,255,255,.72);text-decoration:none;display:block;padding:5px 0}
   footer a:hover{color:var(--yellow)}
+  footer :focus-visible{outline-color:var(--yellow)}
   .foot-logo-img{width:60px;height:60px;object-fit:contain;display:block;margin-bottom:16px}
-  .foot-social{display:flex;gap:12px;margin-top:36px}
-  /* footer a is display:block with a bottom margin — the icon row has to opt out of both */
-  .foot-social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
-    margin:0;border-radius:50%;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);
-    transition:.15s}
+  .foot-sub{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(255,255,255,.58);margin:22px 0 6px}
+  .foot-social{display:flex;gap:10px;margin-top:26px}
+  .foot-social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;
+    border-radius:50%;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.78);transition:.15s}
   .foot-social a:hover{background:var(--yellow);border-color:var(--yellow);color:var(--brown-deep)}
   .foot-social svg{width:18px;height:18px;display:block}
-  .foot-social+.foot-bottom{margin-top:28px}
-  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding-top:22px;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    color:rgba(255,255,255,.45);font-size:.82rem}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:48px;padding-top:20px;display:flex;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;color:rgba(255,255,255,.6);font-size:.82rem}
 
-  /* ---- whatsapp float ----
-     dark rather than yellow: the page's own CTAs are yellow pills, so a yellow float
-     would read as one more of them instead of a persistent, separate affordance. */
+  /* ---- whatsapp: dark, so it never reads as one more yellow CTA ---- */
   .wa{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--night);color:var(--yellow);
-    border-radius:999px;padding:15px 26px;font-weight:700;box-shadow:0 12px 30px rgba(36,30,5,.35);
-    text-decoration:none;font-size:.94rem}
+    border-radius:999px;padding:15px 26px;font-weight:700;text-decoration:none;font-size:.94rem;
+    border:1.5px solid rgba(245,197,24,.35);transition:background .15s ease}
   .wa:hover{background:var(--brown-deep)}
+  .wa:focus-visible{outline-color:var(--yellow)}
 
-  @media(max-width:920px){
-    /* on a phone the hero is tall and narrow, so `contain` would shrink the campus to a
-       thin strip along the bottom. Oversize it and crop the sides instead, biased to 58%
-       across so the crop stays centred on the entrance and the sign rather than the wall. */
-    .hero{background-size:100% 100%,190% auto;background-position:center,58% bottom}
-    .claim-grid{grid-template-columns:1fr;gap:28px}
-    .claim-visual{min-height:360px}
-    .cards{grid-template-columns:1fr}
+  @media(max-width:960px){
+    .hero{padding:44px 0 72px}
+    .hero-grid,.claim-grid,.get-grid,.why-grid,.testi-grid,.final-grid,.sec-head{grid-template-columns:1fr}
+    .hero-grid{gap:44px}
+    .seal{left:auto;right:18px;bottom:-34px;width:128px;height:128px}
+    .seal strong{font-size:2.5rem}
+    .sec-head{gap:14px}
+    .tiers{grid-template-columns:1fr}
+    .claim-grid,.get-grid,.testi-grid,.final-grid{gap:36px}
+    .why-grid{gap:28px}
+    .why-intro{position:static}
     .acc-cols{grid-template-columns:1fr}
-    .cert-showcase{grid-template-columns:1fr;gap:28px;padding:32px 24px;text-align:center}
-    .cert-icon{margin-left:auto;margin-right:auto}
+    .acc-col+.acc-col{border-top:0}
+    .cert-showcase{grid-template-columns:1fr;gap:26px;padding:28px 22px}
     .program-panel{padding:34px 22px}
-    .slide.active{grid-template-columns:1fr;text-align:center}
-    .slide .avatar-img{max-width:220px;margin:0 auto}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
-    .cta-primary{grid-template-columns:1fr}
-    /* the two rates stay side by side even on a phone — seeing 30% next to 15% is the point,
-       so only the third tile (the second programme on the 15% rate) drops to its own row */
-    .claim-tiles{grid-template-columns:1fr 1fr;gap:10px}
-    .c-tile.ai{grid-column:1/-1}
-    .c-tile{padding:16px 14px 15px}
-    .c-for{font-size:.86rem}
-    .checks li{padding:15px 17px;font-size:.97rem}
-    .tab{padding:12px 18px;font-size:.84rem}
-    .cert-showcase{padding:26px 18px}
-    .final .btn{width:100%;min-width:0}
+    :root{--nav-h:77px}
+    .top-cta{display:none}
+    .logo-revou-img{width:52px;height:52px}
+    .logo-bncc-img{height:50px}
+    .get-list{grid-template-columns:1fr}
+    .prog{padding:20px 20px}
+    .tier-head{padding:22px 20px}
+    .slide.active{grid-template-columns:1fr}
+    .slide .avatar-img{max-width:200px}
+    .tab{padding:11px 16px;font-size:.84rem}
     .foot-grid{grid-template-columns:1fr}
+    .wa{right:14px;bottom:14px;padding:13px 20px;font-size:.86rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  }
+
+  /* ============================================================
+     CAMPUS EDITION — premium depth, same RevoU × BINUS system.
+     The authentic campus photograph owns the first viewport. The familiar cream,
+     yellow and brown palette, Oswald/Mulish pairing and pill CTAs remain unchanged;
+     hierarchy now comes from cinematic contrast, warm highlights and restrained
+     elevation instead of a sequence of flat colour fields.
+     ============================================================ */
+  :root{
+    --shadow-sm:0 10px 30px rgba(36,30,5,.08);
+    --shadow-md:0 24px 70px rgba(36,30,5,.13);
+    --shadow-deep:0 34px 90px rgba(15,13,2,.32);
+  }
+  body{background:#fbf7e8}
+  .topbar{background:rgba(255,255,255,.94);border-bottom-color:rgba(89,69,0,.1);
+    box-shadow:0 8px 34px rgba(36,30,5,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .topbar .wrap{max-width:1320px}
+  .top-cta{box-shadow:0 8px 22px rgba(204,159,0,.2)}
+
+  /* Campus-led hero */
+  .hero{position:relative;isolation:isolate;min-height:calc(100svh - var(--nav-h));padding:0;
+    overflow:hidden;background:var(--night);display:flex;align-items:stretch}
+  .hero-media{position:absolute;inset:0;z-index:-2}
+  .hero-photo{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 49%;border-radius:0;
+    filter:saturate(.92) contrast(1.04)}
+  .hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:
+    linear-gradient(90deg,rgba(16,14,2,.94) 0%,rgba(22,19,3,.83) 35%,rgba(25,21,3,.36) 67%,rgba(25,21,3,.14) 100%),
+    linear-gradient(0deg,rgba(16,14,2,.8) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
+  .hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:
+    radial-gradient(circle at 82% 28%,rgba(245,197,24,.2),transparent 28%),
+    linear-gradient(180deg,rgba(245,197,24,.06),transparent 30%);mix-blend-mode:screen}
+  .hero-grid{width:100%;min-height:calc(100svh - var(--nav-h));grid-template-columns:minmax(0,1.22fr) minmax(290px,.56fr);
+    gap:clamp(42px,6vw,96px);align-items:end;padding-top:clamp(72px,10vh,120px);padding-bottom:clamp(64px,9vh,104px);
+    position:relative;z-index:2}
+  .hero-copy{max-width:780px}
+  .hero h1{font-size:clamp(3.2rem,6.5vw,6rem);line-height:.93;color:#fff8df;margin-bottom:28px;
+    max-width:12.5ch;text-shadow:0 5px 34px rgba(0,0,0,.38)}
+  .hero .mark{color:var(--yellow);background:none;padding:0}
+  .hero .lead{color:rgba(255,255,255,.79);font-size:clamp(1rem,1.25vw,1.12rem);max-width:66ch}
+  .hero .lead b{color:#fff;font-weight:800}
+  .hero .lead+.lead{padding-left:18px;border-left:2px solid var(--yellow);color:rgba(255,248,223,.94)}
+  .hero-cta{margin-top:34px}
+  .hero .btn{box-shadow:0 12px 34px rgba(0,0,0,.25)}
+  .hero .btn.line{border-color:rgba(255,255,255,.7);color:#fff;background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+  .hero .btn.line:hover{background:#fff;color:var(--brown-deep)}
+  .hero-offer{position:relative;align-self:end;padding:30px 30px 28px;background:rgba(28,25,1,.84);
+    border:1px solid rgba(245,197,24,.42);border-top:4px solid var(--yellow);border-radius:22px;
+    box-shadow:var(--shadow-deep);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);overflow:hidden}
+  .hero-offer::after{content:"";position:absolute;width:160px;height:160px;right:-74px;top:-74px;border-radius:50%;
+    border:1px solid rgba(245,197,24,.22);box-shadow:0 0 0 24px rgba(245,197,24,.035),0 0 0 52px rgba(245,197,24,.025)}
+  .offer-kicker{color:rgba(255,255,255,.72);font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+  .offer-number{display:block;font-family:'Oswald',sans-serif;font-size:clamp(5.6rem,9vw,8rem);
+    line-height:.85;letter-spacing:-.055em;color:var(--yellow);margin:16px 0 14px}
+  .offer-number small{display:block;font-family:'Mulish',sans-serif;font-size:.75rem;line-height:1;
+    letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:12px}
+  .offer-value{display:flex;align-items:flex-start}
+  .offer-value i{font-style:normal;font-size:.38em;line-height:1;margin:.12em 0 0 .08em}
+  .offer-title{font-family:'Oswald',sans-serif;text-transform:uppercase;color:#fff8df;font-size:1.42rem;
+    font-weight:600;line-height:1.08}
+  .offer-copy{color:rgba(255,255,255,.68);font-size:.88rem;line-height:1.5;margin-top:10px}
+  .offer-deadline{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);
+    color:#fff8df;font-weight:800;font-size:.82rem}
+  .offer-deadline::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(245,197,24,.13)}
+
+  /* RevoU-style proof dock: ratings count up, company logos move continuously. */
+  .hero-grid{padding-bottom:clamp(244px,28vh,280px)}
+  .hero-proof{position:absolute;z-index:3;inset:auto 0 0;
+    background:linear-gradient(180deg,rgba(18,16,2,.78),rgba(13,12,2,.96));color:#fff8df;
+    border-top:1px solid rgba(245,197,24,.42);box-shadow:0 -22px 60px rgba(7,6,1,.32);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .proof-inner{max-width:1352px;margin:0 auto;padding:20px clamp(24px,5vw,64px) 18px}
+  .proof-top{display:flex;align-items:center;justify-content:center;gap:clamp(34px,5vw,68px);margin-bottom:16px}
+  .proof-title{font-size:.95rem;color:rgba(255,248,223,.84);white-space:nowrap}
+  .proof-title b{font-weight:800;color:var(--yellow)}
+  .proof-ratings{display:flex;align-items:flex-start;gap:clamp(28px,3.5vw,46px)}
+  .proof-rating{display:grid;justify-items:center;gap:3px;min-width:96px}
+  .proof-score{font-size:.98rem;font-weight:800;line-height:1;color:#fff8df}
+  .proof-stars{color:var(--yellow);font-size:.8rem;line-height:1;letter-spacing:-.04em;text-shadow:0 0 12px rgba(245,197,24,.3)}
+  .proof-rating img{display:block;width:auto;height:20px;max-width:96px;filter:brightness(0) invert(1);opacity:.9}
+  .company-proof{padding-top:15px;border-top:1px solid rgba(255,248,223,.18)}
+  .company-proof-title{text-align:center;font-size:.86rem;font-weight:700;color:rgba(255,248,223,.86);margin-bottom:12px}
+  .company-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .company-track{display:flex;align-items:center;width:max-content}
+  .company-track.is-ready{animation:companyMarquee 30s linear infinite}
+  .company-set{display:flex;align-items:center;gap:48px;flex:0 0 auto;padding-right:48px}
+  .company-item{display:grid;justify-items:center;gap:5px;min-width:112px;flex:0 0 auto}
+  .company-count{font-size:.78rem;font-weight:800;line-height:1;color:var(--yellow)}
+  .company-item img{display:block;width:auto;height:25px;max-width:132px;filter:brightness(0) invert(1);opacity:.9}
+  .company-more{min-width:148px;border-radius:10px;background:rgba(245,197,24,.12);
+    border:1px solid rgba(245,197,24,.36);padding:10px 15px;text-align:center;
+    font-size:.78rem;font-weight:800;line-height:1.25;color:#fff8df}
+  .company-note{text-align:center;margin-top:10px;font-size:.65rem;font-style:italic;color:rgba(255,248,223,.58)}
+  @keyframes proofReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes companyMarquee{to{transform:translateX(-50%)}}
+  .hero-proof{animation:proofReveal .7s cubic-bezier(.16,1,.3,1) .65s both}
+
+  /* Depth and section rhythm */
+  .statbar{position:relative;z-index:3;background:linear-gradient(105deg,#f5c518 0%,#ffd943 58%,#e8b900 100%);
+    box-shadow:0 18px 55px rgba(89,69,0,.18)}
+  .statbar h2{justify-content:center;text-align:center}
+  .choose{position:relative;background:
+    radial-gradient(circle at 8% 4%,rgba(245,197,24,.16),transparent 24%),#fbf7e8}
+  .choose .sec-head{grid-template-columns:1fr;gap:14px}
+  .choose .sec-head p{max-width:68ch}
+  .tier{border-color:rgba(89,69,0,.14);box-shadow:var(--shadow-md);transition:transform .25s ease,box-shadow .25s ease}
+  .tier:hover{transform:translateY(-5px);box-shadow:0 30px 84px rgba(36,30,5,.17)}
+  .t30 .tier-head{background:linear-gradient(135deg,#ffdf4d 0%,var(--yellow) 58%,#e3b100 100%)}
+  .t15{background:linear-gradient(180deg,#fff 0%,#fffcf3 100%)}
+  .t15 .tier-head{background:linear-gradient(135deg,#211d05 0%,var(--brown) 64%,#7a6007 100%)}
+  .prog{background:rgba(255,255,255,.76)}
+  .prog:hover{background:#fff9e6}
+  .prog-go{box-shadow:inset 0 0 0 0 var(--yellow);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+  .prog:hover .prog-go{transform:translateY(3px)}
+
+  .claim{background:linear-gradient(120deg,#211d05 0%,var(--brown-deep) 58%,#3e3204 100%);position:relative;overflow:hidden}
+  .claim::after{content:"";position:absolute;width:520px;height:520px;right:-220px;top:-250px;border-radius:50%;
+    border:1px solid rgba(245,197,24,.13);box-shadow:0 0 0 60px rgba(245,197,24,.025),0 0 0 120px rgba(245,197,24,.018)}
+  .claim-grid{position:relative;z-index:1}
+  .claim h2,.claim h3{color:#fff8df}
+  .claim p{color:rgba(255,255,255,.7)}
+  .claim b{color:#fff}
+  .claim .mark{color:var(--yellow);background:none}
+  .kenalan{border-top-color:rgba(245,197,24,.62)}
+  .claim-visual{background:linear-gradient(145deg,#ffdc40,var(--yellow));box-shadow:var(--shadow-deep);border:1px solid rgba(255,255,255,.14)}
+
+  .get{background:#fff}
+  .get-list li{position:relative;padding-right:12px}
+  .get-list li::after{content:"";position:absolute;inset:0 0 auto;height:1.5px;background:linear-gradient(90deg,var(--brown),transparent)}
+  .why{background:linear-gradient(180deg,#fbf7e8 0%,#fef6dc 100%)}
+  .why-item{background:rgba(255,255,255,.38);padding-left:22px;padding-right:22px;border-top-color:rgba(89,69,0,.34);transition:background .2s ease,transform .2s ease}
+  .why-item:hover{background:rgba(255,255,255,.8);transform:translateX(5px)}
+  .why-item:last-child{border-bottom-color:rgba(89,69,0,.34)}
+  .milestone{background:
+    radial-gradient(circle at 90% 5%,rgba(245,197,24,.2),transparent 25%),var(--cream-deep)}
+  .milestone .sec-head{grid-template-columns:1fr}
+  .tabs{gap:12px}
+  .tab{box-shadow:0 7px 20px rgba(36,30,5,.06)}
+  .program-panel{border-color:rgba(89,69,0,.12);box-shadow:var(--shadow-md)}
+  .cert-showcase{border:1px solid rgba(89,69,0,.1);box-shadow:var(--shadow-sm)}
+  .cert-visual img{box-shadow:var(--shadow-sm)}
+  .final{background:linear-gradient(120deg,#f5c518 0%,#ffdf54 54%,#e5b400 100%);position:relative;overflow:hidden}
+  .final::after{content:"";position:absolute;right:-3%;bottom:-10%;width:min(59vw,880px);aspect-ratio:1257/838;
+    background:url('/binus-bncc/images/binus-campus.png') right bottom/contain no-repeat;
+    filter:grayscale(1) contrast(1.08);mix-blend-mode:multiply;opacity:.13;pointer-events:none}
+  .final-grid{position:relative;z-index:1}
+  .cta-list{background:rgba(255,255,255,.32);border:1px solid rgba(89,69,0,.14);padding:8px 24px;border-radius:20px;
+    box-shadow:0 18px 52px rgba(89,69,0,.14);backdrop-filter:blur(8px)}
+  footer{background:linear-gradient(135deg,#161401 0%,#252005 100%)}
+  .wa{display:inline-flex;align-items:center;gap:9px;box-shadow:0 16px 40px rgba(20,18,1,.3)}
+  .wa svg{width:18px;height:18px;flex:0 0 auto}
+
+  /* Give the campus signage a clear focal area beside the desktop hero copy. */
+  @media(min-width:961px){
+    .hero-photo{width:78%;margin-left:auto;object-position:50% 52%}
+  }
+
+  @media(max-width:960px){
+    .hero{min-height:auto;flex-direction:column}
+    .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:clamp(110px,18vh,170px);padding-bottom:54px;gap:34px}
+    .hero h1{max-width:12ch}
+    .hero-copy{max-width:700px}
+    .hero-offer{max-width:360px;padding:24px 26px}
+    .offer-number{font-size:6rem}
+    .hero-media::before{background:linear-gradient(90deg,rgba(16,14,2,.94),rgba(22,19,3,.62)),linear-gradient(0deg,rgba(16,14,2,.75),transparent 55%)}
+    .hero-proof{position:relative;inset:auto}
+    .proof-inner{padding-left:24px;padding-right:24px}
+  }
+  @media(max-width:560px){
+    .hero-grid{padding-top:92px;padding-bottom:44px;gap:28px}
+    .hero h1{font-size:clamp(2.75rem,14vw,4.2rem);margin-bottom:22px}
+    .hero .lead{font-size:.95rem}
+    .hero-copy h1 + .lead{display:none}
+    .hero-offer{width:100%;max-width:none;display:grid;grid-template-columns:auto 1fr;column-gap:18px;align-items:center}
+    .offer-kicker{grid-column:1/-1}
+    .offer-number{grid-row:2/5;font-size:5.2rem;margin:15px 0 0}
+    .offer-title{font-size:1.12rem;margin-top:14px}
+    .offer-copy{font-size:.78rem}
+    .offer-deadline{grid-column:2;margin-top:12px;padding-top:12px}
+    .proof-inner{padding:16px 0 14px}
+    .proof-top{display:grid;justify-items:center;gap:12px;margin-bottom:14px}
+    .proof-title{font-size:.78rem}
+    .proof-ratings{gap:12px}
+    .proof-rating{min-width:72px}
+    .proof-rating img{height:17px;max-width:82px}
+    .company-proof-title{padding:0 20px;font-size:.7rem}
+    .company-set{gap:26px;padding-right:26px}
+    .company-item{min-width:86px}
+    .company-item img{height:20px;max-width:105px}
+    .statbar h2{justify-content:flex-start;text-align:left}
+    .tier:hover{transform:none}
+    .claim{padding:76px 0}
+    .why-item{padding-left:0;padding-right:0}
+    .why-item:hover{transform:none;background:transparent}
+    .cta-list{padding:6px 18px}
+    .final::after{right:-30%;bottom:-2%;width:125vw;opacity:.1}
+    .wa{width:54px;height:54px;padding:0;justify-content:center}
+    .wa span{display:none}
+    .wa svg{width:21px;height:21px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .company-track.is-ready{animation:none!important}
+    .company-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
   }
 </style>
 </head>
 <body>
 
-<!-- TOP LOGO BAR -->
+<!-- TOP BAR -->
 <header class="topbar">
-  <div class="wrap logos">
-    <img src="/binus-bncc/images/revou-logo.png" alt="RevoU" class="logo-revou-img">
-    <span class="logo-x">×</span>
-    <img src="/binus-bncc/images/bncc-logo.png" alt="BNCC — Bina Nusantara Computer Club, BINUS University" class="logo-bncc-img">
+  <div class="wrap">
+    <div class="logos">
+      <img src="/binus-bncc/images/revou-logo.png" alt="RevoU" class="logo-revou-img">
+      <span class="logo-x" aria-hidden="true">×</span>
+      <img src="/binus-bncc/images/bncc-logo.png" alt="BNCC — Bina Nusantara Computer Club, BINUS University" class="logo-bncc-img">
+    </div>
+    <a href="#pilih" class="btn top-cta">Daftar sebelum 23 Oktober 2026</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO — the campus is the primary visual, not a supporting thumbnail -->
 <section class="hero">
+  <div class="hero-media">
+    <img src="/binus-bncc/images/binus-campus.jpg" alt="Gedung kampus BINUS University" class="hero-photo">
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>Raih Karier Impian di Bidang Digital lewat Beasiswa Eksklusif!</h1>
-      <p class="hero-partner">BNCC (Bina Nusantara Computer Club) × RevoU</p>
-      <p class="lead"><span class="strong">Kamu anggota aktif atau alumni BNCC BINUS University?</span>
-        Ini kesempatanmu buat <span class="strong">mulai karier</span> di bidang paling dicari:
-        <span class="strong">Applied Cybersecurity with AI, Applied AI, Analytics &amp; Automation,
-        Software Engineering, Digital Marketing</span>, atau <span class="strong">Data Analytics</span>
-        bareng RevoU.</p>
-      <p class="lead"><span class="strong">Daftar sebelum 30 September 2026</span> dan dapatkan
-        <span class="strong">benefit spesial</span> khusus Anggota &amp; Alumni BNCC.</p>
+      <h1>Raih Karier Impian di Bidang Digital lewat <span class="mark">Beasiswa Eksklusif!</span></h1>
+      <p class="lead"><b>Kamu anggota aktif atau alumni BNCC BINUS University?</b>
+        Ini kesempatanmu buat <b>mulai karier</b> di bidang paling dicari:
+        <b>Applied Cybersecurity with AI, Applied AI, Analytics &amp; Automation,
+        Software Engineering, Digital Marketing</b>, atau <b>Data Analytics</b> bareng RevoU.</p>
+      <p class="lead"><b>Daftar sebelum 23 Oktober 2026</b> dan dapatkan <b>benefit spesial</b> untuk
+        Anggota &amp; Alumni BNCC.</p>
+      <div class="hero-cta">
+        <a href="#pilih" class="btn">Pilih Program</a>
+        <a href="#video" class="btn line" hidden>Intip keseruan belajar</a>
+      </div>
     </div>
-    <div class="hero-actions">
-      <p class="cta-label">Pilih Program</p>
-      <div class="cta-primary">
-        <a href="#program" data-goto="cs" class="btn-hero cs">
-          <span class="bh-tags">
-            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 15%</span>
-            <span class="bh-badge">Baru</span>
-            <span class="bh-logo dark"><img src="/binus-bncc/images/aws-logo.png" alt="AWS" class="lg-aws"><span class="lbl">Labs</span></span>
-            <span class="bh-logo light"><img src="/binus-bncc/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
-          </span>
-          <span class="bh-title">Applied Cybersecurity with AI</span>
-          <span class="bh-meta">12 minggu · Sertifikat dari 3 institusi</span>
-          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="#program" data-goto="se" class="btn-hero se">
-          <span class="bh-tags">
-            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
-            <span class="bh-logo dark"><img src="/binus-bncc/images/aws-logo.png" alt="AWS" class="lg-aws"></span>
-            <span class="bh-logo light"><img src="/binus-bncc/images/hackerrank-logo.png" alt="HackerRank" class="lg-hr"></span>
-          </span>
-          <span class="bh-title">Software Engineering</span>
-          <span class="bh-meta">6 bulan · AI-native pertama di Indonesia</span>
-          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="#program" data-goto="dm" class="btn-hero dm">
-          <span class="bh-tags">
-            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
-            <span class="bh-tag">AI-powered</span>
-          </span>
-          <span class="bh-title">Digital Marketing</span>
-          <span class="bh-meta">4 bulan · Growth &amp; performance marketing</span>
-          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="#program" data-goto="da" class="btn-hero da">
-          <span class="bh-tags">
-            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 30%</span>
-            <span class="bh-tag">AI-powered</span>
-          </span>
-          <span class="bh-title">Data Analytics</span>
-          <span class="bh-meta">4 bulan · Analitik siap kerja bareng AI</span>
-          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="#program" data-goto="ai" class="btn-hero ai wide">
-          <span class="bh-tags">
-            <span class="bh-scholar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.5 8.1 12 13.2l10.5-5.1z" fill="currentColor"/><path d="M5.4 10.8v4.7c0 1.8 2.9 3.3 6.6 3.3s6.6-1.5 6.6-3.3v-4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21.2 9.2v5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Beasiswa 15%</span>
-            <span class="bh-badge">Baru</span>
-            <span class="bh-logo light"><img src="/binus-bncc/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
-            <span class="bh-logo light">
-              <img src="/binus-bncc/images/n8n-logo.png" alt="n8n" class="lg-n8n">
-              <img src="/binus-bncc/images/claude-code-logo.png" alt="Claude Code" class="lg-cc">
-            </span>
-          </span>
-          <span class="bh-title">Applied AI, Analytics &amp; Automation</span>
-          <span class="bh-meta">12 minggu · Mulai Oktober 2026 · Online live + sesi on-campus di BINUS Kemanggisan · Tanpa pengalaman coding</span>
-          <span class="bh-go">Lihat kurikulum <svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
+    <aside class="hero-offer" aria-label="Informasi beasiswa">
+      <p class="offer-kicker">Benefit khusus BNCC</p>
+      <div class="offer-number"><small>Hingga</small><span class="offer-value">30<i>%</i></span></div>
+      <p class="offer-title">Beasiswa biaya program</p>
+      <p class="offer-copy">Untuk anggota aktif &amp; alumni BNCC BINUS University.</p>
+      <p class="offer-deadline">Daftar sebelum 23 Oktober 2026</p>
+    </aside>
+  </div>
+  <div class="hero-proof" aria-label="Rating RevoU dan perusahaan tempat alumni bekerja">
+    <div class="proof-inner">
+      <div class="proof-top">
+        <p class="proof-title">Dipercaya oleh <b>2,7 juta+</b> pembelajar</p>
+        <div class="proof-ratings">
+          <div class="proof-rating">
+            <span class="proof-score" data-rating="4.94" data-decimals="2" aria-label="Rating 4.94">4.94</span>
+            <span class="proof-stars" aria-hidden="true">★★★★★</span>
+            <img src="/binus-bncc/images/proof/course-report.C9B26bEi.svg" alt="Course Report" width="69" height="16">
+          </div>
+          <div class="proof-rating">
+            <span class="proof-score" data-rating="4.93" data-decimals="2" aria-label="Rating 4.93">4.93</span>
+            <span class="proof-stars" aria-hidden="true">★★★★★</span>
+            <img src="/binus-bncc/images/proof/switchup.CP6x00Gv.svg" alt="SwitchUp" width="63" height="16">
+          </div>
+          <div class="proof-rating">
+            <span class="proof-score" data-rating="4.8" data-decimals="1" aria-label="Rating 4.8">4.8</span>
+            <span class="proof-stars" aria-hidden="true">★★★★★</span>
+            <img src="/binus-bncc/images/proof/google.3yJEmnZ5.svg" alt="Google" width="49" height="16">
+          </div>
+        </div>
+      </div>
+      <div class="company-proof">
+        <p class="company-proof-title">Alumni RevoU bekerja di perusahaan ternama Indonesia</p>
+        <div class="company-marquee" aria-label="Perusahaan tempat alumni RevoU bekerja">
+          <div class="company-track">
+            <div class="company-set">
+              <div class="company-item"><span class="company-count">56</span><img src="/binus-bncc/images/proof/bca.DHTQRN5S.svg" alt="BCA" width="72" height="20"></div>
+              <div class="company-item"><span class="company-count">52</span><img src="/binus-bncc/images/proof/mandiri.4v4Agjva.svg" alt="Mandiri" width="90" height="20"></div>
+              <div class="company-item"><span class="company-count">49</span><img src="/binus-bncc/images/proof/bri.BnVmUcMb.svg" alt="BRI" width="64" height="20"></div>
+              <div class="company-item"><span class="company-count">63</span><img src="/binus-bncc/images/proof/telkom.B8SSg6z5.svg" alt="Telkom Indonesia" width="98" height="20"></div>
+              <div class="company-item"><span class="company-count">30</span><img src="/binus-bncc/images/proof/goto.D6lZVyP3.svg" alt="GoTo" width="58" height="20"></div>
+              <div class="company-item"><span class="company-count">48</span><img src="/binus-bncc/images/proof/shopee.BJSRXtRs.svg" alt="Shopee" width="69" height="20"></div>
+              <div class="company-item"><span class="company-count">31</span><img src="/binus-bncc/images/proof/pertamina.7G9agcwj.svg" alt="Pertamina" width="103" height="20"></div>
+              <div class="company-item"><span class="company-count">38</span><img src="/binus-bncc/images/proof/tiktok.CittzP-2.svg" alt="TikTok" width="60" height="20"></div>
+              <div class="company-item"><span class="company-count">20</span><img src="/binus-bncc/images/proof/grab.DkNU6kWt.svg" alt="Grab" width="68" height="20"></div>
+              <div class="company-item"><span class="company-count">20</span><img src="/binus-bncc/images/proof/cimb-niaga.B7Umw-4V.svg" alt="CIMB Niaga" width="131" height="20"></div>
+              <div class="company-item"><span class="company-count">23</span><img src="/binus-bncc/images/proof/omnicom.icJ-tc2G.svg" alt="Omnicom Media Group" width="113" height="20"></div>
+              <div class="company-more">dan 500+ perusahaan lainnya</div>
+            </div>
+          </div>
+        </div>
+        <p class="company-note">Jumlah alumni berdasarkan data LinkedIn yang tersedia untuk publik.</p>
       </div>
     </div>
   </div>
@@ -537,56 +679,112 @@
 
 <!-- STAT BAR -->
 <section class="statbar">
-  <div class="wrap"><h2>Karier 15.000+ Individu Sudah Berubah. Siap Jadi Berikutnya?</h2></div>
+  <div class="wrap"><h2><span>Karier</span> <span class="big">15.000+</span> <span>Individu Sudah Berubah. Siap Jadi Berikutnya?</span></h2></div>
 </section>
 
-<!-- CLAIM + KENALAN + VIDEO -->
-<section class="block">
+<!-- RATE TIERS -->
+<section class="choose" id="pilih">
   <div class="wrap">
-    <div class="claim-grid">
-      <div class="claim-visual">
-        <img src="/binus-bncc/images/hero-students.png" alt="Anggota &amp; Alumni BNCC BINUS University">
+    <div class="sec-head">
+      <h2>Pilih Program</h2>
+      <p>Pilihan beasiswa khusus anggota aktif &amp; alumni <b>BNCC (Bina Nusantara Computer Club)</b>.
+        Pilih program untuk lihat kurikulum lengkapnya.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier t30">
+        <div class="tier-head">
+          <span class="tier-rate">30<i>%</i></span>
+          <span class="tier-lbl">Potongan biaya</span>
+          <span class="tier-for">Software Engineering &amp; program Full Stack lain-nya</span>
+        </div>
+        <a href="#program" data-goto="se" class="prog">
+          <span class="prog-name">Software Engineering</span>
+          <span class="prog-meta">6 bulan · AI-native pertama di Indonesia</span>
+          <span class="prog-go" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="prog-tags">
+            <span class="chip dark"><img src="/binus-bncc/images/aws-logo.png" alt="AWS" class="lg-aws"></span>
+            <span class="chip light"><img src="/binus-bncc/images/hackerrank-logo.png" alt="HackerRank" class="lg-hr"></span>
+          </span>
+          <span class="vh">Lihat kurikulum</span>
+        </a>
+        <a href="#program" data-goto="dm" class="prog">
+          <span class="prog-name">Digital Marketing</span>
+          <span class="prog-meta">4 bulan · Growth &amp; performance marketing</span>
+          <span class="prog-go" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="prog-tags"><span class="tag">AI-powered</span></span>
+          <span class="vh">Lihat kurikulum</span>
+        </a>
+        <a href="#program" data-goto="da" class="prog">
+          <span class="prog-name">Data Analytics</span>
+          <span class="prog-meta">4 bulan · Analitik siap kerja bareng AI</span>
+          <span class="prog-go" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="prog-tags"><span class="tag">AI-powered</span></span>
+          <span class="vh">Lihat kurikulum</span>
+        </a>
       </div>
-      <div class="claim-text">
-        <h2>Klaim Beasiswa Khusus BNCC &amp; Gabung dengan 260+ Alumni BINUS di RevoU!</h2>
-        <p class="lede">Khusus buat anggota aktif &amp; alumni <span class="strong">BNCC (Bina Nusantara
-          Computer Club)</span>. Belajar skill yang paling dicari perusahaan plus bimbingan karier dengan
-          beasiswa:</p>
-        <div class="claim-tiles">
-          <div class="c-tile se">
-            <span class="c-off">30%</span>
-            <span class="c-lbl">Potongan biaya</span>
-            <span class="c-for">Software Engineering &amp; program Full Stack lain-nya</span>
-          </div>
-          <div class="c-tile cs">
-            <span class="c-off">15%</span>
-            <span class="c-lbl">Potongan biaya</span>
-            <span class="c-for">Applied Cybersecurity with AI</span>
-          </div>
-          <div class="c-tile ai">
-            <span class="c-off">15%</span>
-            <span class="c-lbl">Potongan biaya</span>
-            <span class="c-for">Applied AI, Analytics &amp; Automation</span>
-          </div>
+      <div class="tier t15">
+        <div class="tier-head">
+          <span class="tier-rate">15<i>%</i></span>
+          <span class="tier-lbl">Potongan biaya</span>
+          <span class="tier-for">Applied Cybersecurity with AI · Applied AI, Analytics &amp; Automation</span>
         </div>
-        <div class="kenalan">
-          <h3>Kenalan sama RevoU</h3>
-          <p>Platform pendidikan online terbaik di Indonesia — program belajar penuh praktik langsung dengan
-            kurikulum sesuai kebutuhan industri, biar skill-mu benar-benar kepakai di dunia kerja.</p>
-        </div>
+        <a href="#program" data-goto="cs" class="prog">
+          <span class="prog-name">Applied Cybersecurity with AI</span>
+          <span class="prog-meta">12 minggu · Sertifikat dari 3 institusi</span>
+          <span class="prog-go" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="prog-tags">
+            <span class="tag new">Baru</span>
+            <span class="chip dark"><img src="/binus-bncc/images/aws-logo.png" alt="AWS" class="lg-aws"><span class="lbl">Labs</span></span>
+            <span class="chip light"><img src="/binus-bncc/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
+          </span>
+          <span class="vh">Lihat kurikulum</span>
+        </a>
+        <a href="#program" data-goto="ai" class="prog">
+          <span class="prog-name">Applied AI, Analytics &amp; Automation</span>
+          <span class="prog-meta">12 minggu · Mulai Oktober 2026 · Online live + sesi on-campus di BINUS Kemanggisan · Tanpa pengalaman coding</span>
+          <span class="prog-go" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="prog-tags">
+            <span class="tag new">Baru</span>
+            <span class="chip light"><img src="/binus-bncc/images/binus-greatnusa.png" alt="BINUS University &amp; GreatNusa" class="lg-bg"></span>
+            <span class="chip light"><img src="/binus-bncc/images/n8n-logo.png" alt="n8n" class="lg-n8n"><img src="/binus-bncc/images/claude-code-logo.png" alt="Claude Code" class="lg-cc"></span>
+          </span>
+          <span class="vh">Lihat kurikulum</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VIDEO + STATS -->
-<section class="video-block">
+<!-- CLAIM + KENALAN -->
+<section class="claim">
+  <div class="wrap claim-grid">
+    <div>
+      <h2>Klaim Beasiswa &amp; Gabung dengan <span class="mark">260+ Alumni BINUS</span> di RevoU!</h2>
+      <p class="lede">Khusus buat anggota aktif &amp; alumni <b>BNCC (Bina Nusantara Computer Club)</b>.
+        Belajar skill yang paling dicari perusahaan plus bimbingan karier dengan beasiswa hingga 30%.</p>
+      <div class="kenalan">
+        <h3>Kenalan sama RevoU</h3>
+        <p>Platform pendidikan online terbaik di Indonesia — program belajar penuh praktik langsung dengan
+          kurikulum sesuai kebutuhan industri, biar skill-mu benar-benar kepakai di dunia kerja.</p>
+      </div>
+    </div>
+    <div class="claim-visual">
+      <img src="/binus-bncc/images/hero-students.png" alt="Anggota &amp; Alumni BNCC BINUS University">
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO + STATS — hidden for now; remove the `hidden` attribute to bring it back -->
+<section class="video-sec" hidden>
   <div class="wrap">
-    <p class="video-head">Klik Video untuk Intip Keseruan Belajar di RevoU</p>
+    <div class="sec-head">
+      <h2>Klik Video untuk Intip Keseruan Belajar di RevoU</h2>
+      <p>Kelas online live, proyek nyata, dan bimbingan karier — begini rasanya belajar di RevoU.</p>
+    </div>
     <div class="video" id="video" data-yt="ZvpJPtOO5fA"
-         style="background-image:url('/binus-bncc/images/video-thumbnail.jpeg');cursor:pointer"
+         style="background-image:url('/binus-bncc/images/video-thumbnail.jpeg')"
          role="button" tabindex="0" aria-label="Putar video: intip keseruan belajar di RevoU">
-      <span class="play"></span>
+      <span class="play" aria-hidden="true"></span>
     </div>
     <img src="/binus-bncc/images/stats-banner-desktop.png" class="stats-banner"
          alt="2.695.700+ pembelajar, 15.000+ alumni — Best Digital Marketing Bootcamp 2024">
@@ -594,50 +792,36 @@
 </section>
 
 <!-- WHAT YOU GET -->
-<section class="block get">
-  <div class="wrap">
+<section class="get">
+  <div class="wrap get-grid">
     <h2>Apa yang akan Kamu Dapatkan di RevoU</h2>
-    <ul class="checks">
-      <li><span class="tx">Kelas Online Live yang Diajar oleh Ahli Industri</span></li>
-      <li><span class="tx">Tampil Beda di Pasar Kerja dengan Kurikulum Terintegrasi AI dari RevoU</span></li>
-      <li><span class="tx">Kerjakan Proyek &amp; Pengembangan Proyek yang Dibimbing Langsung oleh Para Ahli supaya Kamu Siap Kerja</span></li>
-      <li><span class="tx">Career Coaching &amp; Dukungan Pencarian Kerja dengan mentor dan AI assistant</span></li>
+    <ul class="get-list">
+      <li><span>Kelas Online Live yang Diajar oleh <em>Industry Expert</em></span></li>
+      <li><span><em>Stand out</em> di dunia kerja dengan Kurikulum Terintegrasi AI dari RevoU</span></li>
+      <li><span>Proyek nyata yang dibimbing langsung <em>Industry Expert</em>, siap bantu kamu jadi siap kerja</span></li>
+      <li><span>Career Coaching &amp; Dukungan Pencarian Kerja dengan mentor dan AI assistant</span></li>
     </ul>
   </div>
 </section>
 
-<!-- READY / CARDS -->
-<section class="block ready">
-  <div class="wrap">
-    <div class="intro">
+<!-- WHY -->
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="why-intro">
       <h2>Siap Kerja di Dunia Digital? Mulai Bareng RevoU!</h2>
-      <p>Di dunia kerja sekarang, skill praktis, pengalaman nyata, dan persiapan karier jadi kunci utama
-        selain gelar. RevoU hadir untuk membantu mahasiswa dan lulusan dari komunitas &amp; University Partner kami agar lebih
-        siap menghadapi tantangan tersebut. Yuk, simak gimana RevoU bisa mempersiapkan kamu jadi individu yang
-        siap kerja!</p>
     </div>
-    <div class="cards">
-      <div class="card">
-        <span class="num" aria-hidden="true">1</span>
+    <div>
+      <div class="why-item">
+        <span class="why-n" aria-hidden="true">1</span>
         <h3>Kuasai Skill Digital yang Dicari Perusahaan</h3>
-        <p>RevoU bantu kamu pelajari skill praktis di Digital Marketing, Data Analytics, Software Engineering,
-          Applied Cybersecurity with AI, atau Applied AI, Analytics &amp; Automation—semua dibimbing praktisi
-          industri. Plus, kurikulumnya udah
-          terintegrasi AI, jadi kamu
-          bisa tetap relevan di job market yang makin berubah cepat.</p>
       </div>
-      <div class="card">
-        <span class="num" aria-hidden="true">2</span>
+      <div class="why-item">
+        <span class="why-n" aria-hidden="true">2</span>
         <h3>Tunjukin Kemampuan Lewat Proyek Nyata</h3>
-        <p>Kamu bakal ngerjain proyek nyata yang hasilnya bisa langsung kamu masukin ke portofolio. Jadi bukan
-          cuma belajar teori, tapi juga buktiin kalau kamu bisa langsung pakai skill yang udah dipelajari.</p>
       </div>
-      <div class="card">
-        <span class="num" aria-hidden="true">3</span>
-        <h3>Persiapan Matang untuk Karier Digital Kamu</h3>
-        <p>Nggak cuma belajar, kamu juga bakal dibimbing biar siap bersaing di proses rekrutmen. Mulai dari
-          mock interview, optimasi LinkedIn, sampai career coaching — semuanya disiapin biar kamu siap secara
-          maksimal menyambut dunia kerja.</p>
+      <div class="why-item">
+        <span class="why-n" aria-hidden="true">3</span>
+        <h3>Persiapan Terbaik untuk Karier Digital Kamu</h3>
       </div>
     </div>
   </div>
@@ -646,23 +830,20 @@
 <!-- MILESTONE / PROGRAM TABS -->
 <section class="milestone" id="program">
   <div class="wrap">
-    <div class="head">
+    <div class="sec-head">
       <h2>Pilih Milestone untuk Karier Baru Kamu</h2>
-      <p>Jelajahi timeline perjalanan kamu, mulai dari pendaftaran sampai dukungan karier, dan ambil langkah
-        pertama menuju pekerjaan pertama kamu.</p>
     </div>
-
-    <div class="tabs" role="tablist">
-      <button class="tab featured active" data-tab="cs">Applied Cybersecurity with AI <span class="tag">Baru</span></button>
-      <button class="tab featured" data-tab="se">Software Engineering</button>
-      <button class="tab" data-tab="dm">Digital Marketing</button>
-      <button class="tab" data-tab="da">Data Analytics</button>
-      <button class="tab featured" data-tab="ai">Applied AI, Analytics &amp; Automation <span class="tag">Baru</span></button>
+    <div class="tabs" role="tablist" aria-label="Program">
+      <button class="tab" id="tab-cs" role="tab" aria-selected="true" aria-controls="cs" data-tab="cs">Applied Cybersecurity with AI <span class="tag">Baru</span></button>
+      <button class="tab" id="tab-se" role="tab" aria-selected="false" aria-controls="se" data-tab="se" tabindex="-1">Software Engineering</button>
+      <button class="tab" id="tab-dm" role="tab" aria-selected="false" aria-controls="dm" data-tab="dm" tabindex="-1">Digital Marketing</button>
+      <button class="tab" id="tab-da" role="tab" aria-selected="false" aria-controls="da" data-tab="da" tabindex="-1">Data Analytics</button>
+      <button class="tab" id="tab-ai" role="tab" aria-selected="false" aria-controls="ai" data-tab="ai" tabindex="-1">Applied AI, Analytics &amp; Automation <span class="tag">Baru</span></button>
     </div>
 
     <div class="program-panel">
       <!-- DIGITAL MARKETING -->
-      <div class="panel" id="dm">
+      <div class="panel" id="dm" role="tabpanel" aria-labelledby="tab-dm" tabindex="0">
         <h3 class="p-title">Future-Proof Karier Digital Marketing Kamu dengan AI</h3>
         <p class="p-desc">Dirancang dengan <b>kurikulum terintegrasi AI</b>, program Digital Marketing with AI
           dari RevoU siapin kamu dengan <b>skill future-proof</b> yang penting di ekonomi digital. Di program
@@ -671,32 +852,32 @@
         <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
         <div class="acc-cols">
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Measuring Performance and Budget Allocation<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Belajar mengukur performa kampanye dan mengalokasikan budget secara efektif berbasis data.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Product Marketing and Landing Page<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyusun strategi product marketing dan membangun landing page yang konversif.</div></div></div>
-            <div class="acc-item"><button class="acc-head">GenAI Fundamentals<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner"><ul>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Measuring Performance and Budget Allocation<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Belajar mengukur performa kampanye dan mengalokasikan budget secara efektif berbasis data.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Product Marketing and Landing Page<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyusun strategi product marketing dan membangun landing page yang konversif.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">GenAI Fundamentals<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner"><ul>
               <li>Understand the basic concepts of AI and prompting for effective communication with AI.</li>
               <li>Learn how to create Custom GPTs for various practical purposes.</li>
               <li>Experiment directly with GPT to complete tasks or projects.</li></ul></div></div></div>
-            <div class="acc-item"><button class="acc-head">Google Analytics, UTM, GTM<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Tracking dan pengukuran performa lewat Google Analytics, UTM, dan Google Tag Manager.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Basic Analytics &amp; Reporting, Data Visualization<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyusun laporan dan memvisualisasikan data marketing agar mudah dipahami.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Social Media Organic<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Strategi membangun dan menumbuhkan channel media sosial secara organik.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Google Analytics, UTM, GTM<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Tracking dan pengukuran performa lewat Google Analytics, UTM, dan Google Tag Manager.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Basic Analytics &amp; Reporting, Data Visualization<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyusun laporan dan memvisualisasikan data marketing agar mudah dipahami.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Social Media Organic<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Strategi membangun dan menumbuhkan channel media sosial secara organik.</div></div></div>
           </div>
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Influencer Marketing (KOL)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Merancang dan menjalankan kampanye dengan Key Opinion Leaders.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Meta Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menjalankan iklan berbayar di Facebook &amp; Instagram lewat Meta Ads Manager.</div></div></div>
-            <div class="acc-item"><button class="acc-head">TikTok Ads &amp; Marketplace Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Beriklan di TikTok dan platform marketplace untuk menjangkau audiens lebih luas.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Google Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Search, display, dan performance campaign menggunakan Google Ads.</div></div></div>
-            <div class="acc-item"><button class="acc-head">SEO with AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Optimasi mesin pencari dengan bantuan tools AI terbaru.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Customer Relationship Management (CRM)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Mengelola hubungan pelanggan dan retensi lewat strategi CRM.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Influencer Marketing (KOL)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Merancang dan menjalankan kampanye dengan Key Opinion Leaders.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Meta Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menjalankan iklan berbayar di Facebook &amp; Instagram lewat Meta Ads Manager.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">TikTok Ads &amp; Marketplace Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Beriklan di TikTok dan platform marketplace untuk menjangkau audiens lebih luas.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Google Ads<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Search, display, dan performance campaign menggunakan Google Ads.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">SEO with AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Optimasi mesin pencari dengan bantuan tools AI terbaru.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Customer Relationship Management (CRM)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Mengelola hubungan pelanggan dan retensi lewat strategi CRM.</div></div></div>
           </div>
         </div>
         <div class="timeline-head">Timeline Belajar Kamu</div>
         <img src="/binus-bncc/images/timeline-desktop-4mo.png" alt="Timeline belajar Digital Marketing" class="timeline-img">
-        <div class="panel-cta"><a href="https://fsdm-fb.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Digital Marketing Sekarang</a></div>
+        <div class="panel-cta"><a href="https://fsdm-fb.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn">Daftar Beasiswa Digital Marketing Sekarang</a></div>
       </div>
 
       <!-- DATA ANALYTICS -->
-      <div class="panel" id="da">
+      <div class="panel" id="da" role="tabpanel" aria-labelledby="tab-da" tabindex="0">
         <h3 class="p-title">Jadi Data Analyst yang Siap Kerja Bareng AI</h3>
         <p class="p-desc">Program Data Analytics RevoU membekali kamu dari fundamental sampai analisis tingkat
           lanjut — <b>SQL, Python, hingga visualisasi Tableau</b> — plus capstone project nyata untuk
@@ -704,26 +885,26 @@
         <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
         <div class="acc-cols">
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">AI &amp; Prompting Fundamentals<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Konsep dasar AI dan prompting untuk bekerja lebih cepat dan efektif.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Data Analytics Process &amp; Architecture<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Memahami alur kerja dan arsitektur data end-to-end.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Understanding the Business Problem<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menerjemahkan masalah bisnis menjadi pertanyaan analitis yang tepat.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Data Preparation &amp; Exploration<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membersihkan, menyiapkan, dan mengeksplorasi data sebelum dianalisis.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Advanced SQL<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Query kompleks untuk mengambil dan mengolah data dari database.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">AI &amp; Prompting Fundamentals<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Konsep dasar AI dan prompting untuk bekerja lebih cepat dan efektif.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Data Analytics Process &amp; Architecture<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Memahami alur kerja dan arsitektur data end-to-end.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Understanding the Business Problem<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menerjemahkan masalah bisnis menjadi pertanyaan analitis yang tepat.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Data Preparation &amp; Exploration<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membersihkan, menyiapkan, dan mengeksplorasi data sebelum dianalisis.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Advanced SQL<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Query kompleks untuk mengambil dan mengolah data dari database.</div></div></div>
           </div>
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Python Programming<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menggunakan Python untuk analisis dan otomasi pengolahan data.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Data Visualization with Tableau<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun dashboard dan visualisasi interaktif di Tableau.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Communicating Insights<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyampaikan insight data secara persuasif kepada stakeholder.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Capstone Project &amp; Pitching<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyelesaikan proyek akhir nyata dan mempresentasikannya.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Python Programming<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menggunakan Python untuk analisis dan otomasi pengolahan data.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Data Visualization with Tableau<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun dashboard dan visualisasi interaktif di Tableau.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Communicating Insights<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyampaikan insight data secara persuasif kepada stakeholder.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Capstone Project &amp; Pitching<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Menyelesaikan proyek akhir nyata dan mempresentasikannya.</div></div></div>
           </div>
         </div>
         <div class="timeline-head">Timeline Belajar Kamu</div>
         <img src="/binus-bncc/images/timeline-desktop-4mo.png" alt="Timeline belajar Data Analytics" class="timeline-img">
-        <div class="panel-cta"><a href="https://revou-fsda.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Data Analytics Sekarang</a></div>
+        <div class="panel-cta"><a href="https://revou-fsda.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn">Daftar Beasiswa Data Analytics Sekarang</a></div>
       </div>
 
       <!-- SOFTWARE ENGINEERING -->
-      <div class="panel" id="se">
+      <div class="panel" id="se" role="tabpanel" aria-labelledby="tab-se" tabindex="0">
         <h3 class="p-title">Jadi Software Engineer Bareng AWS &amp; HackerRank</h3>
         <p class="p-desc"><b>Bootcamp coding AI-native pertama di Indonesia.</b> Belajar membangun aplikasi
           full-stack dengan alur kerja AI-driven, didukung partnership bersama AWS dan HackerRank.</p>
@@ -734,24 +915,24 @@
         <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
         <div class="acc-cols">
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Algorithm &amp; Programming Logic<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Fondasi logika pemrograman dan algoritma untuk memecahkan masalah.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Backend Development (PostgreSQL, Python, Flask)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun REST API dan database dengan Python, Flask, dan PostgreSQL.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Frontend Development (React, Next.js, TypeScript)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun antarmuka modern dengan React, Next.js, dan TypeScript.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Algorithm &amp; Programming Logic<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Fondasi logika pemrograman dan algoritma untuk memecahkan masalah.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Backend Development (PostgreSQL, Python, Flask)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun REST API dan database dengan Python, Flask, dan PostgreSQL.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Frontend Development (React, Next.js, TypeScript)<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Membangun antarmuka modern dengan React, Next.js, dan TypeScript.</div></div></div>
           </div>
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">AI-Driven Development<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Memanfaatkan AI untuk mempercepat proses coding dan debugging.</div></div></div>
-            <div class="acc-item"><button class="acc-head">HackerRank Coding Challenges<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Latihan coding terintegrasi HackerRank sepanjang program.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">AI-Driven Development<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Memanfaatkan AI untuk mempercepat proses coding dan debugging.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">HackerRank Coding Challenges<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Latihan coding terintegrasi HackerRank sepanjang program.</div></div></div>
           </div>
         </div>
         <div class="timeline-head">Tech Stack yang Kamu Kuasai</div>
         <img src="/binus-bncc/images/tech-logos-desktop.png" alt="Tech stack: GitHub, Next.js, Python, React, TypeScript, Vercel, Flask" class="timeline-img">
         <div class="timeline-head">Timeline Belajar Kamu</div>
         <img src="/binus-bncc/images/timeline-desktop-6mo.png" alt="Timeline belajar Software Engineering" class="timeline-img">
-        <div class="panel-cta"><a href="https://revou-fsse.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Software Engineering Sekarang</a></div>
+        <div class="panel-cta"><a href="https://revou-fsse.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn">Daftar Beasiswa Software Engineering Sekarang</a></div>
       </div>
 
       <!-- APPLIED CYBERSECURITY WITH AI -->
-      <div class="panel active" id="cs">
+      <div class="panel active" id="cs" role="tabpanel" aria-labelledby="tab-cs" tabindex="0">
         <h3 class="p-title">Mulai karir Cybersecurity dengan AI</h3>
         <p class="p-desc">Program <b>defensive cybersecurity 12 minggu</b> yang dibangun bersama
           <b>BINUS Faculty dan AWS</b>. Kamu bakal kerja dengan <b>infrastruktur live, skenario alert nyata</b>,
@@ -765,23 +946,17 @@
         <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
         <div class="acc-cols">
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Foundations of Security Thinking<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 1–2 — Membangun pola pikir security: memahami aset, ancaman, dan risiko sebelum masuk ke tools.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Security Operations: Threat Detection, Triage &amp; Incident Response<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 3–5 — Mendeteksi ancaman, melakukan triage alert, dan menjalankan incident response layaknya di SOC.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Network &amp; Infrastructure Security<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 6–7 — Mengamankan jaringan dan infrastruktur cloud, termasuk praktik langsung di lingkungan AWS.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Foundations of Security Thinking<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 1–2 — Membangun pola pikir security: memahami aset, ancaman, dan risiko sebelum masuk ke tools.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Security Operations: Threat Detection, Triage &amp; Incident Response<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 3–5 — Mendeteksi ancaman, melakukan triage alert, dan menjalankan incident response layaknya di SOC.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Network &amp; Infrastructure Security<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 6–7 — Mengamankan jaringan dan infrastruktur cloud, termasuk praktik langsung di lingkungan AWS.</div></div></div>
           </div>
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Application Security &amp; AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 8–10 — Mengamankan aplikasi dan memahami risiko baru dari sistem AI, plus cara mengawasi output AI secara kritis.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Professional Readiness &amp; Capstone<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 11–12 — Capstone project berbasis skenario nyata dan persiapan karier untuk masuk peran security.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Application Security &amp; AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 8–10 — Mengamankan aplikasi dan memahami risiko baru dari sistem AI, plus cara mengawasi output AI secara kritis.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Professional Readiness &amp; Capstone<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 11–12 — Capstone project berbasis skenario nyata dan persiapan karier untuk masuk peran security.</div></div></div>
           </div>
         </div>
         <div class="cert-showcase">
           <div class="cert-copy">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 9h7M7 12h4"/>
-                <circle cx="17" cy="18" r="3.4" fill="#fff"/><path d="M15.6 18l1 1 1.8-2"/>
-              </svg>
-            </div>
             <h4>Sertifikat profesional, didukung akademisi dan industri</h4>
             <p>Diberikan setelah kamu menyelesaikan capstone dan seluruh syarat program, pada acara
               graduation di kampus BINUS.</p>
@@ -791,11 +966,11 @@
                  alt="Contoh Certificate of Achievement program Cybersecurity dari RevoU, BINUS University, dan GreatNusa">
           </div>
         </div>
-        <div class="panel-cta"><a href="https://cybersecurity-fp.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Beasiswa Applied Cybersecurity Sekarang</a></div>
+        <div class="panel-cta"><a href="https://cybersecurity-fp.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn">Daftar Beasiswa Applied Cybersecurity Sekarang</a></div>
       </div>
 
       <!-- APPLIED AI, ANALYTICS & AUTOMATION -->
-      <div class="panel" id="ai">
+      <div class="panel" id="ai" role="tabpanel" aria-labelledby="tab-ai" tabindex="0">
         <h3 class="p-title">Bangun AI Agent &amp; Automation untuk Kerjaan Kamu</h3>
         <p class="p-desc">Program <b>12 minggu hybrid</b> yang mulai <b>Oktober 2026</b>, dibangun bareng
           <b>BINUS Faculty dan praktisi industri</b>: kelas online live 3× seminggu (19.00–21.00 WIB) plus
@@ -810,14 +985,14 @@
         <div class="badge-line">Dibuat dengan Kurikulum Berbasis AI</div>
         <div class="acc-cols">
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Foundations of Data-Driven Problem Solving<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 1–2 — Framework problem solving seperti 5 Whys dan hypothesis-driven thinking, plus cara menerjemahkan masalah bisnis jadi metrik yang bisa diukur.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Data Analytics Foundation &amp; Communication<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 3–4 — Exploratory data analysis, prinsip visualisasi, dan data storytelling untuk meyakinkan stakeholder.</div></div></div>
-            <div class="acc-item"><button class="acc-head">AI Foundations<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 5 — Cara kerja Large Language Model: token, embedding, dan context window, plus etika AI soal bias, halusinasi, dan privasi data.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Foundations of Data-Driven Problem Solving<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 1–2 — Framework problem solving seperti 5 Whys dan hypothesis-driven thinking, plus cara menerjemahkan masalah bisnis jadi metrik yang bisa diukur.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Data Analytics Foundation &amp; Communication<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 3–4 — Exploratory data analysis, prinsip visualisasi, dan data storytelling untuk meyakinkan stakeholder.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">AI Foundations<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 5 — Cara kerja Large Language Model: token, embedding, dan context window, plus etika AI soal bias, halusinasi, dan privasi data.</div></div></div>
           </div>
           <div class="acc-col">
-            <div class="acc-item"><button class="acc-head">Custom AI &amp; Analytics<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 6–7 — Prompt engineering dasar sampai lanjutan, bikin chatbot dan asisten AI no-code, dan mengintegrasikan AI ke workflow kerja yang sudah jalan.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Automation &amp; Agentic AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 8–10 — Merancang workflow otomatis dan multi-agent system pakai n8n dan Claude Code, termasuk kapan workflow terkontrol lebih aman daripada agent otonom.</div></div></div>
-            <div class="acc-item"><button class="acc-head">Capstone: AI-First Solution<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 11–12 — Bangun satu solusi AI end-to-end — dari masalah bisnis, data, workflow, sampai dampaknya — lalu pitch prototype-nya ke panel industri di Demo Day.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Custom AI &amp; Analytics<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 6–7 — Prompt engineering dasar sampai lanjutan, bikin chatbot dan asisten AI no-code, dan mengintegrasikan AI ke workflow kerja yang sudah jalan.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Automation &amp; Agentic AI<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 8–10 — Merancang workflow otomatis dan multi-agent system pakai n8n dan Claude Code, termasuk kapan workflow terkontrol lebih aman daripada agent otonom.</div></div></div>
+            <div class="acc-item"><button class="acc-head" aria-expanded="false">Capstone: AI-First Solution<svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="inner">Minggu 11–12 — Bangun satu solusi AI end-to-end — dari masalah bisnis, data, workflow, sampai dampaknya — lalu pitch prototype-nya ke panel industri di Demo Day.</div></div></div>
           </div>
         </div>
         <div class="timeline-head">Tools yang Kamu Pakai</div>
@@ -829,12 +1004,6 @@
         </div>
         <div class="cert-showcase">
           <div class="cert-copy">
-            <div class="cert-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 9h7M7 12h4"/>
-                <circle cx="17" cy="18" r="3.4" fill="#fff"/><path d="M15.6 18l1 1 1.8-2"/>
-              </svg>
-            </div>
             <h4>Sertifikat profesional, didukung akademisi dan industri</h4>
           </div>
           <div class="cert-visual">
@@ -842,72 +1011,69 @@
                  alt="Contoh Certificate of Achievement program Applied AI, Analytics &amp; Automation dari RevoU, BINUS University, dan GreatNusa">
           </div>
         </div>
-        <div class="panel-cta"><a href="https://revou-applied-ai.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Applied AI, Analytics &amp; Automation Sekarang</a></div>
+        <div class="panel-cta"><a href="https://revou-applied-ai.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn">Daftar Applied AI, Analytics &amp; Automation Sekarang</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testi">
-  <div class="wrap">
-    <h2>Transformasi Karier Alumni BINUS University Setelah Ikut RevoU</h2>
-    <div class="carousel">
-      <button class="car-btn" id="prev" aria-label="Sebelumnya"><svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="car-window">
-        <div class="slide active">
-          <img src="/binus-bncc/images/testimonial-alvin.webp" alt="Alvin Budiarjo" class="avatar-img">
-          <div>
-            <div class="t-name">Alvin Budiarjo</div>
-            <div class="t-label">Sebelum RevoU</div>
-            <div class="t-role">Supermarket Ops – Business Development</div>
-            <div class="t-at">di Shopee</div>
-            <div class="t-label after">Setelah RevoU</div>
-            <div class="t-role">Business Operations Analyst</div>
-            <div class="t-at">di Xendit</div>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="/binus-bncc/images/testimonial-mega.jpg" alt="Mega Dewi Larasati" class="avatar-img">
-          <div>
-            <div class="t-name">Mega Dewi Larasati</div>
-            <div class="t-label">Sebelum RevoU</div>
-            <div class="t-role">Quality Executive</div>
-            <div class="t-at">di Siegwerk</div>
-            <div class="t-label after">Setelah RevoU</div>
-            <div class="t-role">Performance Marketing</div>
-            <div class="t-at">di Virus Media Investara</div>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="/binus-bncc/images/testimonial-nathasya.jpeg" alt="Nathasya Magdalena" class="avatar-img">
-          <div>
-            <div class="t-name">Nathasya Magdalena</div>
-            <div class="t-label">Sebelum RevoU</div>
-            <div class="t-role">Hotel Management Student</div>
-            <div class="t-at">di BINUS University</div>
-            <div class="t-label after">Setelah RevoU</div>
-            <div class="t-role">Social Media Executive</div>
-            <div class="t-at">di Dentsu Creative</div>
-          </div>
+<!-- TESTIMONIALS — hidden for now; remove the `hidden` attribute to bring it back -->
+<section class="testi" hidden>
+  <div class="wrap testi-grid">
+    <div class="testi-intro">
+      <h2>Transformasi Karier Alumni BINUS University Setelah Ikut RevoU</h2>
+      <div class="car-nav">
+        <button class="car-btn" id="prev" aria-label="Alumni sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="car-btn" id="next" aria-label="Alumni berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <span class="car-count" id="car-count" aria-live="polite">1 / 3</span>
+      </div>
+    </div>
+    <div class="car-window">
+      <div class="slide active">
+        <img src="/binus-bncc/images/testimonial-alvin.webp" alt="Alvin Budiarjo" class="avatar-img">
+        <div>
+          <p class="t-name">Alvin Budiarjo</p>
+          <div class="t-step before"><span class="t-label">Sebelum RevoU</span><span class="t-role">Supermarket Ops – Business Development</span><span class="t-at">di Shopee</span></div>
+          <span class="t-join" aria-hidden="true"></span>
+          <div class="t-step after"><span class="t-label">Setelah RevoU</span><span class="t-role">Business Operations Analyst</span><span class="t-at">di Xendit</span></div>
         </div>
       </div>
-      <button class="car-btn" id="next" aria-label="Berikutnya"><svg class="ico-arr" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="slide">
+        <img src="/binus-bncc/images/testimonial-mega.jpg" alt="Mega Dewi Larasati" class="avatar-img">
+        <div>
+          <p class="t-name">Mega Dewi Larasati</p>
+          <div class="t-step before"><span class="t-label">Sebelum RevoU</span><span class="t-role">Quality Executive</span><span class="t-at">di Siegwerk</span></div>
+          <span class="t-join" aria-hidden="true"></span>
+          <div class="t-step after"><span class="t-label">Setelah RevoU</span><span class="t-role">Performance Marketing</span><span class="t-at">di Virus Media Investara</span></div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="/binus-bncc/images/testimonial-nathasya.jpeg" alt="Nathasya Magdalena" class="avatar-img">
+        <div>
+          <p class="t-name">Nathasya Magdalena</p>
+          <div class="t-step before"><span class="t-label">Sebelum RevoU</span><span class="t-role">Hotel Management Student</span><span class="t-at">di BINUS University</span></div>
+          <span class="t-join" aria-hidden="true"></span>
+          <div class="t-step after"><span class="t-label">Setelah RevoU</span><span class="t-role">Social Media Executive</span><span class="t-at">di Dentsu Creative</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final" id="daftar">
-  <div class="wrap">
-    <h2>Manfaatkan kesempatan untuk mulai karier digital dengan beasiswa eksklusif!</h2>
-    <div class="cta-row">
-      <a href="https://fsdm-fb.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn pink">Daftar Digital Marketing</a>
-      <a href="https://revou-fsda.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn peach">Daftar Data Analytics</a>
-      <a href="https://revou-fsse.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn purple">Daftar Software Engineering</a>
-      <a href="https://www.revou.co/binus-applied-cybersecurity?o=bncc" target="_blank" rel="noopener" class="btn sky">Daftar Applied Cybersecurity</a>
-      <a href="https://revou-applied-ai.paperform.co/?o=bncc" target="_blank" rel="noopener" class="btn yellow">Daftar Applied AI &amp; Automation</a>
+  <div class="wrap final-grid">
+    <div>
+      <h2>Manfaatkan kesempatan untuk mulai karier digital dengan beasiswa eksklusif!</h2>
+      <p class="deadline">Daftar sebelum 23 Oktober 2026.</p>
     </div>
+    <ul class="cta-list">
+      <li><a href="https://www.revou.co/binus-applied-cybersecurity?o=bncc" target="_blank" rel="noopener"><span class="cta-name">Applied Cybersecurity<small>Beasiswa 15%</small></span><span class="cta-pill">Daftar</span></a></li>
+      <li><a href="https://revou-applied-ai.paperform.co/?o=bncc" target="_blank" rel="noopener"><span class="cta-name">Applied AI &amp; Automation<small>Beasiswa 15%</small></span><span class="cta-pill">Daftar</span></a></li>
+      <li><a href="https://revou-fsse.paperform.co/?o=bncc" target="_blank" rel="noopener"><span class="cta-name">Software Engineering<small>Beasiswa 30%</small></span><span class="cta-pill">Daftar</span></a></li>
+      <li><a href="https://fsdm-fb.paperform.co/?o=bncc" target="_blank" rel="noopener"><span class="cta-name">Digital Marketing<small>Beasiswa 30%</small></span><span class="cta-pill">Daftar</span></a></li>
+      <li><a href="https://revou-fsda.paperform.co/?o=bncc" target="_blank" rel="noopener"><span class="cta-name">Data Analytics<small>Beasiswa 30%</small></span><span class="cta-pill">Daftar</span></a></li>
+    </ul>
   </div>
 </section>
 
@@ -915,14 +1081,27 @@
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
+      <div>
         <img src="/binus-bncc/images/revou-logo.png" alt="RevoU" class="foot-logo-img">
-        <p style="color:#9a9a9a;max-width:280px">Platform pendidikan online terbaik di Indonesia untuk skill
-          Digital Marketing, Data Analytics, Software Engineering, Applied Cybersecurity with AI, dan
-          Applied AI, Analytics &amp; Automation.</p>
+        <p>Platform pendidikan online terbaik di Indonesia untuk skill Digital Marketing, Data Analytics,
+          Software Engineering, Applied Cybersecurity with AI, dan Applied AI, Analytics &amp; Automation.</p>
+        <div class="foot-social">
+      <a href="https://www.linkedin.com/school/revou/" target="_blank" rel="noopener" aria-label="RevoU di LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/revou_id/" target="_blank" rel="noopener" aria-label="RevoU di Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.youtube.com/c/revoudotco" target="_blank" rel="noopener" aria-label="RevoU di YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.44-5.03a2.6 2.6 0 0 0-1.83-1.84C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.43a2.6 2.6 0 0 0-1.83 1.84C1 8.6 1 12 1 12s0 3.4.44 5.03c.24.9.95 1.6 1.83 1.84 1.63.43 8.73.43 8.73.43s7.1 0 8.73-.43a2.6 2.6 0 0 0 1.83-1.84C23 15.4 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@revou_id" target="_blank" rel="noopener" aria-label="RevoU di TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.2a2.7 2.7 0 1 1-2.2-2.65V9.4a6 6 0 1 0 5.2 5.94V9.02a7 7 0 0 0 4 1.27V7.2a4.2 4.2 0 0 1-4-4.2z"/></svg>
+      </a>
+    </div>
       </div>
-      <!-- column taxonomy and destinations mirror the live revou.co footer; absolute URLs
-           because this page is served from offer.revou.co, where /digital-marketing would 404 -->
+      <!-- destinations mirror the live revou.co footer; absolute URLs because this page is
+           served from offer.revou.co, where /digital-marketing would 404 -->
       <div>
         <h4>Program</h4>
         <a href="https://www.revou.co/digital-marketing">Digital Marketing with AI</a>
@@ -937,81 +1116,124 @@
         <a href="https://www.revou.co/important-links">Free Courses</a>
         <a href="https://www.revou.co/panduan-karir">Career Guide</a>
         <a href="https://www.revou.co/revoupedia">RevoUpedia</a>
-      </div>
-      <div>
-        <h4>Company</h4>
+        <p class="foot-sub">Company</p>
         <a href="https://www.revou.co/lifeatrevou">About Us</a>
         <a href="https://www.revou.co/career">Careers</a>
         <a href="https://api.whatsapp.com/send/?phone=6281399100086&amp;text=Halo+Kak%2C+aku+habis+explore+website+RevoU+dan+ingin+tanya+beberapa+hal&amp;type=phone_number&amp;app_absent=0"
            target="_blank" rel="noopener">Contact</a>
       </div>
     </div>
-    <div class="foot-social">
-      <a href="https://www.linkedin.com/school/revou/" target="_blank" rel="noopener" aria-label="RevoU di LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/revou_id/" target="_blank" rel="noopener" aria-label="RevoU di Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/c/revoudotco" target="_blank" rel="noopener" aria-label="RevoU di YouTube">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.44-5.03a2.6 2.6 0 0 0-1.83-1.84C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.43a2.6 2.6 0 0 0-1.83 1.84C1 8.6 1 12 1 12s0 3.4.44 5.03c.24.9.95 1.6 1.83 1.84 1.63.43 8.73.43 8.73.43s7.1 0 8.73-.43a2.6 2.6 0 0 0 1.83-1.84C23 15.4 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@revou_id" target="_blank" rel="noopener" aria-label="RevoU di TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.2a2.7 2.7 0 1 1-2.2-2.65V9.4a6 6 0 1 0 5.2 5.94V9.02a7 7 0 0 0 4 1.27V7.2a4.2 4.2 0 0 1-4-4.2z"/></svg>
-      </a>
-    </div>
     <div class="foot-bottom">
       <span>© 2026 RevoU × BNCC BINUS University. Beasiswa Eksklusif.</span>
-      <span>Recreated landing page</span>
+      <span>Campus Edition</span>
     </div>
   </div>
 </footer>
 
-<a class="wa" href="https://api.whatsapp.com/send?phone=6281399100086&amp;text=Halo!%20Saya%20mau%20tanya%20soal%20beasiswa%2030%25%20di%20program%20RevoU%20%F0%9F%91%8B" target="_blank" rel="noopener" aria-label="Tanya via WhatsApp">Ada pertanyaan? Tanya di sini!</a>
+<a class="wa" href="https://api.whatsapp.com/send?phone=6281399100086&amp;text=Halo!%20Saya%20mau%20tanya%20soal%20beasiswa%2030%25%20di%20program%20RevoU%20%F0%9F%91%8B" target="_blank" rel="noopener" aria-label="Tanya tentang beasiswa lewat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.5 9.5 0 0 1-4-.9L3 21l1.9-4.6A8.3 8.3 0 0 1 3.5 12a8.5 8.5 0 0 1 17.5-.5Z"/><path d="M8.7 9.3c.5 2.4 1.8 3.8 4.2 4.7"/></svg>
+  <span>Ada pertanyaan? Tanya di sini!</span>
+</a>
 
 <script>
-  // Program tabs
-  document.querySelectorAll('.tab').forEach(function(tab){
-    tab.addEventListener('click', function(){
-      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('active');
+  // ---- ATF social proof: seamless logo rail plus a short rating count-up.
+  (function(){
+    var track = document.querySelector('.company-track');
+    var set = track && track.querySelector('.company-set');
+    if(track && set){
+      var clone = set.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+      track.classList.add('is-ready');
+    }
+
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-rating]').forEach(function(score){
+      var target = Number(score.dataset.rating);
+      var decimals = Number(score.dataset.decimals || 1);
+      var duration = 720;
+      score.textContent = (0).toFixed(decimals);
+      window.setTimeout(function(){
+        var started = performance.now();
+        function tick(now){
+          var progress = Math.min((now - started) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          score.textContent = (target * eased).toFixed(decimals);
+          if(progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }, 650);
+    });
+  })();
+
+  // ---- programme tabs: click, arrow keys, and the aria state the markup declares
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function selectTab(tab, moveFocus){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if(panel) panel.classList.toggle('active', on);
+    });
+    if(moveFocus) tab.focus();
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectTab(tab, false); });
+    tab.addEventListener('keydown', function(e){
+      var n = null;
+      if(e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      else if(e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if(e.key === 'Home') n = tabs[0];
+      else if(e.key === 'End') n = tabs[tabs.length - 1];
+      if(n){ e.preventDefault(); selectTab(n, true); }
     });
   });
 
-  // Hero cards -> open the matching program tab and scroll to the curriculum.
-  // The scroll is done here rather than left to the #program href: once the hash is
-  // already #program, a second card click wouldn't move the page on its own.
+  // ---- tier rows open the matching programme and scroll to the curriculum.
+  // Scrolling here rather than via the #program href: once the hash is already
+  // #program, a second click wouldn't move the page on its own.
   document.querySelectorAll('[data-goto]').forEach(function(link){
     link.addEventListener('click', function(e){
-      var tab = document.querySelector('.tab[data-tab="'+link.dataset.goto+'"]');
+      var tab = document.getElementById('tab-' + link.dataset.goto);
       var target = document.getElementById('program');
-      if(tab) tab.click();
+      if(tab) selectTab(tab, false);
       if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
-  // Accordion
+
+  // ---- accordion
   document.querySelectorAll('.acc-head').forEach(function(head){
     head.addEventListener('click', function(){
-      var item = head.parentElement;
-      var body = head.nextElementSibling;
-      if(item.classList.contains('open')){ item.classList.remove('open'); body.style.maxHeight=null; }
-      else { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+      var item = head.parentElement, body = head.nextElementSibling;
+      var open = !item.classList.contains('open');
+      item.classList.toggle('open', open);
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.style.maxHeight = open ? body.scrollHeight + 'px' : null;
     });
   });
-  // Video: click-to-play YouTube embed (loads player only on interaction)
+  // open items are pinned to a pixel height, so a width change must re-measure them
+  var reflow;
+  window.addEventListener('resize', function(){
+    clearTimeout(reflow);
+    reflow = setTimeout(function(){
+      document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){
+        b.style.maxHeight = b.scrollHeight + 'px';
+      });
+    }, 120);
+  });
+
+  // ---- video: click-to-play YouTube embed (player loads only on interaction)
   (function(){
     var v = document.getElementById('video');
     if(!v) return;
     function play(){
-      var id = v.dataset.yt;
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + v.dataset.yt + '?autoplay=1&rel=0';
       f.title = 'Video RevoU';
       f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       f.allowFullscreen = true;
-      f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit';
+      f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
       v.innerHTML = '';
       v.style.cursor = 'default';
       v.removeAttribute('role');
@@ -1019,16 +1241,20 @@
       v.appendChild(f);
     }
     v.addEventListener('click', play);
-    v.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
+    v.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } });
   })();
 
-  // Testimonial carousel
+  // ---- alumni carousel
   (function(){
-    var slides = document.querySelectorAll('.testi .slide');
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.testi .slide'));
+    var count = document.getElementById('car-count');
     var i = 0;
-    function show(n){ slides.forEach((s,k)=>s.classList.toggle('active', k===n)); }
-    document.getElementById('prev').addEventListener('click', function(){ i=(i-1+slides.length)%slides.length; show(i); });
-    document.getElementById('next').addEventListener('click', function(){ i=(i+1)%slides.length; show(i); });
+    function show(n){
+      slides.forEach(function(s, k){ s.classList.toggle('active', k === n); });
+      count.textContent = (n + 1) + ' / ' + slides.length;
+    }
+    document.getElementById('prev').addEventListener('click', function(){ i = (i - 1 + slides.length) % slides.length; show(i); });
+    document.getElementById('next').addEventListener('click', function(){ i = (i + 1) % slides.length; show(i); });
   })();
 </script>
 </body>
