@@ -417,9 +417,6 @@
     gap:clamp(42px,6vw,96px);align-items:end;padding-top:clamp(72px,10vh,120px);padding-bottom:clamp(64px,9vh,104px);
     position:relative;z-index:2}
   .hero-copy{max-width:780px}
-  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px;color:var(--yellow);font-size:.74rem;
-    font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-  .hero-eyebrow::before{content:"";width:44px;height:2px;background:var(--yellow);box-shadow:0 0 18px rgba(245,197,24,.7)}
   .hero h1{font-size:clamp(3.2rem,6.5vw,6rem);line-height:.93;color:#fff8df;margin-bottom:28px;
     max-width:12.5ch;text-shadow:0 5px 34px rgba(0,0,0,.38)}
   .hero .mark{color:var(--yellow);background:none;padding:0}
@@ -436,9 +433,12 @@
   .hero-offer::after{content:"";position:absolute;width:160px;height:160px;right:-74px;top:-74px;border-radius:50%;
     border:1px solid rgba(245,197,24,.22);box-shadow:0 0 0 24px rgba(245,197,24,.035),0 0 0 52px rgba(245,197,24,.025)}
   .offer-kicker{color:rgba(255,255,255,.72);font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-  .offer-number{display:flex;align-items:flex-start;font-family:'Oswald',sans-serif;font-size:clamp(5.6rem,9vw,8rem);
+  .offer-number{display:block;font-family:'Oswald',sans-serif;font-size:clamp(5.6rem,9vw,8rem);
     line-height:.85;letter-spacing:-.055em;color:var(--yellow);margin:16px 0 14px}
-  .offer-number span{font-size:.38em;line-height:1;margin:.12em 0 0 .08em}
+  .offer-number small{display:block;font-family:'Mulish',sans-serif;font-size:.75rem;line-height:1;
+    letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:12px}
+  .offer-value{display:flex;align-items:flex-start}
+  .offer-value i{font-style:normal;font-size:.38em;line-height:1;margin:.12em 0 0 .08em}
   .offer-title{font-family:'Oswald',sans-serif;text-transform:uppercase;color:#fff8df;font-size:1.42rem;
     font-weight:600;line-height:1.08}
   .offer-copy{color:rgba(255,255,255,.68);font-size:.88rem;line-height:1.5;margin-top:10px}
@@ -554,7 +554,7 @@
     .hero-grid{padding-top:92px;padding-bottom:44px;gap:28px}
     .hero h1{font-size:clamp(2.75rem,14vw,4.2rem);margin-bottom:22px}
     .hero .lead{font-size:.95rem}
-    .hero-copy .hero-eyebrow + h1 + .lead{display:none}
+    .hero-copy h1 + .lead{display:none}
     .hero-offer{width:100%;max-width:none;display:grid;grid-template-columns:auto 1fr;column-gap:18px;align-items:center}
     .offer-kicker{grid-column:1/-1}
     .offer-number{grid-row:2/5;font-size:5.2rem;margin:15px 0 0}
@@ -609,7 +609,6 @@
   </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hero-eyebrow">BINUS University × RevoU</p>
       <h1>Raih Karier Impian di Bidang Digital lewat <span class="mark">Beasiswa Eksklusif!</span></h1>
       <p class="lead"><b>Kamu mahasiswa atau alumni School of Computer Science BINUS University?</b>
         Ini kesempatanmu buat <b>mulai karier</b> di bidang paling dicari:
@@ -624,7 +623,7 @@
     </div>
     <aside class="hero-offer" aria-label="Informasi beasiswa">
       <p class="offer-kicker">Benefit khusus BINUSIAN</p>
-      <div class="offer-number">30<span>%</span></div>
+      <div class="offer-number"><small>Hingga</small><span class="offer-value">30<i>%</i></span></div>
       <p class="offer-title">Beasiswa biaya program</p>
       <p class="offer-copy">Untuk mahasiswa aktif &amp; alumni School of Computer Science BINUS University.</p>
       <p class="offer-deadline">Daftar sebelum 23 Oktober 2026</p>
