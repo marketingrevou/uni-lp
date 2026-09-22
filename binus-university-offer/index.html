@@ -404,12 +404,12 @@
   /* Campus-led hero */
   .hero{position:relative;isolation:isolate;min-height:calc(100svh - var(--nav-h));padding:0;
     overflow:hidden;background:var(--night);display:flex;align-items:stretch}
-  .hero-media{position:absolute;inset:0;z-index:-2}
+  .hero-media{position:absolute;inset:0;z-index:0}
   .hero-photo{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 49%;border-radius:0;
     filter:saturate(.92) contrast(1.04)}
   .hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:
     linear-gradient(90deg,rgba(16,14,2,.94) 0%,rgba(20,17,3,.82) 18%,rgba(25,21,3,.58) 34%,rgba(25,21,3,.28) 52%,rgba(25,21,3,.10) 70%,transparent 88%),
-    linear-gradient(0deg,rgba(16,14,2,.8) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
+    linear-gradient(0deg,rgba(16,14,2,.3) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
   .hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:
     radial-gradient(circle at 82% 28%,rgba(245,197,24,.2),transparent 28%),
     linear-gradient(180deg,rgba(245,197,24,.06),transparent 30%);mix-blend-mode:screen}
@@ -446,12 +446,11 @@
     color:#fff8df;font-weight:800;font-size:.82rem}
   .offer-deadline::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(245,197,24,.13)}
 
-  /* RevoU-style proof dock: ratings count up, company logos move continuously. */
+  /* Let the campus remain visible behind the proof content. */
   .hero-grid{padding-bottom:clamp(244px,28vh,280px)}
   .hero-proof{position:absolute;z-index:3;inset:auto 0 0;
-    background:linear-gradient(180deg,rgba(18,16,2,.78),rgba(13,12,2,.96));color:#fff8df;
-    border-top:1px solid rgba(245,197,24,.42);box-shadow:0 -22px 60px rgba(7,6,1,.32);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    background:linear-gradient(180deg,transparent,rgba(13,12,2,.2) 42%,rgba(13,12,2,.48));
+    border:0;box-shadow:none;color:#fff8df;text-shadow:0 2px 12px rgba(0,0,0,.55)}
   .proof-inner{max-width:1352px;margin:0 auto;padding:20px clamp(24px,5vw,64px) 18px}
   .proof-top{display:flex;align-items:center;justify-content:center;gap:clamp(34px,5vw,68px);margin-bottom:16px}
   .proof-title{font-size:.95rem;color:rgba(255,248,223,.84);white-space:nowrap}
