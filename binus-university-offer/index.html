@@ -496,7 +496,37 @@
   .t30 .tier-head{background:linear-gradient(135deg,#ffdf4d 0%,var(--yellow) 58%,#e3b100 100%)}
   .t15{background:linear-gradient(180deg,#fff 0%,#fffcf3 100%)}
   .t15 .tier-head{background:linear-gradient(135deg,#005b8f 0%,#008ed3 58%,#00a8e8 100%)}
-  .t33 .tier-head{background:linear-gradient(135deg,#211d05 0%,var(--brown-deep) 58%,#3e3204 100%)}
+  /* Cybersecurity tier borrows the programme page's SOC look: night-navy console, violet glow,
+     orange signal colour and a live-looking alert queue. */
+  .t33{border-color:rgba(91,76,255,.28)}
+  .t33 .tier-head{position:relative;isolation:isolate;overflow:hidden;grid-template-columns:auto 1fr auto;
+    background:radial-gradient(ellipse 60% 120% at 78% 120%,rgba(110,64,255,.55),transparent 62%),
+      radial-gradient(circle at 8% -20%,rgba(240,135,0,.22),transparent 38%),
+      linear-gradient(135deg,#070922 0%,#090d1e 55%,#120f3a 100%)}
+  .t33 .tier-head::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background-image:radial-gradient(rgba(160,170,230,.22) 1px,transparent 1.2px);background-size:16px 16px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%)}
+  .t33 .tier-rate{color:#fff}
+  .t33 .tier-rate i{color:#f08700}
+  .t33 .tier-lbl{grid-row:1/3;align-self:center;color:#f08700;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:1rem;font-weight:700;letter-spacing:.08em}
+  .t33 .tier-lbl::before{content:"> ";color:#6b739e}
+  .term{grid-column:3;grid-row:1/3;align-self:center;width:min(380px,36vw);border:1px solid rgba(107,115,158,.35);
+    border-radius:10px;background:rgba(7,9,34,.82);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.72rem;line-height:1;color:#c9cff0;box-shadow:0 18px 50px rgba(5,4,30,.5)}
+  .term-top{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid rgba(107,115,158,.25);
+    color:#6b739e;letter-spacing:.12em;text-transform:uppercase;font-size:.62rem}
+  .term-top b{color:#3ddc84;font-weight:700}
+  .term-top b::before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;
+    background:#3ddc84;box-shadow:0 0 8px #3ddc84;vertical-align:1px;animation:termPulse 1.6s ease-in-out infinite}
+  .term-row{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:8px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .term-row+.term-row{border-top:1px solid rgba(107,115,158,.12)}
+  .term-row em{font-style:normal;font-weight:700;color:#6b739e}
+  .term-row.med em{color:var(--yellow)}
+  .term-row.hi{background:rgba(240,135,0,.12)}
+  .term-row.hi em{color:#f08700}
+  @keyframes termPulse{50%{opacity:.35}}
+  @media(max-width:760px){.term{display:none}.t33 .tier-head{grid-template-columns:auto 1fr}.t33 .tier-lbl{font-size:.8rem;white-space:nowrap}}
   .prog{background:rgba(255,255,255,.76)}
   .prog:hover{background:#fff9e6}
   .prog-go{box-shadow:inset 0 0 0 0 var(--yellow);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
@@ -698,7 +728,12 @@
         <div class="tier-head">
           <span class="tier-rate">33<i>%</i></span>
           <span class="tier-lbl">Potongan biaya</span>
-          <span class="tier-for">Applied Cybersecurity with AI</span>
+          <span class="term" aria-hidden="true">
+            <span class="term-top">Alert queue · week 4 lab <b>live</b></span>
+            <span class="term-row"><em>LOW</em>Failed login · svc_backup · 3 attempts</span>
+            <span class="term-row med"><em>MED</em>Port scan detected · 10.0.4.0/24</span>
+            <span class="term-row hi"><em>HIGH</em>Valid login · admin_ops · new ASN · 02:47</span>
+          </span>
         </div>
         <a href="#program" data-goto="cs" class="prog">
           <span class="prog-name">Applied Cybersecurity with AI</span>
