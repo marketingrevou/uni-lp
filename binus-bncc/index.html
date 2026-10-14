@@ -11,14 +11,14 @@
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://offer.revou.co/binus-bncc">
 <meta property="og:title" content="Beasiswa Eksklusif BNCC untuk Karier Masa Depan">
-<meta property="og:description" content="Raih beasiswa eksklusif hingga 33% untuk peserta BNCC CSR 2026 dari RevoU. Daftar sebelum 12 Oktober 2026.">
+<meta property="og:description" content="Raih beasiswa eksklusif hingga 33% untuk peserta BNCC CSR 2026 dari RevoU. Daftar sebelum 19 Oktober 2026.">
 <meta property="og:image" content="https://offer.revou.co/binus-bncc/images/og-image.jpg">
 <meta property="og:image:width" content="2253">
 <meta property="og:image:height" content="1203">
 <meta property="og:image:alt" content="Beasiswa Eksklusif BNCC x RevoU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Beasiswa Eksklusif BNCC untuk Karier Masa Depan">
-<meta name="twitter:description" content="Raih beasiswa eksklusif hingga 33% untuk peserta BNCC CSR 2026 dari RevoU. Daftar sebelum 12 Oktober 2026.">
+<meta name="twitter:description" content="Raih beasiswa eksklusif hingga 33% untuk peserta BNCC CSR 2026 dari RevoU. Daftar sebelum 19 Oktober 2026.">
 <meta name="twitter:image" content="https://offer.revou.co/binus-bncc/images/og-image.jpg">
 
 <link rel="icon" type="image/png" href="/binus-bncc/images/revou-logo.png">
@@ -408,12 +408,12 @@
   /* Campus-led hero */
   .hero{position:relative;isolation:isolate;min-height:calc(100svh - var(--nav-h));padding:0;
     overflow:hidden;background:var(--night);display:flex;align-items:stretch}
-  .hero-media{position:absolute;inset:0;z-index:-2}
+  .hero-media{position:absolute;inset:0;z-index:0}
   .hero-photo{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 49%;border-radius:0;
     filter:saturate(.92) contrast(1.04)}
   .hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:
     linear-gradient(90deg,rgba(16,14,2,.94) 0%,rgba(20,17,3,.82) 18%,rgba(25,21,3,.58) 34%,rgba(25,21,3,.28) 52%,rgba(25,21,3,.10) 70%,transparent 88%),
-    linear-gradient(0deg,rgba(16,14,2,.8) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
+    linear-gradient(0deg,rgba(16,14,2,.3) 0%,transparent 42%,rgba(16,14,2,.12) 100%)}
   .hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:
     radial-gradient(circle at 82% 28%,rgba(245,197,24,.2),transparent 28%),
     linear-gradient(180deg,rgba(245,197,24,.06),transparent 30%);mix-blend-mode:screen}
@@ -450,12 +450,11 @@
     color:#fff8df;font-weight:800;font-size:.82rem}
   .offer-deadline::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(245,197,24,.13)}
 
-  /* RevoU-style proof dock: ratings count up, company logos move continuously. */
+  /* Let the campus remain visible behind the proof content. */
   .hero-grid{padding-bottom:clamp(244px,28vh,280px)}
   .hero-proof{position:absolute;z-index:3;inset:auto 0 0;
-    background:linear-gradient(180deg,rgba(18,16,2,.78),rgba(13,12,2,.96));color:#fff8df;
-    border-top:1px solid rgba(245,197,24,.42);box-shadow:0 -22px 60px rgba(7,6,1,.32);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    background:linear-gradient(180deg,transparent,rgba(13,12,2,.2) 42%,rgba(13,12,2,.48));
+    border:0;box-shadow:none;color:#fff8df;text-shadow:0 2px 12px rgba(0,0,0,.55)}
   .proof-inner{max-width:1352px;margin:0 auto;padding:20px clamp(24px,5vw,64px) 18px}
   .proof-top{display:flex;align-items:center;justify-content:center;gap:clamp(34px,5vw,68px);margin-bottom:16px}
   .proof-title{font-size:.95rem;color:rgba(255,248,223,.84);white-space:nowrap}
@@ -465,6 +464,7 @@
   .proof-score{font-size:.98rem;font-weight:800;line-height:1;color:#fff8df}
   .proof-stars{color:var(--yellow);font-size:.8rem;line-height:1;letter-spacing:-.04em;text-shadow:0 0 12px rgba(245,197,24,.3)}
   .proof-rating img{display:block;width:auto;height:20px;max-width:96px;filter:brightness(0) invert(1);opacity:.9}
+  .proof-rating img.switchup-logo{filter:grayscale(1) invert(1) contrast(100);opacity:1}
   .company-proof{padding-top:15px;border-top:1px solid rgba(255,248,223,.18)}
   .company-proof-title{text-align:center;font-size:.86rem;font-weight:700;color:rgba(255,248,223,.86);margin-bottom:12px}
   .company-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
@@ -496,7 +496,37 @@
   .t30 .tier-head{background:linear-gradient(135deg,#ffdf4d 0%,var(--yellow) 58%,#e3b100 100%)}
   .t15{background:linear-gradient(180deg,#fff 0%,#fffcf3 100%)}
   .t15 .tier-head{background:linear-gradient(135deg,#005b8f 0%,#008ed3 58%,#00a8e8 100%)}
-  .t33 .tier-head{background:linear-gradient(135deg,#211d05 0%,var(--brown-deep) 58%,#3e3204 100%)}
+  /* Cybersecurity tier borrows the programme page's SOC look: night-navy console, violet glow,
+     orange signal colour and a live-looking alert queue. */
+  .t33{border-color:rgba(91,76,255,.28)}
+  .t33 .tier-head{position:relative;isolation:isolate;overflow:hidden;grid-template-columns:auto 1fr auto;
+    background:radial-gradient(ellipse 60% 120% at 78% 120%,rgba(110,64,255,.55),transparent 62%),
+      radial-gradient(circle at 8% -20%,rgba(240,135,0,.22),transparent 38%),
+      linear-gradient(135deg,#070922 0%,#090d1e 55%,#120f3a 100%)}
+  .t33 .tier-head::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background-image:radial-gradient(rgba(160,170,230,.22) 1px,transparent 1.2px);background-size:16px 16px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%)}
+  .t33 .tier-rate{color:#fff}
+  .t33 .tier-rate i{color:#f08700}
+  .t33 .tier-lbl{grid-row:1/3;align-self:center;color:#f08700;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:1rem;font-weight:700;letter-spacing:.08em}
+  .t33 .tier-lbl::before{content:"> ";color:#6b739e}
+  .term{grid-column:3;grid-row:1/3;align-self:center;width:min(380px,36vw);border:1px solid rgba(107,115,158,.35);
+    border-radius:10px;background:rgba(7,9,34,.82);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.72rem;line-height:1;color:#c9cff0;box-shadow:0 18px 50px rgba(5,4,30,.5)}
+  .term-top{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid rgba(107,115,158,.25);
+    color:#6b739e;letter-spacing:.12em;text-transform:uppercase;font-size:.62rem}
+  .term-top b{color:#3ddc84;font-weight:700}
+  .term-top b::before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;
+    background:#3ddc84;box-shadow:0 0 8px #3ddc84;vertical-align:1px;animation:termPulse 1.6s ease-in-out infinite}
+  .term-row{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:8px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .term-row+.term-row{border-top:1px solid rgba(107,115,158,.12)}
+  .term-row em{font-style:normal;font-weight:700;color:#6b739e}
+  .term-row.med em{color:var(--yellow)}
+  .term-row.hi{background:rgba(240,135,0,.12)}
+  .term-row.hi em{color:#f08700}
+  @keyframes termPulse{50%{opacity:.35}}
+  @media(max-width:760px){.term{display:none}.t33 .tier-head{grid-template-columns:auto 1fr}.t33 .tier-lbl{font-size:.8rem;white-space:nowrap}}
   .prog{background:rgba(255,255,255,.76)}
   .prog:hover{background:#fff9e6}
   .prog-go{box-shadow:inset 0 0 0 0 var(--yellow);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
@@ -603,7 +633,7 @@
       <span class="logo-x" aria-hidden="true">×</span>
       <img src="/binus-bncc/images/bncc-logo.png" alt="BNCC — Bina Nusantara Computer Club, BINUS University" class="logo-bncc-img">
     </div>
-    <a href="#pilih" class="btn top-cta">Daftar sebelum 12 Oktober 2026</a>
+    <a href="#pilih" class="btn top-cta">Daftar sebelum 19 Oktober 2026</a>
   </div>
 </header>
 
@@ -618,7 +648,7 @@
       <p class="lead">Saatnya <b>mulai karier</b> di bidang paling dicari:
         <b>Applied Cybersecurity with AI, Applied AI, Analytics &amp; Automation,
         Software Engineering, Digital Marketing</b>, atau <b>Data Analytics</b> bareng RevoU.</p>
-      <p class="lead"><b>Daftar sebelum 12 Oktober 2026</b> dan dapatkan <b>benefit spesial</b> untuk
+      <p class="lead"><b>Daftar sebelum 19 Oktober 2026</b> dan dapatkan <b>benefit spesial</b> untuk
         peserta BNCC CSR 2026.</p>
       <div class="hero-cta">
         <a href="#pilih" class="btn">Pilih Program</a>
@@ -630,7 +660,7 @@
       <div class="offer-number"><small>Hingga</small><span class="offer-value">33<i>%</i></span></div>
       <p class="offer-title">Beasiswa biaya program</p>
       <p class="offer-copy">Untuk peserta BNCC CSR 2026.</p>
-      <p class="offer-deadline">Daftar sebelum 12 Oktober 2026</p>
+      <p class="offer-deadline">Daftar sebelum 19 Oktober 2026</p>
     </aside>
   </div>
   <div class="hero-proof" aria-label="Rating RevoU dan perusahaan tempat alumni bekerja">
@@ -646,7 +676,7 @@
           <div class="proof-rating">
             <span class="proof-score" data-rating="4.93" data-decimals="2" aria-label="Rating 4.93">4.93</span>
             <span class="proof-stars" aria-hidden="true">★★★★★</span>
-            <img src="/binus-bncc/images/proof/switchup.CP6x00Gv.svg" alt="SwitchUp" width="63" height="16">
+            <img src="/assets/switchup.png" alt="SwitchUp" class="switchup-logo" width="78" height="20">
           </div>
           <div class="proof-rating">
             <span class="proof-score" data-rating="4.8" data-decimals="1" aria-label="Rating 4.8">4.8</span>
@@ -699,7 +729,12 @@
         <div class="tier-head">
           <span class="tier-rate">33<i>%</i></span>
           <span class="tier-lbl">Potongan biaya</span>
-          <span class="tier-for">Applied Cybersecurity with AI</span>
+          <span class="term" aria-hidden="true">
+            <span class="term-top">Alert queue · week 4 lab <b>live</b></span>
+            <span class="term-row"><em>LOW</em>Failed login · svc_backup · 3 attempts</span>
+            <span class="term-row med"><em>MED</em>Port scan detected · 10.0.4.0/24</span>
+            <span class="term-row hi"><em>HIGH</em>Valid login · admin_ops · new ASN · 02:47</span>
+          </span>
         </div>
         <a href="#program" data-goto="cs" class="prog">
           <span class="prog-name">Applied Cybersecurity with AI</span>
@@ -1076,7 +1111,7 @@
   <div class="wrap final-grid">
     <div>
       <h2>Manfaatkan kesempatan untuk mulai karier digital dengan beasiswa eksklusif!</h2>
-      <p class="deadline">Daftar sebelum 12 Oktober 2026.</p>
+      <p class="deadline">Daftar sebelum 19 Oktober 2026.</p>
     </div>
     <ul class="cta-list">
       <li><a href="https://cybersecurity-fp.paperform.co/?page=binus-socs" target="_blank" rel="noopener"><span class="cta-name">Applied Cybersecurity<small>Beasiswa 33%</small></span><span class="cta-pill">Daftar</span></a></li>
